@@ -42,10 +42,30 @@
             font-size: 5em;
             display: flex;
             z-index: 1;
+            color: green;
+        }
+
+        .p, .r, .o, .a, .i, .y {
+            transform: rotateX(180deg);
+        }
+
+        .e, .s, .n, .l, .f {
+            transform: rotateZ(-180deg);
         }
 
         .scroll-down {
             color: grey;
+        }
+
+        a {
+            visibility: hidden;
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: lightgreen;
+            text-shadow: 0 0 10px darkgreen; 
         }
 
     </style>
@@ -69,6 +89,11 @@
 
         <div class="scroll-down text-center">
             <p>scroll down</p>
+            <div class="link text-center">
+                <a href="homepage.html">
+                    <p>click here to begin</p>
+                </a>
+            </div>
         </div>
     </div>
 
