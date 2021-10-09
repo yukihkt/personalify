@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "octref.vetur", // for reading .vue files when using vue cli
+    "dbaeumer.vscode-eslint", // eslint -- vue cli code maintaining
+    "esbenp.prettier-vscode", // prettier code formatter
+    "vscode-icons-team.vscode-icons", // cool icons for folders and files
+    "formulahendry.auto-rename-tag", // auto renaming tags when one side changes
+    "zignd.html-css-class-completion", // auto complete css classes
+    "coenraads.bracket-pair-colorizer-2", // bracket colors
+    "oderwat.indent-rainbow", // easier to follow indentation
+    "pranaygp.vscode-css-peek" // hold ctrl to see what a css class does
+  ]
+}
