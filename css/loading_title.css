@@ -1,0 +1,59 @@
+html {
+    height: 100%;
+    /* overflow: hidden; */
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    /* overflow: auto; */
+    margin: 0;
+}
+
+.container-fluid {
+    margin-top: 42vh;
+    position: fixed;
+}
+
+#box {
+    background: black;
+    /* opacity: 0; */
+    margin: 0;
+    width: 100%;
+    height: 300vh;
+}
+
+#logo {
+    font-size: 5em;
+    display: flex;
+    z-index: 1;
+    color: #218C31;
+}
+
+.p, .r, .o, .a, .i, .y {
+    transform: rotateX(180deg);
+}
+
+.e, .s, .n, .l, .f {
+    transform: rotateZ(-180deg);
+}
+
+.scroll-down {
+    color: grey;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* hide link at the start */
+#link {
+    visibility: hidden;
+    color: white;
+}
+
+/* glow animation when hovering onto link */
+#link:hover {
+    color: lightgreen;
+    text-shadow: 0 0 50px darkgreen; 
+}
