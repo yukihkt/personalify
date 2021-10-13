@@ -8,3 +8,23 @@ html {
 #logo {
     font-family: 'Reem Kufi', sans-serif;
 }
+
+body {
+    background-color: #181818;
+}
+
+.darkgreen {
+    color: #218C31;
+}
+
+.bgdarkgreen {
+    background-color: #218C31;
+}
+
+.lightgreen {
+    color: #56BD66;
+}
+
+.bglightgreen {
+    background-color: #56BD66;
+}

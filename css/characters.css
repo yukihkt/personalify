@@ -1,0 +1,18 @@
+body {
+    color: white;
+    /* font-style: italic; */
+    text-align: center;
+}
+
+.container {
+    margin-top: 5rem;
+}
+
+img {
+    margin-top: -50px;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 180px;
+}
