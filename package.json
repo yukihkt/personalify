@@ -13,6 +13,7 @@
     "bootstrap-icons": "^1.5.0",
     "choreographer-js": "^1.1.0",
     "material-icons": "^1.9.1",
+    "typed-js": "^0.2.3",
     "vue-carousel-3d": "^1.0.1",
     "vue-typed-js": "^0.1.2",
     "vuesax": "^3.12.2"
