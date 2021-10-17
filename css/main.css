@@ -7,6 +7,8 @@ html {
 
 #logo {
     font-family: 'Reem Kufi', sans-serif;
+<<<<<<< HEAD
+=======
 }
 
 body {
@@ -27,4 +29,5 @@ body {
 
 .bglightgreen {
     background-color: #56BD66;
+>>>>>>> 97bd37f1a07b7b3fd1e898888944af2103a40fb6
 }
