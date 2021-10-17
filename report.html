@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Homepage</title>
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<div id='everything'>
+    
+
+    <!-- main content -->
+    <div id='main'>
+        <div id='main-content'>
+            <div id='heading'>
+                <span id='heading1'>Hello</span>
+            </div>
+            <div id='report'>
+                <div id='box'>
+                    <span id='heading4'>Report</span>
+                    <div id='info'>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit animi, similique aut quod ab, eum rerum perferendis suscipit, non voluptatem labore quasi! Sequi laudantium incidunt asperiores illum eum facere voluptatibus!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- top bar -->
+    <div id='top'>
+        <div id='icon'>
+            <img src='images/icon.svg'>
+            <span id='title'>Personalify</span>
+        </div>
+        <div id='arrows'>
+            <!-- add onclick later-->
+            <button id='arrow1'> < </button>
+            <button id='arrow2'> > </button>
+        </div>
+    </div>
+
+    <!-- side bar  -->
+    <div id='sidebar'>
+            
+        <div class='pages'>
+            <div>
+                <img src='images/home_icon.png'>
+            </div>
+            <div>
+                <a href='homepage.html' class='pagename'>Homepage</a><br>
+            </div>
+            
+        </div>
+        <div class='pages'>
+            <div>
+                <img src='images/info_icon.png'>
+            </div>
+            <div>
+                <a href='about.html' class='pagename'>About</a><br>
+            </div>
+        </div>
+        <div class='pages'>
+            <div>
+                <img src='images/report_icon.png'>
+            </div>
+            <div>
+                <a class='bold' href='report.html' class='pagename'>Report</a><br>
+            </div>
+        </div>
+        <div class='pages'>
+            <div>
+                <img src='images/logout_icon.png'>
+            </div>
+            <div>
+                <a href='logout.html' class='pagename'>Logout</a><br>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- bottom bar -->
+    <div id='bottombar'>
+        <div id='leftbottombar'>
+            <div>
+                <img src='images/basic_personality.svg'>
+            </div>
+            <div>
+                <span id='personalityanalysis'>Personality Analysis</span>
+                <br>
+                <span id='inprocess'>In process</span>
+            </div>
+        </div>
+
+        <div id='middlebottombar'>
+            <div id='icons'>
+                <div>
+                    <ion-icon name="shuffle"></ion-icon>
+                </div>
+                <div>   
+                    <ion-icon name="play-skip-back"></ion-icon>
+                </div>
+                <div>
+                    <ion-icon id='play-circle' name="play-circle"></ion-icon>
+                </div>
+                <div>
+                    <ion-icon name="play-skip-forward"></ion-icon>
+                </div>
+                <div>
+                    <ion-icon name="repeat"></ion-icon>
+                </div>
+            </div>
+            <div id='track-progress'>
+                <div class="current-track-progress">
+                    0%
+                </div>
+                <div id="current-track-progress-bar">
+                    <div id='white-1st'>
+                    </div>
+                    <div id='grey-1st'>
+                    </div>
+                </div>
+                <div class="current-track-progress">
+                    100%
+                </div>
+            </div>
+        </div>
+        <div id='rightbottombar'>
+        </div>
+    </div>
+</div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
