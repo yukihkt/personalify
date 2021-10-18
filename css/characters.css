@@ -3,13 +3,14 @@ body {
     /* font-style: italic; */
     text-align: center;
 }
-#yes{
+#yes.container{
     margin-right: auto;
     margin-left: auto;
+    
 }
 
-#inputMain {
-    margin-top: 15rem;
+#inputMain.container {
+    margin-top: 20px;
 }
 
 #inputMain h2 {
@@ -19,7 +20,9 @@ body {
 
 #inputMain p {
     color: lightgray;
-    margin-bottom: 5px;
+    
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #inputMain input {
@@ -48,10 +51,11 @@ body {
     width: 15rem;
 }
 
-#typed {
-    padding-top: 30px;
+#this_typed{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
 }
-
 .typed-cursor{
     font-size: 40px;
     opacity: 1;
