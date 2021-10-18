@@ -7,55 +7,31 @@
     <title>Spotify Homepage</title>
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/base.css">
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- for chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
 <body>
 <div id='everything'>
+    
 
     <!-- main content -->
     <div id='main'>
         <div id='main-content'>
             <div id='heading'>
                 <span id='heading1'>Hello</span>
-                <br>
-                <span id='heading2'>See current quiz report or take a new one... </span>
-                <br>
-                <span id='heading3'>...do whatever you want I guess</span>
             </div>
-            <div id='cards'>
-                <div class="grid">
-                    <a class="grid__item grid__item--noclick" href="basicpersonalityloading.html">
-						<div class="box">
-							<div class="box__shadow"></div>
-							<img class="box__img" src="images/homepage/basic_personality.svg" alt="Some image"/>
-							<img id='image1' class="box__img" src="images/basic_personality.svg" alt="Some image"/>
-							<h4 class="box__text"><span class="box__text-inner box__text-inner--rotated2 box__text-inner--reverse">Level1</span></h4>
-							<p class="box__content"><strong>Basic Personality Test</strong> offers Personality Analysis based on your music taste</p>
-						</div>
-					</a>
-                    <a class="grid__item grid__item--noclick" href="personalityquiz.html">
-						<div class="box">
-							<div class="box__shadow"></div>
-							<img class="box__img" src="images/homepage/personality_quiz_done.svg" alt="Some image"/>
-							<img id='image1'  class="box__img" src="images/personality_quiz_done.svg" alt="Some image"/>
-							<h4 class="box__text"><span class="box__text-inner box__text-inner--rotated2 box__text-inner--reverse">Level2</span></h4>
-							<p class="box__content"><strong>Personality Quiz</strong> offers further insights into which of the big 5 personalities you are</p>
-						</div>
-					</a>
-                    <a  class="grid__item grid__item--noclick" href="careerquiz.html">
-						<div class="box">
-							<div class="box__shadow"></div>
-							<img class="box__img" src="images/homepage/career_quiz_done.svg" alt="Some image"/>
-							 <div class="box__shadow"></div>
-							<img id='image1' class="box__img" src="images/career_quiz_done.svg" alt="Some image"/>
-							<h4 class="box__text"><span class="box__text-inner box__text-inner--rotated2 box__text-inner--reverse">Level3</span></h4>
-							<p class="box__content"><strong>Career Quiz</strong> offers guidance on your suitable career prospects</p>
-                           
-						</div>
-					</a>
+            <div id='basicpersonalityloading'>
+                <div id='box'>
+                    <span id='heading4'>Your Basic Personality</span>
+                    <br>
+                    <div id='loadingbox'>
+                        <span id='heading5'>Analysing Your Spotify...</span>
+                        <img id='loading' src='images/loading.gif'>
+                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
@@ -64,13 +40,13 @@
     <!-- top bar -->
     <div id='top'>
         <div id='icon'>
-            <img src='images/homepage/icon.svg'>
+            <img src='images/icon.svg'>
             <span id='title'>Personalify</span>
         </div>
         <div id='arrows'>
             <!-- add onclick later-->
-            <button id='arrow1' disabled> < </button>
-            <a href=''><button id='arrow2'> > </button></a>
+            <a href='homepage.html'><button id='arrow1lighted' title="Go back"> < </button></a>
+            <button id='arrow2' disabled> > </button>
         </div>
     </div>
 
@@ -78,8 +54,6 @@
     <div id='sidebar'>
         <!-- homepage -->
         <div class='pages'>
-            <div>
-                <img src='images/homepage/home_icon.png'>
             <div >
                 <ion-icon id='homeicon' name="home-outline"></ion-icon>
             </div>
@@ -90,8 +64,6 @@
         </div>
         <!-- aboutpage -->
         <div class='pages'>
-            <div>
-                <img src='images/homepage/info_icon.png'>
             <div >
                 <ion-icon id='abouticon' name="information-circle-outline"></ion-icon>
             </div>
@@ -101,8 +73,6 @@
         </div>
         <!-- reportpage -->
         <div class='pages'>
-            <div>
-                <img src='images/homepage/report_icon.png'>
             <div >
                 <ion-icon  id='reporticon' name="book-outline"></ion-icon>
             </div>
@@ -112,8 +82,6 @@
         </div>
         <!-- logoutpage -->
         <div class='pages'>
-            <div>
-                <img src='images/homepage/logout_icon.png'>
             <div >
                 <ion-icon id='logouticon' name="log-out-outline"></ion-icon>
             </div>
@@ -128,7 +96,7 @@
     <div id='bottombar'>
         <div id='leftbottombar'>
             <div>
-                <img src='images/homepage/basic_personality.svg'>
+                <img src='images/basic_personality.svg'>
             </div>
             <div>
                 <span id='personalityanalysis'>Personality Analysis</span>
@@ -173,19 +141,11 @@
         <div id='rightbottombar'>
         </div>
     </div>
-
-
+</div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <!-- for cards design -->
-    <script src='GridLayoutMotion-master/js/demo.js'></script>
-    <script src='GridLayoutMotion-master/js/imagesloaded.pkgd.min.js'></script>
-    <script src='GridLayoutMotion-master/js/TweenMax.min.js'></script>
-    <script src='js/homepage.js'></script>
-    <!-- Vue Typed.js -->
-    <script src="/node_modules/vue-typed-js/dist/vue-typed-js.browser.js"></script>
 
-    <!-- Main JS  -->
-    <script src="js/main.js"></script>
+    <!-- chart.js -->
+    <script src='js/chart.js'></script>
 </body>
 </html>

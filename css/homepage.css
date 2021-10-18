@@ -1,16 +1,23 @@
 #everything {
-    font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,helvetica,arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
     margin:0px;
     padding:0px;
     width:100%;
 }
 
 #main{
-    background-color: #2a2a2a;
+    background-color: #181818;
     width:100%;
     margin-right:0px;
     height:2000px;
     overflow:hidden;
+}
+
+#loadingbox {
+    display:block
+}
+#loading {
+    margin-left:350px;
+    height:200px;
 }
 
 #basicpersonality {
@@ -18,6 +25,13 @@
     border-radius: 5%;
     font-size:100px;
     padding:0px;
+}
+
+#basicpersonalityloading {
+    background-color: #777777;
+    border-radius: 5%;
+    font-size:100px;
+    height:500px;
 }
 
 #personalityquiz {
@@ -85,17 +99,43 @@
 
 #heading4 {
     font-size:40px;
-    color:black;
+    color:white;
     font-weight: 500;
+}
+
+#heading5 {
+    font-size:50px;
+    color:white;
+    font-weight: 500;
+    margin-left:200px;
 }
 
 #box {
     padding:0px 20px 0px 20px;
 }
+
+
 #info {
     font-size: 100px;
+    display: flex;
+    width:800px;
+    height:400px;
+    padding-left:50px;
 }
 
+#chart1 {
+    padding:20px;
+    width:400px;
+    height:400px;
+    align-items:center;
+}
+
+#chart2 {
+    padding:20px;
+    width:500px;
+    height:500px;
+    align-items:center;
+}
 
 #top {
     background: #282828;
@@ -140,16 +180,25 @@
 }
 
 #arrow1 {
-    background-color: black;
+    background-color: #222222;
     color: white;
     border-radius: 50%;
-    border: 1px black solid;
+    border: 1px solid #222222;
     height: 40px;
     width:40px;
 }
 
 #arrow2 {
-    background-color: black;
+    background-color: #222222;
+    color: white;
+    border-radius: 50%;
+    border: 1px solid #222222;
+    height: 40px;
+    width:40px;
+}
+
+#arrow1lighted {
+    background-color:black;
     color: white;
     border-radius: 50%;
     border: 1px black solid;
@@ -168,22 +217,51 @@
     float:left;
     font-size: 24px;
     color:white;
+    padding-left:20px;
 }
-
+/* 
 #sidebar img {
     height:50px;
     width:50px;
+} */
+
+
+#homepage {
+    margin:10px 20px 10px 17px;
+    align-items: center;
+    display: flex;
+    height: 50px;
 }
 
-.pagename {
-    text-align: center;
-}
-
-.pages {
+#aboutpage {
     margin:10px 20px 10px 20px;
     align-items: center;
     display: flex;
     height: 50px;
+}
+
+#reportpage {
+    margin:10px 20px 10px 14px;
+    align-items: center;
+    display: flex;
+    height: 50px;
+}
+
+#logoutpage {
+    margin:10px 20px 10px 30px;
+    display: flex;
+}
+
+.pages {
+    display:flex;
+    vertical-align: middle;
+}
+
+.pagename {
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    padding:10px;
 }
 
 .pages img {
@@ -313,4 +391,29 @@ ion-icon {
 a {
     text-decoration:none;
     color:white;
+}
+
+a:visited img{
+    filter:none;
+}
+
+a img {
+    filter:grayscale(1);
+}
+
+#logouticon {
+    font-size: 50px;
+}
+
+#reporticon {
+    font-size: 50px;
+}
+
+#abouticon {
+    font-size: 50px;
+
+}
+
+#homeicon {
+    font-size: 50px;
 }

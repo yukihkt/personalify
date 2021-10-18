@@ -7,6 +7,7 @@
     <title>Spotify Homepage</title>
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div id='everything'>
@@ -37,45 +38,48 @@
         </div>
         <div id='arrows'>
             <!-- add onclick later-->
-            <button id='arrow1'> < </button>
-            <button id='arrow2'> > </button>
+            <a href='homepage.html'><button id='arrow1lighted' title="Go back"> < </button></a>
+            <button id='arrow2' disabled> > </button>
         </div>
     </div>
 
     <!-- side bar  -->
     <div id='sidebar'>
-            
+        <!-- homepage -->
         <div class='pages'>
             <div>
                 <img src='images/homepage/home_icon.png'>
             </div>
-            <div>
-                <a class='bold' href='homepage.html' class='pagename'>Homepage</a><br>
+            <div class='pagename'>
+                <a class='bold'>Homepage</a><br>
             </div>
             
         </div>
+        <!-- aboutpage -->
         <div class='pages'>
             <div>
                 <img src='images/homepage/info_icon.png'>
             </div>
-            <div>
-                <a href='about.html' class='pagename'>About</a><br>
+            <div class='pagename'>
+                <a  href='about.html'>About</a><br>
             </div>
         </div>
+        <!-- reportpage -->
         <div class='pages'>
             <div>
                 <img src='images/homepage/report_icon.png'>
             </div>
-            <div>
-                <a href='report.html' class='pagename'>Report</a><br>
+            <div class='pagename'>
+                <a href='report.html' >Report</a><br>
             </div>
         </div>
+        <!-- logoutpage -->
         <div class='pages'>
             <div>
                 <img src='images/homepage/logout_icon.png'>
             </div>
-            <div>
-                <a href='logout.html' class='pagename'>Logout</a><br>
+            <div class='pagename'>
+                <a href='logout.html'>Logout</a><br>
             </div>
         </div>
     </div>
