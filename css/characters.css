@@ -52,3 +52,11 @@ body {
     margin: 10px 0;
     width: 15rem;
 }
+
+.typed-cursor{
+    font-size: 40px;
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
