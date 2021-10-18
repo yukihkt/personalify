@@ -30,6 +30,16 @@
 <body>
     
     <div class="container" id="main">
+
+        <style>
+            .typed-cursor{
+                font-size: 40px;
+                opacity: 1;
+                -webkit-animation: blink 0.7s infinite;
+                -moz-animation: blink 0.7s infinite;
+                animation: blink 0.7s infinite;
+            }
+        </style>
         
         
         <div id="typed-strings">
@@ -39,13 +49,7 @@
         </div>
         <span id="typed"></span>
 
-        <script>
-            var typed = new Typed('#typed', {
-              stringsElement: '#typed-strings',
-              backSpeed: 40,
-              typeSpeed: 40
-            });
-        </script>
+        
         
 
 
