@@ -3,14 +3,15 @@ import Vue from 'vue'
 import { rtdbPlugin } from 'vuefire'
 Vue.use(rtdbPlugin)
 
+// Get a RTDB instance
 import firebase from 'firebase/app'
-import 'firebase/firestore'
+import 'firebase/database'
 
-// Get a Firestore instance
 export const db = firebase
-  .initializeApp({ projectId: 'MY PROJECT ID' })
-  .firestore()
+  .initializeApp({ databaseURL: 'MY PROJECT URL' })
+  .database()
 
+// From Firebase Documentation:
 // // Import the functions you need from the SDKs you need
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
