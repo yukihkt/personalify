@@ -9,6 +9,7 @@ body {
     
 }
 
+
 #inputMain.container {
     margin-top: 20px;
 }
@@ -28,12 +29,16 @@ body {
 #inputMain input {
     width: 30rem;
     height: 2.5rem;
-    margin-bottom:30px;
+    margin-bottom:20px;
     text-align: center;
 }
 
 #inputMain button {
     width: 12rem;
+}
+
+#inputMain p{
+    font-style: italic;
 }
 
 #charMain {
