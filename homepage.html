@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Spotify Homepage</title>
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div id='everything'>
-    
 
     <!-- main content -->
     <div id='main'>
@@ -24,10 +25,10 @@
             </div>
             <div id='cards'>
                 <div class="grid">
-                    <a class="grid__item grid__item--noclick" href="basicpersonality.html">
+                    <a class="grid__item grid__item--noclick" href="basicpersonalityloading.html">
 						<div class="box">
 							<div class="box__shadow"></div>
-							<img class="box__img" src="images/basic_personality.svg" alt="Some image"/>
+							<img id='image1' class="box__img" src="images/basic_personality.svg" alt="Some image"/>
 							<h4 class="box__text"><span class="box__text-inner box__text-inner--rotated2 box__text-inner--reverse">Level1</span></h4>
 							<p class="box__content"><strong>Basic Personality Test</strong> offers Personality Analysis based on your music taste</p>
 						</div>
@@ -35,17 +36,18 @@
                     <a class="grid__item grid__item--noclick" href="personalityquiz.html">
 						<div class="box">
 							<div class="box__shadow"></div>
-							<img class="box__img" src="images/personality_quiz_done.svg" alt="Some image"/>
+							<img id='image1'  class="box__img" src="images/personality_quiz_done.svg" alt="Some image"/>
 							<h4 class="box__text"><span class="box__text-inner box__text-inner--rotated2 box__text-inner--reverse">Level2</span></h4>
 							<p class="box__content"><strong>Personality Quiz</strong> offers further insights into which of the big 5 personalities you are</p>
 						</div>
 					</a>
-                    <a class="grid__item grid__item--noclick" href="careerquiz.html">
+                    <a  class="grid__item grid__item--noclick" href="careerquiz.html">
 						<div class="box">
-							<div class="box__shadow"></div>
-							<img class="box__img" src="images/career_quiz_done.svg" alt="Some image"/>
+							 <div class="box__shadow"></div>
+							<img id='image1' class="box__img" src="images/career_quiz_done.svg" alt="Some image"/>
 							<h4 class="box__text"><span class="box__text-inner box__text-inner--rotated2 box__text-inner--reverse">Level3</span></h4>
 							<p class="box__content"><strong>Career Quiz</strong> offers guidance on your suitable career prospects</p>
+                           
 						</div>
 					</a>
                 </div>
@@ -61,48 +63,51 @@
         </div>
         <div id='arrows'>
             <!-- add onclick later-->
-            <button id='arrow1'> < </button>
-            <button id='arrow2'> > </button>
+            <button id='arrow1' disabled> < </button>
+            <a href=''><button id='arrow2'> > </button></a>
         </div>
     </div>
 
     <!-- side bar  -->
     <div id='sidebar'>
+        <!-- homepage -->
+        <div class='pages'>
+            <div >
+                <ion-icon id='homeicon' name="home-outline"></ion-icon>
+            </div>
+            <div class='pagename'>
+                <a class='bold'>Homepage</a><br>
+            </div>
             
-        <div class='pages'>
-            <div>
-                <img src='images/home_icon.png'>
-            </div>
-            <div>
-                <a class='bold' class='pagename'>Homepage</a><br>
-            </div>
-            
         </div>
+        <!-- aboutpage -->
         <div class='pages'>
-            <div>
-                <img src='images/info_icon.png'>
+            <div >
+                <ion-icon id='abouticon' name="information-circle-outline"></ion-icon>
             </div>
-            <div>
-                <a  href='about.html' class='pagename'>About</a><br>
+            <div class='pagename'>
+                <a  href='about.html'>About</a><br>
             </div>
         </div>
+        <!-- reportpage -->
         <div class='pages'>
-            <div>
-                <img src='images/report_icon.png'>
+            <div >
+                <ion-icon  id='reporticon' name="book-outline"></ion-icon>
             </div>
-            <div>
-                <a href='report.html' class='pagename'>Report</a><br>
+            <div class='pagename'>
+                <a href='report.html' >Report</a><br>
             </div>
         </div>
+        <!-- logoutpage -->
         <div class='pages'>
-            <div>
-                <img src='images/logout_icon.png'>
+            <div >
+                <ion-icon id='logouticon' name="log-out-outline"></ion-icon>
             </div>
-            <div>
-                <a href='logout.html' class='pagename'>Logout</a><br>
+            <div class='pagename'>
+                <a href='logout.html'>Logout</a><br>
             </div>
         </div>
-    </div>]
+    </div>
 
 
     <!-- bottom bar -->
@@ -161,8 +166,10 @@
     <script src='GridLayoutMotion-master/js/demo.js'></script>
     <script src='GridLayoutMotion-master/js/imagesloaded.pkgd.min.js'></script>
     <script src='GridLayoutMotion-master/js/TweenMax.min.js'></script>
+    <script src='js/homepage.js'></script>
 </body>
 </html>
+=======
     <title>Personalify</title>
 
     <!-- Main CSS -->
@@ -183,9 +190,10 @@
     
 
     <!-- Vue Typed.js -->
-    <script src="/node_modules/vue-typed-js/dist/vue-typed-js.browser.js"></script>
+    <script src="/node_modules/vue-typed-js/dist/vue-typed-js.browser.js"></s>
 
     <!-- Main JS  -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></>
 </body>
 </html>
+>>>>>>> 97bd37f1a07b7b3fd1e898888944af2103a40fb6

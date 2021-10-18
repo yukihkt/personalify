@@ -7,6 +7,7 @@
     <title>Spotify Homepage</title>
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div id='everything'>
@@ -43,38 +44,41 @@
     
     <!-- side bar  -->
     <div id='sidebar'>
+        <!-- homepage -->
+        <div class='pages'>
+            <div >
+                <ion-icon id='homeicon' name="home-outline"></ion-icon>
+            </div>
+            <div class='pagename'>
+                <a class='bold'>Homepage</a><br>
+            </div>
             
-        <div class='pages'>
-            <div>
-                <img src='images/home_icon.png'>
-            </div>
-            <div>
-                <a  href='homepage.html' class='pagename'>Homepage</a><br>
-            </div>
-            
         </div>
+        <!-- aboutpage -->
         <div class='pages'>
-            <div>
-                <img src='images/info_icon.png'>
+            <div >
+                <ion-icon id='abouticon' name="information-circle-outline"></ion-icon>
             </div>
-            <div>
-                <a class='bold' href='about.html' class='pagename'>About</a><br>
+            <div class='pagename'>
+                <a  href='about.html'>About</a><br>
             </div>
         </div>
+        <!-- reportpage -->
         <div class='pages'>
-            <div>
-                <img src='images/report_icon.png'>
+            <div >
+                <ion-icon  id='reporticon' name="book-outline"></ion-icon>
             </div>
-            <div>
-                <a href='report.html' class='pagename'>Report</a><br>
+            <div class='pagename'>
+                <a href='report.html' >Report</a><br>
             </div>
         </div>
+        <!-- logoutpage -->
         <div class='pages'>
-            <div>
-                <img src='images/logout_icon.png'>
+            <div >
+                <ion-icon id='logouticon' name="log-out-outline"></ion-icon>
             </div>
-            <div>
-                <a href='logout.html' class='pagename'>Logout</a><br>
+            <div class='pagename'>
+                <a href='logout.html'>Logout</a><br>
             </div>
         </div>
     </div>

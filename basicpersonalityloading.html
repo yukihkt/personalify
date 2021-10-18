@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- for chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
 <body>
 <div id='everything'>
@@ -19,12 +22,16 @@
             <div id='heading'>
                 <span id='heading1'>Hello</span>
             </div>
-            <div id='careerquiz'>
+            <div id='basicpersonalityloading'>
                 <div id='box'>
-                    <span id='heading4'>Career Quiz</span>
-                    <div id='info'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit animi, similique aut quod ab, eum rerum perferendis suscipit, non voluptatem labore quasi! Sequi laudantium incidunt asperiores illum eum facere voluptatibus!
+                    <span id='heading4'>Your Basic Personality</span>
+                    <br>
+                    <div id='loadingbox'>
+                        <span id='heading5'>Analysing Your Spotify...</span>
+                        <img id='loading' src='images/loading.gif'>
                     </div>
+                    
+                    
                 </div>
             </div>
         </div>
@@ -89,7 +96,7 @@
     <div id='bottombar'>
         <div id='leftbottombar'>
             <div>
-                <img src='images/career_quiz_done.svg'>
+                <img src='images/basic_personality.svg'>
             </div>
             <div>
                 <span id='personalityanalysis'>Personality Analysis</span>
@@ -137,5 +144,8 @@
 </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- chart.js -->
+    <script src='js/chart.js'></script>
 </body>
 </html>
