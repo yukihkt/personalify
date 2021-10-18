@@ -23,68 +23,69 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="css/characters.css">
 
-    <!-- Main JS  -->
-    <script src="js/main.js"></script>
-
-</head>
-<body>
-    
-    <div class="container" id="main">
-        
-        
-        <div id="typed-strings">
-            <h3>
-                Welcome to <span id="logo" class="lightgreen" style="font-size:40px;">Personalify</span>
-            </h3>
-        </div>
-        <span id="typed"></span>
-
-        <script>
-            var typed = new Typed('#typed', {
-              stringsElement: '#typed-strings',
-              backSpeed: 40,
-              typeSpeed: 40
-            });
-        </script>
-        
-
-
-          
-
-        <!-- Character image card slideshow -->
-        <!-- <carousel-3d>
-            <slide v-for="(index) in characterSlides">
-                
-              <img :src="{{src}} + {{++index}} + '.png/'" height="500px">
-
-            </slide>
-          </carousel-3d> -->
-          <carousel-3d  :controls-visible="true" :controls-prev-html="'&#10092; '" :controls-next-html="'&#10093;'" 
-          :controls-width="30" :controls-height="60" :clickable="false">
-            <slide v-for="(src, index) in charArr">
-                <figure>
-                    <img src={{src}} height="500px">
-                </figure>
-            </slide>
-        </carousel-3d>
-
-        <br>
-
-        <a href="character_dialogue.html">
-            <button type="button" class="btn btn-success bgdarkgreen">Continue</button>
-        </a>
-
-    </div>
-
-
     <!-- Vue JS -->
     <script src="https://unpkg.com/vue@next"></script>
 
     <!-- Vue Typed.js -->
     <script src="/node_modules/vue-typed-js/dist/vue-typed-js.browser.js"></script>
+    
+    <!-- Firebase -->
+    <script src="js/db.js"></script>
+    
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="main">
+        <!-- Input Name -->
+        <div class="container" id="inputMain">
+            <h2>
+                Hi there!
+                <br>
+                How would you like to be addressed?
+            </h2>
+            <p>
+                Edit this name
+            </p>
+            <!-- Autofill this textbox with name extracted from Spotify -->
+            <input type="text" v-modal="name" placeholder="Your Name">
+            <!-- !!!!!!!!!!!!! TO FIX !!!!!!!!!!!!! -->
+            <!-- <vs-input color="success" label-placeholder="Success" v-model="inputName"/> -->
+    
+            <br>
+            <button type="button" class="btn btn-success bgdarkgreen" id="continue">Continue</button>
+        </div>
+        
+        <!-- Choose Character -->
+        <div class="container" id="charMain">        
+            <div id="typed-strings">
+                <h2>
+                    Welcome to <span id="logo" class="lightgreen" style="font-size:40px;">Personalify</span>
+                </h2>
+            </div>
+            <!-- <span id="typed"></span> -->
+            
+            <!-- Show character -->    
+            <img id="charImg">
+
+            <br>
+            
+            <button type="button" class="btn btn-light" onclick="randomGenerateNumber">Generate another character</button>
+    
+            <br>
+    
+            <a href="character_dialogue.html">
+                <button type="button" class="btn btn-success bgdarkgreen" onclick="updateUser">Continue</button>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Custom JS -->
+    <script src="js/characters.js"></script>
 
     <!-- Vuesax
     <script src="https://unpkg.com/vuesax"></script> -->
-    
 </body>
 </html>

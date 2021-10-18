@@ -3,16 +3,52 @@ body {
     /* font-style: italic; */
     text-align: center;
 }
-
-.container {
-    margin-top: 5rem;
+body {
+    color: white;
+    /* font-style: italic; */
+    text-align: center;
 }
 
-img {
+#inputMain {
+    margin-top: 15rem;
+}
+
+#inputMain h2 {
+    color: white;
+    font-weight: 500;
+}
+
+#inputMain p {
+    color: lightgray;
+    margin-bottom: 5px;
+}
+
+#inputMain input {
+    width: 30rem;
+    height: 2.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#inputMain button {
+    width: 12rem;
+}
+
+#charMain {
+    margin-top: 5rem;
+    display: none;
+}
+
+#typed {
+    font-size: 2rem;
+}
+
+#charMain img {
     margin-top: -50px;
     margin-bottom: 15px;
 }
 
-button {
-    width: 180px;
+#charMain button {
+    margin: 10px 0;
+    width: 15rem;
 }
