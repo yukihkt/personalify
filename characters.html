@@ -39,45 +39,49 @@
 <body>
     <div class="container" id="main">
         <!-- Input Name -->
-        <div class="container" id="inputMain">
-            <span id="typed">
+
+        <div id="yes" class="container">
+            <div id="typed-strings" class="container">
+            
                 <h2>
-                    <!-- <span style="font-size:30px;"> -->
-                        Hi there!
+                    <span style="font-size: 30px;">
+                        Welcome to <span id="logo" class="lightgreen" style="font-size:40px;">Personalify</span>
                         <br>
                         How would you like to be addressed?
-                    <!-- </span> -->
+                    </span>
                 </h2>
-            </span>
-            <p>Edit this name</p>
-            <!-- Autofill this textbox with name extracted from Spotify -->
-            <input type="text" v-modal="name" placeholder="Your Nickname" id="new_name">
-            <!-- !!!!!!!!!!!!! TO FIX !!!!!!!!!!!!! -->
-            <!-- <vs-input color="success" label-placeholder="Success" v-model="inputName"/> -->
-            <br>
-            <button id="continue" class="btn btn-success bgdarkgreen">Continue</button>
+                
+            </div>
+            <span id="typed"></span>
+            
+            <div class="container"  id="inputMain" >
+                <p>Edit this name</p>
+                <!-- Autofill this textbox with name extracted from Spotify -->
+                <input type="text" v-modal="name" placeholder="Your Nickname" id="new_name">
+                <!-- !!!!!!!!!!!!! TO FIX !!!!!!!!!!!!! -->
+                <!-- <vs-input color="success" label-placeholder="Success" v-model="inputName"/> -->
+                <br>
+                <button id="continue" class="btn btn-success bgdarkgreen">Continue</button>
+            </div>
         </div>
 
+        
+
         <!-- Choose Character -->
-        <div class="container" id="charMain">
-            <div id="typed">
-                <h2>
-                    Welcome to <span id="logo" class="lightgreen" style="font-size:40px;">Personalify</span>
-                </h2>
-            </div>
+        <div class="container" id="charMain">        
+            
             <!-- Show character -->    
             <img id="charImg">
+
             <br>
+            
             <button type="button" class="btn btn-light" id="generate">Generate another character</button>
+    
             <br>
+    
             <a href="character_dialogue.html">
                 <button type="button" class="btn btn-success bgdarkgreen" id="updateUser">Let's Go!</button>
             </a>
-        </div>
-
-        <!-- Character Dialogue -->
-        <div class="container" id="dialogueMain">
-            
         </div>
     </div>
 

@@ -3,10 +3,9 @@ body {
     /* font-style: italic; */
     text-align: center;
 }
-body {
-    color: white;
-    /* font-style: italic; */
-    text-align: center;
+#yes{
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #inputMain {
@@ -26,7 +25,7 @@ body {
 #inputMain input {
     width: 30rem;
     height: 2.5rem;
-    margin-bottom: 15px;
+    margin-bottom:30px;
     text-align: center;
 }
 
@@ -39,9 +38,6 @@ body {
     display: none;
 }
 
-#typed {
-    font-size: 2rem;
-}
 
 #charMain img {
     margin-top: 15px 0;
@@ -50,6 +46,10 @@ body {
 #charMain button {
     margin: 10px 0;
     width: 15rem;
+}
+
+#typed {
+    padding-top: 30px;
 }
 
 .typed-cursor{
