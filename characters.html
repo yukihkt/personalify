@@ -40,50 +40,44 @@
     <div class="container" id="main">
         <!-- Input Name -->
         <div class="container" id="inputMain">
-            <h2>
-                <!-- <span style="font-size:30px;"> -->
-                    Hi there!
-                    <br>
-                    How would you like to be addressed?
-                <!-- </span> -->
-            </h2>
-        </div>
-        <span id="typed"></span>
-        <div class="container" id="inputMain">
-            <h2>
-                Hi there!
-                <br>
-                How would you like to be addressed?
-            </h2>
-            <p>
-                Edit this name
-            </p>
+            <span id="typed">
+                <h2>
+                    <!-- <span style="font-size:30px;"> -->
+                        Hi there!
+                        <br>
+                        How would you like to be addressed?
+                    <!-- </span> -->
+                </h2>
+            </span>
+            <p>Edit this name</p>
             <!-- Autofill this textbox with name extracted from Spotify -->
-            <input type="text" v-modal="name" placeholder="Your Name">
+            <input type="text" v-modal="name" placeholder="Your Nickname" id="new_name">
             <!-- !!!!!!!!!!!!! TO FIX !!!!!!!!!!!!! -->
             <!-- <vs-input color="success" label-placeholder="Success" v-model="inputName"/> -->
+            <br>
+            <button id="continue" class="btn btn-success bgdarkgreen">Continue</button>
+        </div>
 
         <!-- Choose Character -->
-        <div class="container" id="charMain">        
-            <div id="typed-strings">
+        <div class="container" id="charMain">
+            <div id="typed">
                 <h2>
                     Welcome to <span id="logo" class="lightgreen" style="font-size:40px;">Personalify</span>
                 </h2>
             </div>
-            <!-- <span id="typed"></span> -->
-            
             <!-- Show character -->    
             <img id="charImg">
-
             <br>
-            
-            <button type="button" class="btn btn-light" onclick="randomGenerateNumber">Generate another character</button>
-    
+            <button type="button" class="btn btn-light" id="generate">Generate another character</button>
             <br>
-    
             <a href="character_dialogue.html">
-                <button type="button" class="btn btn-success bgdarkgreen" onclick="updateUser">Continue</button>
+                <button type="button" class="btn btn-success bgdarkgreen" id="updateUser">Let's Go!</button>
             </a>
+        </div>
+
+        <!-- Character Dialogue -->
+        <div class="container" id="dialogueMain">
+            
         </div>
     </div>
 

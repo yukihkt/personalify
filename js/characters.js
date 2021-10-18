@@ -1,3 +1,36 @@
+var username = ""
+var charId = 1
+
+// jQuery
+$(document).ready(function(){
+    // Onclick "Continue" button,
+    $("#continue").click(function(){
+        console.log("continue is clicked")
+        // Hide InputMain and Show CharMain
+        $("#inputMain").hide()
+        $("#charMain").show()
+
+        // Update Username
+        username = $("#new_name").val()
+
+        // Set imgSrc
+        $("#charImg").attr("src","images/upperbody/" + charId + ".png")
+    })
+
+    $('#generate').click(function(){
+        charId = randomGenerateNumber()
+        console.log(charId)
+        $("#charImg").attr("src","images/upperbody/" + charId + ".png")
+    })
+
+    $('#updateUser').click(function(){
+        console.log(charId)
+        $("#charImg").attr("src","images/upperbody/" + charId + ".png")
+        updateUser()
+    })
+})
+
+// User Class
 var User = class {
     constructor(username, charId) {
         this.username = ""
@@ -13,6 +46,10 @@ var User = class {
         return this.charId
     }
 
+    get imgSrc() {
+        return this.charId
+    }
+
     // Method
     changeUsername(name) {
         this.username = name
@@ -23,22 +60,23 @@ var User = class {
     }
 }
 
-var username = ""
-var charId = 1
+// Create new User object
 const user = new User(username, charId)
-var charSrc = "images/upperbody/" + charId + ".png"
+charId = user.charId()
 
+
+// Onclick functions
 function randomGenerateNumber() {
-    newId = charId
+    let newId = charId
     while (newId == charId) {
-        newId = Math.floor(Math.random(1,37))
+        newId = Math.floor(Math.random() * (37 - 1) + 1) //min is 1, max is 37
     }
-    charId = newId
+    return newId
 }
 
 function updateUser() {
-    user.changeUsername(this.username)
-    user.changeCharId(this.charId)
+    user.changeUsername(username)
+    user.changeCharId(charId)
 }
 
 var typed = new Typed('#typed', {
@@ -47,14 +85,3 @@ var typed = new Typed('#typed', {
     typeSpeed: 40
 });
 
-$(document).ready(function(){
-    // Onclick "Continue" button,
-    $("#continue").click(function(){
-        console.log("continue is clicked")
-        // Hide InputMain and Show CharMain
-        $("#inputMain").hide()
-        $("#charMain").show()
-        // Set imgSrc
-        $("#charImg").attr("src","images/upperbody/"+charId+".png")
-    })
-})
