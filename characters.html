@@ -25,9 +25,6 @@
 
     <!-- Vue JS -->
     <script src="https://unpkg.com/vue@next"></script>
-
-    <!-- Vue Typed.js -->
-    <script src="/node_modules/vue-typed-js/dist/vue-typed-js.browser.js"></script>
     
     <!-- Firebase -->
     <script src="js/db.js"></script>
@@ -39,18 +36,14 @@
 <body>
     <div class="container" id="main">
         <!-- Input Name -->
-
         <div id="yes" class="container">
             <div id="this_typed">
                 <div id="typed-strings" class="container">
-            
-                    <h2>
-                        <span style="font-size: 30px;">
+                        <h1>
                             Welcome to <span id="logo" class="lightgreen" style="font-size:40px;">Personalify</span>
                             <br>
                             How would you like to be addressed?
-                        </span>
-                    </h2>
+                        </h1>
                     
                 </div>
                 <span id="typed"></span>
@@ -68,12 +61,9 @@
             </div>
         </div>
 
-        
-
         <!-- Choose Character -->
-        <div class="container" id="charMain">        
-            
-            <!-- Show character -->    
+        <div class="container" id="charMain">
+            <!-- Show character -->
             <img id="charImg">
 
             <br>
@@ -82,10 +72,11 @@
     
             <br>
     
-            <a href="character_dialogue.html">
-                <button type="button" class="btn btn-success bgdarkgreen" id="updateUser">Let's Go!</button>
-            </a>
+            <button type="button" class="btn btn-success bgdarkgreen" id="updateUser">Let's Go!</button>
         </div>
+
+        <!-- Character Dialogue -->
+
     </div>
 
 
