@@ -2,16 +2,12 @@ body {
     color: white;
     /* font-style: italic; */
     text-align: center;
+    font-size: 18px;
 }
+
 #yes.container{
     margin-right: auto;
     margin-left: auto;
-    
-}
-
-
-#inputMain.container {
-    margin-top: 20px;
 }
 
 #inputMain h2 {
@@ -21,13 +17,12 @@ body {
 
 #inputMain p {
     color: lightgray;
-    
     margin-right: auto;
     margin-left: auto;
 }
 
 #inputMain input {
-    width: 30rem;
+    width: 25rem;
     height: 2.5rem;
     margin-bottom:20px;
     text-align: center;
@@ -35,25 +30,37 @@ body {
 
 #inputMain button {
     width: 12rem;
+    font-size: 18px;
 }
 
 #inputMain p{
     font-style: italic;
 }
 
-#charMain {
-    margin-top: 5rem;
-    display: none;
+.heading {
+    max-block-size: 50px;
+    display: block;
 }
 
 
+#inputMain {
+    margin-top: 10rem;
+}
+
+#charMain {
+    display: none; 
+    margin-top: 1rem;
+}
+
 #charMain img {
-    margin-top: 15px 0;
+    margin-bottom: -30px;
 }
 
 #charMain button {
-    margin: 10px 0;
-    width: 15rem;
+    margin-bottom: 15px;
+    width: 20rem;
+    height: 3rem;
+    font-size: 18px;
 }
 
 #this_typed{
@@ -61,6 +68,7 @@ body {
     margin-left: auto;
     margin-top: 100px;
 }
+
 .typed-cursor{
     font-size: 40px;
     opacity: 1;
