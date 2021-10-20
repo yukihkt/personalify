@@ -1,6 +1,16 @@
 var username = ""
 var charId = 1
 
+var typed = new Typed('#typed1', {
+    stringsElement: '#typed-strings1',
+    typeSpeed: 20,
+    });
+
+var typed = new Typed('#typed0', {
+    stringsElement: '#typed-strings0',
+    typeSpeed: 20,
+    });
+
 // jQuery
 $(document).ready(function(){
     // Onclick "Continue" button,
