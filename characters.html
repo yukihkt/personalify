@@ -39,8 +39,8 @@
         <div id="yes" class="container heading">
             <div id="this_typed">
                 <div id="typed-strings0" class="container">
-                        <h2>
-                            <span style="font-size: 30px;">
+                        <h2 >
+                            <span style="font-size: 30px;" id ="stop-display">
                                 Welcome to <span id="logo" class="lightgreen" style="font-size:40px;">Personalify</span>
                                 <br>
                                 How would you like to be addressed?
@@ -58,16 +58,16 @@
             <!-- Autofill this textbox with name extracted from Spotify -->
             <input type="text" v-modal="name" placeholder="Your Nickname" id="new_name">
             <br>
-            <button id="continue" class="btn btn-success bgdarkgreen" class="btn">Continue</button>
+            <button id="continue" class="btn btn-success bgdarkgreen" class="btn" onclick="display()">Continue</button>
         </div>
 
         <!-- Please add a typed.js heading here -->
         <!-- something like "Choose a character" -->
-        <div class="container heading">
+        <div class="container heading" id="display" style="display: none;">
             <!-- Choose Your Character -->
             <div id="typed-strings1">
                 <h2>
-                    <span style="font-size: 30px;">
+                    <span style="font-size: 30px">
                         Choose your Character.
                     </span>
                 </h2>

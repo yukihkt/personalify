@@ -11,6 +11,12 @@ var typed = new Typed('#typed0', {
     typeSpeed: 20,
     });
 
+//EDIT THIS FUNCTION to stop the display    
+function display(){
+    document.getElementById("display").style="display:block";
+    document.getElementById("stop-display").style="display:none"
+}
+
 // jQuery
 $(document).ready(function(){
     // Onclick "Continue" button,
