@@ -1,30 +1,36 @@
 var username = ""
 var charId = 1
 
-var typed = new Typed('#typed1', {
-    stringsElement: '#typed-strings1',
-    typeSpeed: 20,
-    });
 
 var typed = new Typed('#typed0', {
     stringsElement: '#typed-strings0',
-    typeSpeed: 20,
+    typeSpeed: 15,
+});
+
+var typed = new Typed('#typed1', {
+    stringsElement: '#typed-strings1',
+    typeSpeed: 15,
     });
 
-//EDIT THIS FUNCTION to stop the display    
-function display(){
-    document.getElementById("display").style="display:block";
-    document.getElementById("stop-display").style="display:none"
-}
+//EDIT THIS FUNCTION to stop the display  (moved to jquery)
+// function display(){
+//     document.getElementById("display").style="display:block";
+//     document.getElementById("stop-display").style="display:none"
+// }
 
 // jQuery
 $(document).ready(function(){
+    $("#inputMain").delay(8000).fadeIn(1000)
     // Onclick "Continue" button,
     $("#continue").click(function(){
         console.log("continue is clicked")
         // Hide InputMain and Show CharMain
-        $("#inputMain").hide()
-        $("#charMain").show()
+        $("#inputMain").hide() // hides input box
+        $("#heading1").hide() // hides first heading
+        $("#typed-strings0").hide() // hides first heading
+        $("#typed-strings1").show() // hides first heading
+        $("#heading2").show() // shows second heding
+        $("#charMain").delay(2000).fadeIn(1000) // show character
 
         // Update Username
         username = $("#new_name").val()

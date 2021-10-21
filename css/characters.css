@@ -42,14 +42,18 @@ body {
     display: block;
 }
 
-
-#inputMain {
-    margin-top: 10rem;
+#heading1, #heading2 {
+    font-size: 20px;
 }
 
-#charMain {
+#inputMain {
+    margin-top: 8rem;
+    display: none;
+}
+
+#charMain, #heading2 {
     display: none; 
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 #charMain img {
@@ -60,23 +64,15 @@ body {
 
 #charMain button {
     margin-bottom: 15px;
-    width: 20rem;
-    height: 3rem;
-    font-size: 18px;
+    width: 15rem;
+    height: 2.5rem;
+    font-size: 15px;
 }
 
 #this_typed{
     margin-right: auto;
     margin-left: auto;
-    margin-top: 100px;
-}
-
-.typed-cursor{
-    font-size: 40px;
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
+    margin-top: 3rem;
 }
 
 .typed-cursor{

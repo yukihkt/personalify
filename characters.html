@@ -35,7 +35,7 @@
 </head>
 <body>
     <div class="container" id="main">
-        <!-- Input Name -->
+        <!-- Input Name Title-->
         <div id="yes" class="container heading">
             <div id="this_typed">
                 <div id="typed-strings0" class="container">
@@ -43,7 +43,7 @@
                             <span style="font-size: 30px;" id ="stop-display">
                                 Welcome to <span id="logo" class="lightgreen" style="font-size:40px;">Personalify</span>
                                 <br>
-                                How would you like to be addressed?
+                                <span id="heading1"> How would you like to be addressed?</span>
                             </span>
                         </h2>
                 </div>
@@ -52,29 +52,27 @@
                 
             </div>
         </div>
-            
+
+        <!-- Input Name -->
         <div class="container"  id="inputMain" >
-            <p>Edit this name</p>
+            <!-- <p>Edit this name</p> -->
             <!-- Autofill this textbox with name extracted from Spotify -->
             <input type="text" v-modal="name" placeholder="Your Nickname" id="new_name">
             <br>
             <button id="continue" class="btn btn-success bgdarkgreen" class="btn" onclick="display()">Continue</button>
         </div>
 
-        <!-- Please add a typed.js heading here -->
-        <!-- something like "Choose a character" --> <!--CHECK OUT THE JS FILE TOO-->
+        <!-- Choose Character Title -->
         <div class="container heading" id="display" style="display: none;">
             <!-- Choose Your Character -->
             <div id="typed-strings1">
                 <h2>
-                    <span style="font-size: 30px">
+                    <span style="font-size: 30px" id="heading2">
                         Choose your Character.
                     </span>
                 </h2>
             </div>
             <span id="typed1"></span>
-            
-            
         </div>
 
         <!-- Choose Character -->
