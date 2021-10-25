@@ -16,16 +16,6 @@ export default createStore({
     nickname: "",
     userId: "", // user ID spotify
     genres: [], // genre ids -- arr, cant use keyed collection
-
-    // holding onto in case needed later
-    // stateKey: "spotify_auth_state", // localStorage auth key
-    // mbtiDomain: "https://personalitytest.herokuapp.com/api/v1", // mbti api
-    // auth_token: "", // spotify auth token for current user
-    // tracks: {}, // track ids -- obj --> might not need
-    // artists: {}, // artist ids -- obj --> might not need
-    // questions: [], // list of personality test questions retrieved -- arr (that is the data response)
-    // answers: {}, // user-answers to the personality test questions retrieved -- obj (that is the data request requirement)
-    // personalityResults: {}, // results object that is returned -- obj (data response from api)
   },
   mutations: {
     updateLoginState(state, isIn) {
@@ -46,18 +36,6 @@ export default createStore({
       console.log(newGenre);
       if (!(newGenre in state.genres)) state.genres.push(newGenre);
     },
-    // old stuff, keeping in case need later
-    // updateToken(state, newToken) { state.auth_token = newToken; },
-    // updateTracks(state, newTracks) {
-    //   if (newTracks in state.tracks) state.tracks[newTracks] += 1;
-    //   else state.tracks[newTracks] = 1;
-    // },
-    // updateArtists(state, newArtist) {
-    //   if (newArtist in state.artists) state.artists[newArtist] += 1;
-    //   else state.artists[newArtist] = 1;
-    // },
-    // updateQuestions(state, newQuestions) { state.questions = newQuestions; },
-    // updatePersonalityResults(state, newResults) { state.personalityResults = newResults; },
   },
   actions: {
     async retrieveGenres({ state, commit }, auth_token) {
@@ -89,21 +67,5 @@ export default createStore({
         });
       } else console.log("Unable to get tracks");
     },
-
-    // old stuff, will delete later if truly unnecessary
-    // async retrieveQuestions({ state, commit }) {
-    //   const config = newConfig("GET", `${state.mbtiDomain}/questions`);
-    //   const questions = await axiosAwait(config);
-    //   if (questions) commit("updateQuestions", questions);
-    //   else console.log("Unable to retrieve questions");
-    // },
-    // async retrieveResults({ state, commit }, location) {
-    //   const config = newConfig("POST", `${state.mbtiDomain}/answers`, {
-    //     data: { answers: state.answers, location: location },
-    //   });
-    //   const results = await axiosAwait(config);
-    //   if (results) commit("updatePersonalityResults", results);
-    //   else console.log("Unable to return results");
-    // },
   },
 });
