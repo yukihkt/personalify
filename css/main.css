@@ -5,12 +5,39 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-color: #181818;
+}
+
 #logo {
     font-family: 'Reem Kufi', sans-serif;
 }
 
-body {
-    background-color: #181818;
+#icon {
+    width: 18%;
+}
+
+#navbar {
+    width: 18vw;
+    height: 100vh;
+    /* padding: 20px; */
+    font-size: 1.5vw;
+    overflow: hidden;
+    padding: 2%;
+}
+
+#navbar #logo {
+    padding-left: 0.5vw;
+}
+
+#navbar a {
+    color: white;
+}
+
+#navbar i {
+    color: white;
+    scale: 150%;
+    margin: 10%;
 }
 
 .darkgreen {
