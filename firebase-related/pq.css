@@ -58,26 +58,26 @@
 }
 
 .slick-snext {
-    opacity: 1;
-    transform: translate3d(10%, 0, -10px);
+    opacity: 0.75;
+    transform: translate3d(5%, 0, -5px);
     z-index: 1;
     perspective: 1000px;
 }
 .slick-snext2 {
-    opacity: 1;
-    transform: translate3d(20%, 0, -20px);
+    opacity: 0.5;
+    transform: translate3d(10%, 0, -10px);
     z-index: 0;
     perspective: 1000px;
 }
 
 .slick-sprev {
-    opacity: 1;
-    transform: translate3d(-10%, 0, -10px);
+    opacity: 0.75;
+    transform: translate3d(-5%, 0, -5px);
 }
 
 .slick-sprev2 {
-    opacity: 1;
-    transform: translate3d(-20%, 0, -20px);
+    opacity: 0.5;
+    transform: translate3d(-10%, 0, -10px);
 }
 
 .openness, .conscientiousness, .extroversion, .agreeableness, .neuroticism {
@@ -86,8 +86,10 @@
     height: 300px;
     background: #FF4B40;
     border-radius: 30px;
+    border: 0px;
     text-align: center;
     justify-content: center;
+    font-size: larger;
 }
 
 button {
