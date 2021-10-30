@@ -20,7 +20,7 @@ var typed = new Typed('#typed1', {
 
 // jQuery
 $(document).ready(function(){
-    $("#inputMain").delay(8000).fadeIn(1000)
+    $("#inputMain").delay(5000).fadeIn(1000)
     // Onclick "Continue" button,
     $("#continue").click(function(){
         console.log("continue is clicked")
