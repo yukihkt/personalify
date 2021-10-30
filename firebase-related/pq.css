@@ -107,4 +107,17 @@ button {
 .slick-arrow{
     width:40px;
     height: 40px;
+    position: relative;  
+}
+
+.a-left{
+    left: 225px;
+    top: 285px;
+    z-index: 1;
+}
+
+.a-right{
+    left: 875px;
+    bottom: 300px;
+    z-index: 1;
 }
