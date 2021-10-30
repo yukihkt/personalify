@@ -1,6 +1,7 @@
 /* Font families */
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&family=Roboto&display=swap');
 
+/* Default CSS */
 html {
     font-family: 'Roboto', sans-serif;
 }
@@ -11,33 +12,6 @@ body {
 
 #logo {
     font-family: 'Reem Kufi', sans-serif;
-}
-
-#icon {
-    width: 18%;
-}
-
-#navbar {
-    width: 18vw;
-    height: 100vh;
-    /* padding: 20px; */
-    font-size: 1.5vw;
-    overflow: hidden;
-    padding: 2%;
-}
-
-#navbar #logo {
-    padding-left: 0.5vw;
-}
-
-#navbar a {
-    color: white;
-}
-
-#navbar i {
-    color: white;
-    scale: 150%;
-    margin: 10%;
 }
 
 .darkgreen {
@@ -54,4 +28,151 @@ body {
 
 .bglightgreen {
     background-color: #56BD66;
+}
+
+/* Navbar CSS */
+#navbar {
+    width: 18vw;
+    height: 100vh;
+    /* padding: 20px; */
+    font-size: 1.8vw;
+    overflow: hidden;
+    padding: 1vw;
+    position: fixed;
+    z-index: 1;
+}
+
+#header {
+    display: fixed;
+    width: 18vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5vw;
+    align-items: center;
+}
+
+#navlinks {
+    margin: 1vw 0;
+    align-content: center;
+}
+
+#navbar a {
+    color: white;
+}
+
+#navbar i {
+    color: white;
+    scale: 150%;
+    margin-left: 3vw;
+    padding-right: 0.5vw;
+}
+
+#cropped {
+    width: 4vw;
+    height: 4vw;
+    overflow: hidden;
+    /* display: fixed; */
+}
+
+#icon {
+    width: 100%;
+}
+
+/* Bottom Progress Bar CSS */
+#footer {
+    position: fixed;
+    z-index: 1;
+    /* top: 88vh; */
+    bottom: 0;
+    height: 8vw;
+}
+
+.ocean {
+    /* min-height: 450px; */
+    /* width: 100%; */
+    /* margin: 0 auto; */
+    /* max-width: 960px; */
+    width: 4vw;
+    position: relative;
+    /* background: #015871; */
+}
+
+#upperBody {
+    width: 200%;
+}
+
+#progressbar {
+    z-index: 2;
+    background-color: darkgrey;
+    border-radius: 2px; 
+    position: fixed;
+    width: 70vw;
+    bottom: 2vw;
+    height: 0.5vw;
+    margin-left: 22vw;
+}
+
+#progressbar:after {
+    content: '';
+    display: block;
+    background-color: white;
+    width: 33%; /* to change this width accordingly using jquery*/
+    height: 100%;
+    border-radius: 2px; 
+}
+
+/* Wave Animation for Progress Bar */
+.wave {
+    z-index: 4;
+    background: url(https://cdn.kcak11.com/codepen_assets/wave_animation/wave.svg) repeat-x;
+    filter: grayscale(20%);
+    position: absolute;
+    bottom: 0;
+    width: 1000vw;
+    height: 2vw; /* to change this width accordingly using jquery*/
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+    bottom: 25px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+}
+
+@keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+}
+@keyframes swell {
+    0%,100% {
+      transform: translate3d(0, -25px, 0);
+    }
+    50% {
+      transform: translate3d(0, 5px, 0);
+    }
+}
+@keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+}
+@keyframes swell {
+    0%, 100% {
+      transform: translate3d(0, -25px, 0);
+    }
+    50% {
+      transform: translate3d(0, 5px, 0);
+    }
+}
+
+.endWave{
+    display:none;
 }

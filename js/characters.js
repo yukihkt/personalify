@@ -1,6 +1,6 @@
 var username = ""
 var charId = 1
-
+var imgSrc = "images/upperbody/" + charId + ".png"
 
 var typed = new Typed('#typed0', {
     stringsElement: '#typed-strings0',
@@ -36,55 +36,21 @@ $(document).ready(function(){
         username = $("#new_name").val()
 
         // Set imgSrc
-        $("#charImg").attr("src","images/upperbody/" + charId + ".png")
+        $("#charImg").attr("src", imgSrc)
     })
 
     $('#generate').click(function(){
         charId = randomGenerateNumber()
         console.log(charId)
-        $("#charImg").attr("src","images/upperbody/" + charId + ".png")
+        imgSrc = "images/upperbody/" + charId + ".png"
+        $("#charImg").attr("src", imgSrc)
     })
 
     $('#updateUser').click(function(){
-        console.log(charId)
-        $("#charImg").attr("src","images/upperbody/" + charId + ".png")
+        console.log(username, charId, imgSrc)
         updateUser()
     })
 })
-
-// User Class
-var User = class {
-    constructor(username, charId) {
-        this.username = ""
-        this.charId = 1
-    }
-
-    // Getter
-    get username() {
-        return this.username
-    }
-
-    get charId() {
-        return this.charId
-    }
-
-    get imgSrc() {
-        return this.charId
-    }
-
-    // Method
-    changeUsername(name) {
-        this.username = name
-    }
-
-    changeCharId(id) {
-        this.charId = id
-    }
-}
-
-// Create new User object
-const user = new User(username, charId)
-charId = user.charId()
 
 
 // Onclick functions
@@ -93,12 +59,10 @@ function randomGenerateNumber() {
     while (newId == charId) {
         newId = Math.floor(Math.random() * (37 - 1) + 1) //min is 1, max is 37
     }
+    charId = newId
     return newId
 }
 
 function updateUser() {
-    user.changeUsername(username)
-    user.changeCharId(charId)
+    app.$options.methods.getUser(username, charId, imgSrc)
 }
-
-
