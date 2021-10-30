@@ -24,14 +24,22 @@ const app = initializeApp(firebaseConfig);
 // Get a database reference to our personalities
 const db = getDatabase();
 const dbref = ref(getDatabase());
+console.log(dbref)
 
-//Read only
-get(child(dbref, 'personalities')).then((snapshot)=>{
+get(child(dbref, 'quizzes/personality_quiz')).then((snapshot)=>{
     if (snapshot.exists()){
         console.log(snapshot.val());
-    }   else {
+
+        var title = snapshot.val().title
+        var agreeablenessArr = snapshot.val().questions.agreeableness
+        var conscientiousnessArr = snapshot.val().questions.conscientiousness
+        var extroversionArr = snapshot.val().questions.extroversion
+        var neuroticismArr = snapshot.val().questions.neuroticism
+        var opennessArr = snapshot.val().questions.openness
+        console.log(agreeablenessArr);
+        console.log(neuroticismArr);
+    }   
+    else {
         console.log("No data available");
     }
-    }).catch((error) => {
-    console.error(error);
-    });
+})
