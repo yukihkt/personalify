@@ -24,25 +24,32 @@
 </head>
 <body>
     <div id="app">
+        
+       
         <!-- Side Nav Bar -->
         <nav-bar :elements="navEl" :user="user"></nav-bar>
         <!-- to add: jquery to make navbar data property -->
         <!-- isActive to relevant boolean -->
 
         <!-- Main Content in the middle -->
-        <home-content :elements="homeEl"></home-content>
-        <!-- to add: jquery to show/hide div contents -->
-        <!-- e.g. clicking on basic personality will hide -->
-        <!-- this div and show basic personality div -->
+        <!-- header -->
+        
+        <div id='cards'>
+            <header></header>
+            <div class='grid'>
+                <home-content :elements="homeEl"></home-content>
+                <!-- to add: jquery to show/hide div contents -->
+                <!-- e.g. clicking on basic personality will hide -->
+                <!-- this div and show basic personality div -->
+            </div>
+        </div>
+        
 
         <!-- Bottom Progress Bar -->
         <progress-bar :elements="navEl" :progress="completedQuizzes" :user="user"></progress-bar>
         <!-- to add: jquery to edit num of completed quizzes -->
     </div>
 
-
-
-   
     <!-- for cards design -->
     <script src='GridLayoutMotion-master/js/demo.js'></script>
     <script src='GridLayoutMotion-master/js/imagesloaded.pkgd.min.js'></script>
