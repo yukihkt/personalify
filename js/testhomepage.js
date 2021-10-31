@@ -96,6 +96,19 @@ app.component('nav-bar', {
     `
 })
 
+app.component("header", {
+    template: 
+    `
+    <div id='heading'>
+        <span id='heading1'>Hello</span>
+        <br>
+        <span id='heading2'>See current quiz report or take a new one... </span>
+        <br>
+        <span id='heading3'>...do whatever you want I guess</span>
+    </div>
+    `
+})
+
 app.component('home-content', {
     props: ['elements'],
     template: `
@@ -104,8 +117,8 @@ app.component('home-content', {
             <div class="box p-0">
                 <div class="box__shadow"></div>
                 <img class="box__img" id='cardImg' :src="el.cardImg">
-                <h3 class="box__title"><span class="box__title-inner" data-hover="Level">Level {{el.level}}</span></h3>
-                <h4 class="box__text"><span class="box__text-inner box__text-inner--rotated2 box__text-inner--reverse"></span></h4>
+                <h3 class="box__title"><span class="box__title-inner" data-hover="Level"></span></h3>
+                <h4 class="box__text"><span class="box__text-inner box__text-inner--rotated2 box__text-inner--reverse">Level {{el.level}}</span></h4>
                 <p class="box__content"><strong>{{el.title}}</strong> {{el.dec}}</p>
             </div>
         </a>
