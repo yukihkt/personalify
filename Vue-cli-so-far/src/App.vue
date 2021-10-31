@@ -17,11 +17,14 @@ console.log("app created");
   /* color: #2c3e50; */
   color: #fff;
   background-color: #181818;
-  height: 100vh;
+  min-height: 100vh; /* clamp has no place when it comes to height */
+  scroll-behavior: smooth;
 }
 
 #logo {
   font-family: "Reem Kufi", sans-serif;
+  font-size: 40px;
+  color: #56bd66;
 }
 
 .darkgreen {
@@ -48,7 +51,7 @@ console.log("app created");
   animation: blink 0.7s infinite;
 }
 
-.btn {
-  width: 12rem;
+.main-btn {
+  width: 16rem;
 }
 </style>

@@ -9,21 +9,27 @@ export default createStore({
     isLoggedIn: false, // if user is logged in or not
     myDomain: "", // web domain
     spotifyDomain: "https://api.spotify.com/v1", // spotify api domain
+    myDatabase:
+      "https://wad2-941f5-default-rtdb.asia-southeast1.firebasedatabase.app",
     timeLimit: 30, // 86400s = 1 day, currently 30 days
     currentDate: "", // current date when user's tracks were checked
 
     // user-to-store-data
     nickname: "",
     userId: "", // user ID spotify
-    genres: [], // genre ids -- arr, cant use keyed collection
+    genres: {}, // genre ids -- obj, cant use keyed collection like set
+    character: 0, // character chosen (0 for now since none chosen)
+    personalityType: "", // introvert, extrovert or ambivert
+
+    // personality quiz
+    personalityQuestions: {}, // questions object, key: trait, value: qn arr
+    personalityResults: {}, // results obj, key: trait, value: points
   },
   mutations: {
     updateLoginState(state, isIn) {
-      // state.isLoggedIn = true;
       state.isLoggedIn = isIn;
     },
     updateMyDomain(state, newDomain) {
-      // domain set when Home load
       state.myDomain = newDomain;
     },
     updateNickName(state, newNick) {
@@ -34,7 +40,16 @@ export default createStore({
     },
     updateGenres(state, newGenre) {
       console.log(newGenre);
-      if (!(newGenre in state.genres)) state.genres.push(newGenre);
+      state.genres[newGenre] = 0; // check for newGenre in state.genres doesn't work, doesn't really check it, and I can't find why
+    },
+    updateCharacter(state, newCharacter) {
+      state.character = newCharacter;
+    },
+    updatePersonalityType(state, newPersonalityType) {
+      state.personalityType = newPersonalityType;
+    },
+    updatePersonalityQuestions(state, newPersonalityQuestions) {
+      state.personalityQuestions = newPersonalityQuestions;
     },
   },
   actions: {

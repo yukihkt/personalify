@@ -1,4 +1,3 @@
-// a file storing a general template for the get and post functions
 import axios from "axios";
 
 // function to decrease number of config statements in main code

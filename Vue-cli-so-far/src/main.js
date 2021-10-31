@@ -5,7 +5,6 @@ import store from "./store";
 // import i18n from "./i18n"; // .use(i18n) // currently not a priority
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
-import "material-icons/iconfont/material-icons.css";
-import "bootstrap-icons/font/bootstrap-icons";
+import "@fortawesome/fontawesome-free/js/all";
 
 createApp(App).use(store).use(router).mount("#app");

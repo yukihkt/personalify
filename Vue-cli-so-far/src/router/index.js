@@ -27,12 +27,17 @@ const routes = [
     component: () => import("../views/Character.vue"),
   },
   {
-    path: "/personalityquiz",
+    path: "/main",
+    name: "MainPage",
+    component: () => import("../views/MainPage.vue"),
+  },
+  {
+    path: "/pquiz",
     name: "PersonalityQuiz",
     component: () => import("../views/PersonalityQuiz.vue"),
   },
   {
-    path: "/personalityquiz/personalityresults",
+    path: "/report",
     name: "PersonalityResults",
     component: () => import("../views/PersonalityResults.vue"),
   },

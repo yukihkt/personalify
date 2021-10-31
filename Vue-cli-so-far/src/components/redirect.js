@@ -33,7 +33,7 @@ const generateRandomString = (length) => {
 export const redirecting = () => {
   const stateKey = "spotify_auth_state";
   const client_id = "b3f66bd5eeb545279f225a5f96659557";
-  const redirect_uri = "http://localhost:8080/authenticated";
+  const redirect_uri = `${store.state.myDomain}/authenticated`;
 
   let state = generateRandomString(16); // this component's generateRandomString function
   localStorage.setItem(stateKey, state); // setting localStorage with statekey and state data random string, to verify authentication later
@@ -54,4 +54,13 @@ export const checkDomain = () => {
   if (store.state.myDomain == "" || !store.state.isLoggedIn) {
     router.replace({ path: "/" });
   }
+};
+
+export const rng = (currChar, min, max) => {
+  let newChar = currChar;
+  // char can be min - max, random() provides random num from 0 - <1
+  // floor is more consistent than ceil (what if num is just 0)
+  // + 1 to make sure it works with the numbers we need
+  while (currChar == newChar) newChar = Math.floor(Math.random() * max) + min;
+  return newChar;
 };

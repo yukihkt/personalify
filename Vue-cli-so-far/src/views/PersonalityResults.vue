@@ -1,15 +1,28 @@
 <template>
-  <!-- results of personality quiz -->
-  <div class="container"></div>
+  <Sidebar />
+
+  <!-- the main container where the content will go, this will act -->
+  <!-- as the code's body from here on out as the sidebar exists -->
+  <div class="d-flex pt-3 justify-content-center" style="margin-left: 19rem">
+    PLACEHOLDER: { HELLO REPORT }
+  </div>
+  <!-- this will contain the sidebar component and the main content component -->
+  <!-- main content component is just a buzz word for dynamic components -->
+  <!-- also there is a header which says "Hello, nickname" -->
+  <!-- the components will be "see current quiz report or take a new one" -->
+  <!-- "basic personality (music)", "various quizzes etc" -->
 </template>
 
 <script>
 import { checkDomain } from "../components/redirect";
+import Sidebar from "../components/sidebar/Sidebar.vue";
 
 export default {
   name: "PersonalityResults",
+  components: { Sidebar },
   setup() {
     checkDomain();
+    return {};
   },
 };
 </script>

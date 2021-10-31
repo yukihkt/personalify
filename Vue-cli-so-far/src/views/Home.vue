@@ -1,7 +1,7 @@
 <template>
   <div class="container pt-5">
     <h2>Please login with your spotify account</h2>
-    <button class="btn btn-lg btn-success mt-5" @click="redirecting">
+    <button class="btn main-btn btn-success mt-5" @click="redirecting">
       Login
     </button>
   </div>
