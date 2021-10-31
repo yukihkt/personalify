@@ -1,11 +1,12 @@
 <template>
   <!-- need to add the stuff jen has done in the grp repo -->
-  <Sidebar />
+  
 
   <div
     style="margin-left: 18rem; margin-right: 0"
     class="row d-flex justify-content-center"
   >
+  <Sidebar />
     <div class="col">
       <div class="pt-5 px-3 text-start fs-2">
         <!-- header section -->

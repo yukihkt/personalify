@@ -1,11 +1,13 @@
+
 <template>
   <!-- this page is super incomplete -->
-  <Sidebar />
+  
 
   <div
     style="margin-left: 18rem; margin-right: 0"
     class="row d-flex justify-content-center px-4 pb-3"
   >
+  <Sidebar />
     <div class="col" v-if="!quizDone">
       <div class="pt-4 px-3 text-start fs-2">
         <!-- header section -->
@@ -56,7 +58,7 @@
       </div>
     </div>
 
-    <div class="col" id="quiz-question-results" v-if="quizDone">
+    <div class="col" id="quiz-question-results" v-else>
       <!-- v-if depending on if submitquiz is pressed -->
       <!-- I assume the calculation works as follows -->
       <!-- 5 sections, 3 questions each, max 3pts per section -->

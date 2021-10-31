@@ -31,13 +31,15 @@ get(child(dbref, 'quizzes/personality_quiz')).then((snapshot)=>{
         console.log(snapshot.val());
 
         var title = snapshot.val().title
+        var me = snapshot.val().options[0]
+        var notMe = snapshot.val().options[1]
         var agreeablenessArr = snapshot.val().questions.agreeableness
         var conscientiousnessArr = snapshot.val().questions.conscientiousness
         var extroversionArr = snapshot.val().questions.extroversion
         var neuroticismArr = snapshot.val().questions.neuroticism
         var opennessArr = snapshot.val().questions.openness
         console.log(agreeablenessArr);
-        console.log(neuroticismArr);
+        console.log(me);
     }   
     else {
         console.log("No data available");
