@@ -25,29 +25,29 @@
 <body>
     <div id="app">
         
+        {{countQuiz()}}
        
         <!-- Side Nav Bar -->
         <nav-bar :elements="navEl" :user="user"></nav-bar>
         <!-- to add: jquery to make navbar data property -->
         <!-- isActive to relevant boolean -->
 
-        <!-- Main Content in the middle -->
         <!-- header -->
+        <header-content :user="user"></header-content>
         
-        <div id='cards'>
-            <header></header>
-            <div class='grid'>
-                <home-content :elements="homeEl"></home-content>
-                <!-- to add: jquery to show/hide div contents -->
-                <!-- e.g. clicking on basic personality will hide -->
-                <!-- this div and show basic personality div -->
-            </div>
+        <!-- Main Content in the middle -->
+        <div class='grid'>
+            <home-content :elements="homeEl"></home-content>
+            <!-- to add: jquery to show/hide div contents -->
+            <!-- e.g. clicking on basic personality will hide -->
+            <!-- this div and show basic personality div -->
         </div>
         
 
         <!-- Bottom Progress Bar -->
         <progress-bar :elements="navEl" :progress="completedQuizzes" :user="user"></progress-bar>
         <!-- to add: jquery to edit num of completed quizzes -->
+        <!-- ocean height and progress bar to change accordingly -->
     </div>
 
     <!-- for cards design -->

@@ -32,10 +32,10 @@ body {
 
 /* Navbar CSS */
 #navbar {
-    width: 18vw;
+    width: 15%;
     height: 100vh;
     /* padding: 20px; */
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     overflow: hidden;
     padding: 1vw;
     position: fixed;
@@ -44,11 +44,6 @@ body {
 
 #header {
     display: fixed;
-    width: 18vw;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0.5vw;
-    align-items: center;
 }
 
 #navlinks {
@@ -58,20 +53,19 @@ body {
 
 #navbar a {
     color: white;
+    padding: 0.5vw 2vw;
 }
 
 #navbar i {
     color: white;
     scale: 150%;
-    margin-left: 3vw;
-    padding-right: 0.5vw;
 }
 
-#cropped {
-    width: 4vw;
-    height: 4vw;
-    overflow: hidden;
-    /* display: fixed; */
+.nav-link:hover, .activeNavLink {
+    background-color: #218C31;
+    border: 1px #218C31 solid;
+    border-radius: 2%;
+    transition: all;
 }
 
 #icon {
@@ -85,6 +79,13 @@ body {
     /* top: 88vh; */
     bottom: 0;
     height: 8vw;
+    border-top: rgb(46, 46, 46) 0.5px solid;
+}
+
+#upperBody {
+    width: 300%;
+    top: -10vw;
+    position: absolute;
 }
 
 .ocean {
@@ -97,11 +98,8 @@ body {
     /* background: #015871; */
 }
 
-#upperBody {
-    width: 200%;
-}
-
 #progressbar {
+    overflow: visible;
     z-index: 2;
     background-color: darkgrey;
     border-radius: 2px; 
