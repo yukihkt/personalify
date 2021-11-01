@@ -79,7 +79,7 @@ const app = Vue.createApp({
 app.component('nav-bar', {
     props: ['elements', 'user'],
     template: `
-        <nav class="nav flex-column bg-dark col" id="navbar">
+        <nav class="nav flex-column navbar-dark bg-dark" id="navbar">
             <div class="d-flex align-self-center" id="header">
                 <div id="cropped">
                     <img :src="'images/upperbody/'+ user.charId +'.png'" id="icon"> 
@@ -117,9 +117,20 @@ app.component('home-content', {
             <div class="box p-0">
                 <div class="box__shadow"></div>
                 <img class="box__img" id='cardImg' :src="el.cardImg">
-                <h3 class="box__title"><span class="box__title-inner" data-hover="Level"></span></h3>
-                <h4 class="box__text"><span class="box__text-inner box__text-inner--rotated2 box__text-inner--reverse">Level {{el.level}}</span></h4>
-                <p class="box__content"><strong>{{el.title}}</strong> {{el.dec}}</p>
+                <h3 class="box__title">
+                    <span class="box__title-inner" data-hover="Level">
+                        Level {{el.level}}
+                    </span>
+                </h3>
+                <h4 class="box__text">
+                    <span class="box__text-inner box__text-inner--rotated2 box__text-inner--reverse">
+                        Level {{el.level}}
+                    </span>
+                </h4>
+                <p class="box__content">
+                    <strong>{{el.title}}</strong> 
+                    {{el.dec}}
+                </p>
             </div>
         </a>
     </div>

@@ -1,8 +1,9 @@
 /* Homepage CSS */
-/* need help changing this to row?? and js doesn't work */
 #app {
-	overflow:hidden;
+	/* overflow:hidden; */
+	height: 100vh
 }
+
 #gridCards {
     padding-left: 1%;
 	padding-right:1;
@@ -10,8 +11,7 @@
     height: 100px; 
     display: flex; 
     flex-direction: row;
-	
-	overflow:hidden;
+	/* overflow:hidden; */
 	height: 50%
 }
 
@@ -26,9 +26,11 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 
 a {
     color: darkgrey;
+	text-decoration: none;
+	outline: none;
 }
 
-a:hover, a:active {
+a:hover, a:active, a:focus {
     color: beige;
 }
 
@@ -73,10 +75,16 @@ a:hover, a:active {
 
 .grid {
 	width: 100%;
-	max-width: 1440px;
+	/* max-width: 1440px; */
+	max-width: 80%;
 	margin: 0 auto;
 	padding-bottom: 10rem;
-	justify-content: space-between;
+	justify-content: space-around;
+	display:flex;
+	position:relative;
+	left:5%;
+	padding-top:5%;
+	overflow:hidden;
 }
 
 .grid__item {
@@ -170,6 +178,7 @@ a:hover, a:active {
 	width:200px;
 	height:200px;
 	position:relative;
+	max-width: 100%;
 	/* z-index:10; */
 	filter: brightness(0.5);
 	transition: filter 0.3s;
@@ -206,7 +215,6 @@ a:hover, a:active {
 	font-size: 0.9rem;
 	text-align: right;
 	display: none;
-	
 }
 
 .box__content strong {
@@ -425,14 +433,4 @@ a:hover, a:active {
 	.codrops-links {
 		margin: 0;
 	}
-}
-
-
-.grid {
-	display:flex;
-	position:relative;
-	left:5%;
-	padding-top:5%;
-	overflow:hidden;
-	max-width:80%;
 }
