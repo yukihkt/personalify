@@ -157,10 +157,10 @@ app.component('progress-bar', {
     props: ['elements', 'progress', 'user'],
     template: `
         <div class="container-fluid bg-dark" id="footer">
-            <div class="wave"></div>
             <div class="col-4">
-                <div class="ocean">
-                    <img :src="'images/upperbody/'+ user.charId +'.png'" id="upperBody">
+                <div class="ocean" :style="{backgroundImage: 'url(images/upperbody/' + user.charId + '.png)'}">
+                    <div class="wave" :style="{backgroundImage: 'url(images/upperbody/' + user.charId + '.png)'}">
+                    </div>
                 </div> 
             </div>
             <div class="col-8">
@@ -171,4 +171,5 @@ app.component('progress-bar', {
     `
 })
 
+{/* <img :src="'images/upperbody/'+ user.charId +'.png'" id="upperBody"> */}
 app.mount('#app')

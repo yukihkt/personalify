@@ -82,21 +82,11 @@ body {
     border-top: rgb(46, 46, 46) 0.5px solid;
 }
 
-#upperBody {
+/* #upperBody {
     width: 300%;
     top: -10vw;
     position: absolute;
-}
-
-.ocean {
-    /* min-height: 450px; */
-    /* width: 100%; */
-    /* margin: 0 auto; */
-    /* max-width: 960px; */
-    width: 4vw;
-    position: relative;
-    /* background: #015871; */
-}
+} */
 
 #progressbar {
     overflow: visible;
@@ -120,57 +110,67 @@ body {
 }
 
 /* Wave Animation for Progress Bar */
-.wave {
-    z-index: 4;
-    background: url(https://cdn.kcak11.com/codepen_assets/wave_animation/wave.svg) repeat-x;
-    filter: grayscale(20%);
+.ocean, .wave {
+    background-size: 70%;
+    background-repeat: no-repeat;
+}
+
+.ocean {
+    z-index: 1;
     position: absolute;
-    bottom: 0;
-    width: 1000vw;
-    height: 2vw; /* to change this width accordingly using jquery*/
-    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-    transform: translate3d(0, 0, 0);
+    left: 0.5vw;
+    bottom: 0%;
+    width: 14vw;
+    height: 14vw;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px black;
+    border-radius: 50%;
+    overflow: hidden;
+    background-position: 50%;
 }
 
-.wave:nth-of-type(2) {
-    bottom: 25px;
-    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
-    opacity: 1;
+.wave {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    background-attachment: fixed;
+    background-position: 50%;
 }
 
-@keyframes wave {
+.wave:before, .wave:after {
+    content: '';
+    position: absolute;
+    /* adjust below width and height for wave's height */
+    /* half of icon will be width: 200% and height: 200% */
+    width: 300%;
+    height: 300%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.wave:before {
+    border-radius: 45%;
+    background: rgba (0, 0, 0, 0.1);
+    animation: animate 5s linear infinite
+}
+
+.wave:after {
+    border-radius: 40%;
+    background: rgba(0, 0, 0, 0.5);
+    animation: animate 10s linear infinite
+}
+
+@keyframes animate {
     0% {
-      margin-left: 0;
+        transform: translate(-50%, -75%) rotate(0deg);
     }
-    100% {
-      margin-left: -1600px;
-    }
-}
-@keyframes swell {
-    0%,100% {
-      transform: translate3d(0, -25px, 0);
-    }
-    50% {
-      transform: translate3d(0, 5px, 0);
-    }
-}
-@keyframes wave {
     0% {
-      margin-left: 0;
+        transform: translate(-50%, -75%) rotate(360deg);
     }
-    100% {
-      margin-left: -1600px;
-    }
-}
-@keyframes swell {
-    0%, 100% {
-      transform: translate3d(0, -25px, 0);
-    }
-    50% {
-      transform: translate3d(0, 5px, 0);
-    }
-}
-
-.endWave{
-    display:none;
 }
