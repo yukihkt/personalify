@@ -29,8 +29,7 @@
        
         <!-- Side Nav Bar -->
         <nav-bar :elements="navEl" :user="user"></nav-bar>
-        <!-- to add: jquery to make navbar data property -->
-        <!-- isActive to relevant boolean -->
+        <!-- to add: jquery to change isActive to relevant boolean -->
 
         <!-- header -->
         <header-content :user="user"></header-content>
@@ -46,8 +45,9 @@
 
         <!-- Bottom Progress Bar -->
         <progress-bar :elements="navEl" :progress="completedQuizzes" :user="user"></progress-bar>
-        <!-- to add: jquery to edit num of completed quizzes -->
-        <!-- ocean height and progress bar to change accordingly -->
+        <!-- to add: jquery to edit quiz's isCompleted boolean value -->
+        <!-- .wave:before, .wave:after width and height -->
+         <!-- and length of progress bar to change accordingly -->
     </div>
 
     <!-- for cards design -->
