@@ -38,7 +38,8 @@ const app = Vue.createApp({
                     desc: "offers Personality Analysis based on your music taste",
                     color: "#78E185",
                     id: "basic",
-                    isCompleted: true
+                    isCompleted: true,
+                    imgId: "basicimg"
                 },
                 "personality": {
                     title: "Personality Quiz",
@@ -48,7 +49,8 @@ const app = Vue.createApp({
                     desc: "offers further insights into which of the big 5 personalities you are",
                     color: "#FF4B40",
                     id: "personality",
-                    isCompleted: false
+                    isCompleted: false,
+                    imgId: "personalityimg"
                 },
                 "career": {
                     title: "Career Quiz",
@@ -58,7 +60,8 @@ const app = Vue.createApp({
                     desc: "offers guidance on your suitable career prospects",
                     color: "#37C1FF",
                     id: "career",
-                    isCompleted: false
+                    isCompleted: false,
+                    imgId: "careerimg"
                 },
             },
 
@@ -117,6 +120,7 @@ app.component('nav-bar', {
 app.component('home-content', {
     props: ['homelinks', 'elements', 'user'],
     template: `
+    
         <div>
             <div class="text-white" id="welcomeText">
                 <h1 class="fw-bold">Hello, {{user.username}}</h1>
@@ -125,11 +129,11 @@ app.component('home-content', {
             </div>
             <div class='grid'>
                 <div id="gridCards" v-for="el in homelinks">
-                    <a class="grid__item grid__item--noclick" :href="el.link" :id="el.id" :class="el.isCompleted ? 'quizActive' : 'quizInActive'">
+                    <a class="grid__item grid__item--noclick" :id="el.id" :class="el.isCompleted ? 'quizActive' : 'quizInActive'">
                         <div class="box p-0">
                             <div class="box__shadow">
                             </div>
-                            <img class="box__img" id='cardImg' :src="el.cardImg">
+                            <img class="box__img" id='el.imgId' :src="el.cardImg">
                             <h3 class="box__title">
                                 <span class="box__title-inner" data-hover="Level">
                                     Level {{el.level}}
@@ -140,7 +144,7 @@ app.component('home-content', {
                                     Level {{el.level}}
                                 </span>
                             </h4>
-                            <p class="box__content">
+                            <p id='box__content' class="box__content">
                                 <strong>{{el.title}}</strong> 
                                 {{el.dec}}
                             </p>

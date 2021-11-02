@@ -21,6 +21,9 @@
     <!-- Vue CDN -->
     <script src="https://unpkg.com/vue@next"></script>
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
     <div id="app">
@@ -31,8 +34,11 @@
         <nav-bar :elements="navEl" :user="user"></nav-bar>
         <!-- to add: jquery to change isActive to relevant boolean -->
 
+        
         <!-- Main Content in the middle -->
         <home-content :homelinks="homeEl" :elements="navEl" :user="user"></home-content>
+            
+            
         <!-- to add: jquery to show/hide div contents -->
         <!-- e.g. clicking on basic personality will hide -->
         <!-- this div and show basic personality div -->
@@ -44,6 +50,9 @@
          <!-- and length of progress bar to change accordingly -->
     
     </div>
+
+    <!-- Animate JS CDN -->
+    <script src="https://koffiisen.github.io/Animate.js/dist/animate.min.js"></script>
 
     <!-- for cards design -->
     <script src='GridLayoutMotion-master/js/demo.js'></script>

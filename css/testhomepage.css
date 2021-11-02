@@ -1,9 +1,12 @@
 /* Homepage CSS */
 body {
 	/* overflow:hidden; */
-	height: 100vh
+	height: 200vh
 }
 
+.main {
+	position:relative;
+}
 #gridCards {
     padding-left: 1%;
 	padding-right: 1%;
@@ -18,6 +21,12 @@ body {
 #welcomeText {
 	padding-left: 22vw;
 	padding-top: 1vw;
+}
+
+#career, #personality, #basic {
+	/* position:absolute; */
+	width: 50vh;
+	height: 60vh;
 }
 
 /* Grid CSS */
@@ -83,11 +92,11 @@ a:hover, a:active, a:focus {
 	width: 100%;
 	max-width: 80%;
 	margin: -1vw 12vw;
-	padding: 5vw 0 10vw;
+	padding: 0vw 0 10vw;
 	display: flex;
 	position: fixed;
 	/* position: relative; */
-	justify-content: space-around;
+	justify-content: flex-start;
 	left: 5%;
 	overflow: hidden;
 	/* old code: */
