@@ -31,23 +31,18 @@
         <nav-bar :elements="navEl" :user="user"></nav-bar>
         <!-- to add: jquery to change isActive to relevant boolean -->
 
-        <!-- header -->
-        <header-content :user="user"></header-content>
-        
         <!-- Main Content in the middle -->
-        <div class='grid'>
-            <home-content :elements="homeEl"></home-content>
-            <!-- to add: jquery to show/hide div contents -->
-            <!-- e.g. clicking on basic personality will hide -->
-            <!-- this div and show basic personality div -->
-        </div>
-        
+        <home-content :homelinks="homeEl" :elements="navEl" :user="user"></home-content>
+        <!-- to add: jquery to show/hide div contents -->
+        <!-- e.g. clicking on basic personality will hide -->
+        <!-- this div and show basic personality div -->
 
         <!-- Bottom Progress Bar -->
         <progress-bar :elements="navEl" :progress="completedQuizzes" :user="user"></progress-bar>
         <!-- to add: jquery to edit quiz's isCompleted boolean value -->
         <!-- .wave:before, .wave:after width and height -->
          <!-- and length of progress bar to change accordingly -->
+    
     </div>
 
     <!-- for cards design -->
@@ -60,6 +55,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- jQuery JS -->
+    <script src='js/main.js'></script>
 
     <!-- Homepage Vue -->
     <script src='js/testhomepage.js'></script>

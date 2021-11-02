@@ -88,7 +88,21 @@ body {
     position: absolute;
 } */
 
+#playButtons {
+    position: relative;
+    display: flex;
+    padding-left: 49vw;
+    margin-top: 0.5vw;
+}
+
+#playButtons i{
+    font-size: 250%;
+    padding: 0 1vw;
+    color: white;
+}
+
 #progressbar {
+    margin-left: 22vw;
     overflow: visible;
     z-index: 2;
     background-color: darkgrey;
@@ -97,7 +111,6 @@ body {
     width: 70vw;
     bottom: 2vw;
     height: 0.5vw;
-    margin-left: 22vw;
 }
 
 #progressbar:after {
