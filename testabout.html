@@ -24,9 +24,6 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-     <!-- for chart.js -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-
 </head>
 <body>
     <div id="app">
@@ -37,15 +34,8 @@
         <nav-bar :elements="navEl" :user="user"></nav-bar>
         <!-- to add: jquery to change isActive to relevant boolean -->
 
-        
-        <!-- Main Content in the middle -->
-        <home-content :homelinks="homeEl" :elements="navEl" :user="user"></home-content>
-            
-            
-        <!-- to add: jquery to show/hide div contents -->
-        <!-- e.g. clicking on basic personality will hide -->
-        <!-- this div and show basic personality div -->
-        
+        <!-- about -->
+        <about></about>
 
         <!-- Bottom Progress Bar -->
         <progress-bar :elements="navEl" :progress="completedQuizzes" :user="user"></progress-bar>
@@ -74,8 +64,5 @@
 
     <!-- Homepage Vue -->
     <script src='js/testhomepage.js'></script>
-
-    <!-- chart.js -->
-    <script src='js/chart.js'></script>
 </body>
 </html>
