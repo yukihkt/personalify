@@ -28,6 +28,8 @@
 <body>
     <div id="app">
         
+        <!-- use jQuery or Vue to change the respective
+            homeEl['quizname'].isCompleted once completed -->
         {{countQuiz()}}
        
         <!-- Side Nav Bar -->
@@ -39,15 +41,15 @@
         <home-content :homelinks="homeEl" :elements="navEl" :user="user"></home-content>
             
             
-        <!-- to add: jquery to show/hide div contents -->
-        <!-- e.g. clicking on basic personality will hide -->
-        <!-- this div and show basic personality div -->
+        <!-- to add: jquery to show/hide div contents 
+                e.g. clicking on basic personality will hide 
+                this div and show basic personality div -->
 
         <!-- Bottom Progress Bar -->
         <progress-bar :elements="navEl" :progress="completedQuizzes" :user="user"></progress-bar>
-        <!-- to add: jquery to edit quiz's isCompleted boolean value -->
-        <!-- .wave:before, .wave:after width and height -->
-         <!-- and length of progress bar to change accordingly -->
+        <!-- to add: jquery to edit quiz's isCompleted boolean value
+            .wave:before, .wave:after width and height
+            and length of progress bar to change accordingly -->
     
     </div>
 

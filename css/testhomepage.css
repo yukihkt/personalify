@@ -1,20 +1,15 @@
 /* Homepage CSS */
 body {
-	/* overflow:hidden; */
-	height: 200vh
+	overflow: scroll;
+	height: 100%;
 }
 
-.main {
-	position:relative;
-}
 #gridCards {
     padding-left: 1%;
 	padding-right: 1%;
     z-index: -1;
     height: 100px; 
-    /* display: flex;  */
-    flex-direction: row;
-	/* overflow:hidden; */
+    display: flex; 
 	height: 50%
 }
 
@@ -24,7 +19,7 @@ body {
 }
 
 #career, #personality, #basic {
-	/* position:absolute; */
+	/* position: absolute; */
 	width: 50vh;
 	height: 60vh;
 }
@@ -46,10 +41,6 @@ a {
 
 a:hover, a:active, a:focus {
     color: rgb(247, 247, 229);
-}
-
-.preview-open {
-	overflow: hidden;
 }
 
 /* Page Loader */
@@ -92,39 +83,13 @@ a:hover, a:active, a:focus {
 	width: 100%;
 	max-width: 80%;
 	margin: -1vw 12vw;
-	padding: 0vw 0 10vw;
+	padding: 1rem 0 10rem 4rem;
 	display: flex;
-	position: fixed;
-	/* position: relative; */
+	position: sticky;
 	justify-content: flex-start;
 	left: 5%;
-	overflow: hidden;
-	/* old code: */
-	/* width: 100%;
-	max-width: 80%;
-	margin: 0 auto;
-	padding-bottom: 10rem;
-	justify-content: space-around;
-	display: flex;
-	left:5%;
-	padding-top: 5%;
-	padding-bottom: 10rem; */
+	/* overflow: hidden; */
 }
-
-/* #basic {
-	position: relative;
-	left: 10%;
-}
-
-#personality {
-	position: relative;
-	left: 8%;
-}
-
-#career {
-	position: relative;
-	left: 31%;
-} */
 
 .grid__item {
 	display: flex;
@@ -160,6 +125,8 @@ a:hover, a:active, a:focus {
 	line-height: 1;
 	position: absolute;
 	/* z-index: 100; */
+	padding-top: 30px;
+	width: 110%;
 }
 
 .box__title-inner {
@@ -169,7 +136,7 @@ a:hover, a:active, a:focus {
 	text-transform: uppercase;
 	font-size: 4.15rem;
 	letter-spacing: 0.15rem;
-	line-height: 1.25;
+	line-height: 1;
 	font-family: 'Anton', sans-serif;
 }
 
@@ -230,8 +197,8 @@ a:hover, a:active, a:focus {
 	display: block;
 	flex: none;
 	margin: 0px auto;
-	width:200px;
-	height:200px;
+	width: 200px;
+	height: 200px;
 	position:relative;
 	max-width: 100%;
 	/* z-index:10; */
@@ -269,7 +236,7 @@ a:hover, a:active, a:focus {
 	max-width: 195px;
 	font-size: 0.9rem;
 	text-align: right;
-	display: none;
+	/* display: none; */
 }
 
 .box__content strong {
@@ -363,10 +330,10 @@ a:hover, a:active, a:focus {
 	.grid {
 		grid-template-columns: repeat(4,25%);
 	}
-	/* .grid__item:nth-child(4n-2) {
+	.grid__item:nth-child(4n-2) {
 		margin-top: -8rem;
 		margin-bottom: 8rem;
-	} */
+	}
 	.grid__item:nth-child(4n) {
 		margin-top: -5rem;
 	}
@@ -386,7 +353,6 @@ a:hover, a:active, a:focus {
 	}
 	.content--fixed {
 		position: relative;
-		/* z-index: 1000; */
 		display: block;
 		padding: 0.85em;
 	}

@@ -127,7 +127,7 @@ app.component('home-content', {
                 <h4 class="ps-3">See current quiz report or take a new one... </h4>
                 <h4 class="ps-3 fst-italic">...do whatever you want I guess</h4>
             </div>
-            <div class='grid'>
+            <div class='grid content'>
                 <div id="gridCards" v-for="el in homelinks">
                     <a class="grid__item grid__item--noclick" :id="el.id" :class="el.isCompleted ? 'quizActive' : 'quizInActive'">
                         <div class="box p-0">

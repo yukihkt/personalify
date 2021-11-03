@@ -8,24 +8,34 @@ $(document).ready(function(){
             height: '0px',
             width: '0px',
             opacity: "0"
-        });
+        })
+
         $("#basic").animate({
-            "margin-left": '20px',
-            height: '1000px',
-            width: '400px'
-        });
+            "margin": '0rem',
+            height: '100vh',
+            width: '30vw',
+        })
+
+        $("#basic:hover").css({
+            "filter": "none"
+        })
+
         $(".grid__item").css({
             width:'100vw'
         })
-        
+
+        // Hide rest of elements
         $("#personality").hide();
         $("#career").hide();
         $(".box__shadow").hide();
         $(".box__title").hide();
         $(".box__text").hide();
         // $(".box__content").fadeOut();
+
+        // Move box
         $(".box__content").animate({
-            "font-size": "40px"
+            "font-size": "3vw",
+            "margin-top": "0.5vw",
         },1500);
         // $("#basic .box__content").hide().fadeIn()
 
