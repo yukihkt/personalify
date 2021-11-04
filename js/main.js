@@ -1,49 +1,44 @@
 // jQuery for homepage
 $(document).ready(function(){
     // main button onclick
+    console.log( "document loaded" );
     $("#basic").click(function(){
         console.log("BASIC button clicked")
         $("#welcomeText").animate({
             height: '0px',
             width: '0px',
             opacity: "0"
-        });
-        $("#basic").animate({
-            "margin-left": '20px',
-            height: '1000px',
-            width: '400px'
-        });
-
-        //change body style
-        $(".grid__item").css({
-            width:'100vw',
-            "padding": "0px",
-            height: "50vw"
-
         })
-        $('body').css({height: "200vh"});
-        $(".grid").css({
-            position:"relative",
-            "padding": "0px",
-            "align-items": "flex-start",
-            height: "40vw"
 
-        });
+        $("#basic").animate({
+            "margin": '0rem',
+            height: '100vh',
+            width: '30vw',
+        })
 
+        $("#basic:hover").css({
+            "filter": "none"
+        })
+
+        $(".grid__item").css({
+            width:'100vw'
+        })
+
+        // Hide rest of elements
         $("#personality").hide();
         $("#career").hide();
         $(".box__shadow").hide();
         $(".box__title").hide();
         $(".box__text").hide();
         // $(".box__content").fadeOut();
+
+        // Move box
         $(".box__content").animate({
-            "font-size": "40px"
+            "font-size": "3vw",
+            "margin-top": "0.5vw",
         },1500);
-        // show basic personality
-        $("#basic-personality").css({
-            height: "300vw"
-        })
-        $("#basic-personality").fadeIn(5000);
+        // $("#basic .box__content").hide().fadeIn()
+
     });
 });
 
@@ -67,25 +62,18 @@ $(document).ready(function(){
             height: '1000px',
             width: '400px'
         });
-        //change body style
         $(".grid__item").css({
-            width:'100vw',
-            "padding": "0px",
-            // height: "10vw"
+            width:'100vw'
         })
-        $('body').css({height: "200vh"});
-        $(".grid").css({
-            position:"relative",
-            "padding": "0px",
-            // height: "10vw"
-        });
         $("#career").hide();
         $(".box__shadow").hide();
         $(".box__title").hide();
         $(".box__text").hide();
+        // $(".box__content").fadeOut();
         $(".box__content").animate({
             "font-size": "40px"
         },1000);
+        // $("#basic .box__content").hide().fadeIn()
 
     });
 });
@@ -115,24 +103,17 @@ $(document).ready(function(){
             height: '1000px',
             width: '400px'
         });
-        //change body style
         $(".grid__item").css({
-            width:'100vw',
-            "padding": "0px"
+            width:'100vw'
         })
-        $('body').css({height: "200vh"});
-        $(".grid").css({
-            position:"relative",
-            "padding": "0px"
-        });
-
         $(".box__shadow").hide();
         $(".box__title").hide();
         $(".box__text").hide();
+        // $(".box__content").fadeOut();
         $(".box__content").animate({
             "font-size": "40px"
         },1500);
+        // $("#basic .box__content").hide().fadeIn()
+
     });
 });
-
-// DOM manipulation

@@ -39,8 +39,7 @@ const app = Vue.createApp({
                     color: "#78E185",
                     id: "basic",
                     isCompleted: true,
-                    imgId: "basicimg",
-                    show: false
+                    imgId: "basicimg"
                 },
                 "personality": {
                     title: "Personality Quiz",
@@ -51,8 +50,7 @@ const app = Vue.createApp({
                     color: "#FF4B40",
                     id: "personality",
                     isCompleted: false,
-                    imgId: "personalityimg",
-                    show: false
+                    imgId: "personalityimg"
                 },
                 "career": {
                     title: "Career Quiz",
@@ -63,8 +61,7 @@ const app = Vue.createApp({
                     color: "#37C1FF",
                     id: "career",
                     isCompleted: false,
-                    imgId: "careerimg",
-                    show: false
+                    imgId: "careerimg"
                 },
             },
 
@@ -90,10 +87,6 @@ const app = Vue.createApp({
             this.completedQuizzes = count
             // console.log(count)
         }
-        // changeShow(obj) {
-        //     console.log("inside changeShow()")
-        //     this.homeEl[obj].show = true
-        // }
 
     //     getUser(username, charId, imgSrc) {
     //         this.username = username
@@ -102,7 +95,6 @@ const app = Vue.createApp({
     //     }
 
     }
-
 });
 
 // Side Nav Bar Component
@@ -135,13 +127,13 @@ app.component('home-content', {
                 <h4 class="ps-3">See current quiz report or take a new one... </h4>
                 <h4 class="ps-3 fst-italic">...do whatever you want I guess</h4>
             </div>
-            <div class='grid'>
-                <div id="gridCards" v-for="el in homelinks" v-on:click='el.show = !el.show'>
-                    <a  class="grid__item grid__item--noclick" :id="el.id" :class="el.isCompleted ? 'quizActive' : 'quizInActive'">
+            <div class='grid content'>
+                <div id="gridCards" v-for="el in homelinks">
+                    <a class="grid__item grid__item--noclick" :id="el.id" :class="el.isCompleted ? 'quizActive' : 'quizInActive'">
                         <div class="box p-0">
                             <div class="box__shadow">
                             </div>
-                            <img  class="box__img" id='el.imgId' :src="el.cardImg">
+                            <img class="box__img" id='el.imgId' :src="el.cardImg">
                             <h3 class="box__title">
                                 <span class="box__title-inner" data-hover="Level">
                                     Level {{el.level}}
@@ -158,70 +150,9 @@ app.component('home-content', {
                             </p>
                         </div>
                     </a>
-                    
-                </div>
-            </div>
-            <div v-show="homelinks['basic'].show == true" id='basic-personality'>
-                <div id='box'>
-                    <span id='heading4'>Your Basic Personality</span>
-                    <div id='info'>
-                        <div id='chart1'>
-                            <canvas id="musictraitschart"></canvas>
-                        </div>
-                        <div id='chart2'>
-                            <canvas id="personalitytraits"></canvas>
-                        </div>
-                        
-                    </div>
                 </div>
             </div>
         </div>
-            
-    `
-})
-
-// about content 
-app.component("about", {
-    template: 
-    `
-    <div id='about'>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class='cover'>
-                        Our Music Analysis
-                    </p>
-                </div>
-                <div class="flip-card-back">
-                    <p>Using 10 music characteristics, namely <strong>Duration, Acousticness, Danceability, Energy, Instrumentalness, Liveness, Loudness, Speechiness, Valence and Tempo</strong>we can determine the </p>
-                </div>
-            </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class='middle cover'>
-                        Our personality analysis
-                    </p>
-                </div>
-                <div class="flip-card-back">
-                <p></p>
-                </div>
-            </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class='cover'>
-                        Our Career analysis
-                    </p>
-                </div>
-                <div class="flip-card-back">
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </div>
     `
 })
 
@@ -249,5 +180,3 @@ app.component('progress-bar', {
 })
 
 app.mount('#app')
-
-

@@ -24,13 +24,12 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-     <!-- for chart.js -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-
 </head>
 <body>
     <div id="app">
         
+        <!-- use jQuery or Vue to change the respective
+            homeEl['quizname'].isCompleted once completed -->
         {{countQuiz()}}
        
         <!-- Side Nav Bar -->
@@ -42,21 +41,20 @@
         <home-content :homelinks="homeEl" :elements="navEl" :user="user"></home-content>
             
             
-        <!-- to add: jquery to show/hide div contents -->
-        <!-- e.g. clicking on basic personality will hide -->
-        <!-- this div and show basic personality div -->
-        
+        <!-- to add: jquery to show/hide div contents 
+                e.g. clicking on basic personality will hide 
+                this div and show basic personality div -->
 
         <!-- Bottom Progress Bar -->
         <progress-bar :elements="navEl" :progress="completedQuizzes" :user="user"></progress-bar>
-        <!-- to add: jquery to edit quiz's isCompleted boolean value -->
-        <!-- .wave:before, .wave:after width and height -->
-         <!-- and length of progress bar to change accordingly -->
+        <!-- to add: jquery to edit quiz's isCompleted boolean value
+            .wave:before, .wave:after width and height
+            and length of progress bar to change accordingly -->
     
     </div>
 
     <!-- Animate JS CDN -->
-    <!-- <script src="https://koffiisen.github.io/Animate.js/dist/animate.min.js"></script> -->
+    <script src="https://koffiisen.github.io/Animate.js/dist/animate.min.js"></script>
 
     <!-- for cards design -->
     <script src='GridLayoutMotion-master/js/demo.js'></script>
@@ -75,7 +73,5 @@
     <!-- Homepage Vue -->
     <script src='js/testhomepage.js'></script>
 
-    <!-- chart.js -->
-    <script src='js/chart.js'></script>
 </body>
 </html>
