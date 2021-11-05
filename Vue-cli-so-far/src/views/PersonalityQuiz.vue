@@ -1,122 +1,163 @@
-
 <template>
-  <!-- this page is super incomplete -->
-  
+  <Sidebar />
 
   <div
     style="margin-left: 18rem; margin-right: 0"
     class="row d-flex justify-content-center px-4 pb-3"
   >
-  <Sidebar />
-    <div class="col" v-if="!quizDone">
-      <div class="pt-4 px-3 text-start fs-2">
-        <!-- header section -->
-        Personality Quiz
-      </div>
-      <hr />
-      <div id="main-content-areas" class="mt-1">
-        <div class="rounded-3">
+    <div class="col">
+      <!-- start of the quiz component -->
+      <div v-if="!quizDone">
+        <div class="pt-4 px-3 text-start fs-2">
+          <!-- header section -->
+          Personality Quiz
+        </div>
+        <hr />
+        <div id="main-content-areas" class="mt-1 rounded-3 bg-pinkred">
           <div>
-            <!-- v-for each traits -->
-            <div
-              v-for="(questions, trait) in $store.state.personalityQuestions"
-              :key="trait"
-            >
-              <!-- v-for each question of each trait -->
-              <div class="mb-2" v-for="(qn, index) in questions" :key="index">
-                <br />
-                <br />
-                <!-- should give this guy a nice css class -->
-                <div class="fs-3">{{ qn }}</div>
-                <!-- replace btns with input radio -->
-                <!-- not too sure how the v-models will look in the end -->
-                <!-- <input type="radio" /> -->
-                <button
-                  @click="is_Me(0, trait, index, $event)"
-                  class="btn btn-outline-success"
-                >
-                  Not Me
-                </button>
-                <button
-                  @click="is_Me(1, trait, index, $event)"
-                  class="btn btn-outline-success"
-                >
-                  That's Me
-                </button>
-              </div>
-              <br />
-              <hr />
-            </div>
-            <button
-              @click="submitQuiz"
-              class="submit-btn btn btn-success bgdarkgreen mb-3"
-            >
-              Submit Quiz
-            </button>
+            <vueper-slides :dragging-distance="70" prevent-y-scroll>
+              <!-- v-if="!showQuiz" -- not sure if to have or not -->
+              <vueper-slide>
+                <!-- initial slide, welcome type-message -->
+                <template #content>
+                  <div class="vueperslide__content-wrapper">
+                    <div>Personality Quiz</div>
+                    <div>(15 True/False questions)</div>
+                    <div>
+                      <button
+                        @click="startQuiz"
+                        class="btn btn-outline-light mt-3"
+                      >
+                        Start Quiz
+                      </button>
+                    </div>
+                  </div>
+                </template>
+              </vueper-slide>
+              <!-- main question slides -->
+              <!-- eslint-disable-next-line vue/no-use-v-if-with-v-for prettier/prettier -->
+              <vueper-slide v-for="slide in slides" :key="slide.id" v-if="showQuiz">
+                <template #content>
+                  <div class="vueperslide__content-wrapper">
+                    <div>{{ slide.title }}</div>
+                    <div class="flex-row mt-2">
+                      <span class="m-3">
+                        <input
+                          class="form-check-input mx-1"
+                          type="radio"
+                          :id="slide.id"
+                          :name="slide.id"
+                          :value="0"
+                          v-model="personalityAnswers[slide.id]"
+                        /><label :for="slide.id">Not Me</label>
+                      </span>
+                      <span class="m-3">
+                        <input
+                          class="form-check-input mx-1"
+                          type="radio"
+                          :id="slide.id + 1"
+                          :name="slide.id"
+                          :value="1"
+                          v-model="personalityAnswers[slide.id]"
+                        /><label :for="slide.id + 1">That's Me</label>
+                      </span>
+                    </div>
+                  </div>
+                </template>
+              </vueper-slide>
+              <vueper-slide v-if="Object.keys(personalityAnswers).length == 15">
+                <!-- final submit button, v-if show only if done? -->
+                <template #content>
+                  <div class="vueperslide__content-wrapper">
+                    <button class="btn btn-outline-light" @click="submitQuiz">
+                      Submit Quiz
+                    </button>
+                  </div>
+                </template>
+              </vueper-slide>
+            </vueper-slides>
           </div>
         </div>
+        <br />
+        <div>
+          {{ personalityAnswers }}
+        </div>
       </div>
-    </div>
-
-    <div class="col" id="quiz-question-results" v-else>
-      <!-- v-if depending on if submitquiz is pressed -->
-      <!-- I assume the calculation works as follows -->
-      <!-- 5 sections, 3 questions each, max 3pts per section -->
-      <!-- so max 15pts, radius of polygon is 3 -->
-      <!-- to make the polygon, we need a bunch of numbers -->
-      <!-- an example is this one, this is for a single polygon
-        <svg height="120" width="120" style="background-color: lightgray;">
-          <polygon points="60,13 110,48 92,110 30,110 13,48" />
-          Sorry, your browser does not support inline SVG.
-        </svg>
-      -->
-      <!-- so we need a bunch of x,y values, 5 in fact, with pre-calc -->
-      <!-- values that correspond to the points from the quiz -->
+      <!-- end of the quiz component -->
+      <div class="" id="quiz-question-results" v-else>
+        <!-- no spider web, type out the results or whatever aight -->
+        <li
+          v-for="(result, category, index) in $store.state.personalityResults"
+          :key="index"
+        >
+          {{ category }}: {{ result }}
+        </li>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue";
+import { ref } from "vue";
 import { useStore } from "vuex";
 import { checkDomain } from "../components/redirect";
-import { newConfig, axiosAwait } from "../components/getPost";
 import Sidebar from "../components/sidebar/Sidebar.vue";
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
 
 export default {
   name: "MainPage",
-  components: { Sidebar },
+  components: { Sidebar, VueperSlides, VueperSlide },
   setup() {
-    const store = useStore();
     checkDomain();
+    const store = useStore();
+    const quiz = store.state.personalityQuestions;
 
-    // checks the quiz questions and the options
-    onBeforeMount(async () => {
-      // using the firebase db first
-      const config = newConfig(
-        "GET",
-        `${store.state.myDatabase}/quizzes/personality_quiz/questions.json`
-      );
-      const db_quiz = await axiosAwait(config);
-      if (db_quiz) store.commit("updatePersonalityQuestions", db_quiz);
-      else console.log("Unable to retrieve personality questions");
-    });
+    // preparing the results obj early, no ref needed
+    const categories = [];
 
-    const is_Me = (points, trait, qn, event) => {
-      const current_Target = event.currentTarget.classList;
-      current_Target.remove("btn-outline-success");
-      current_Target.add("btn-success");
-      console.log({ points, trait, qn, event, current_Target });
-    };
+    const slides = ref([]); // slides for the questions
+    // for loop adding questions as individual slides to the slides array
+    for (const { id, question, category } of quiz) {
+      slides.value.push({
+        id: id,
+        title: question,
+      });
+      categories.push(category);
+    }
 
+    // v-modeled question answers
+    const personalityAnswers = ref({});
+
+    const showQuiz = ref(false);
+    const startQuiz = () => (showQuiz.value = true);
     const quizDone = ref(false);
+
+    const results = store.state.personalityResults;
+
+    // only shows when all questions are answered
     const submitQuiz = () => {
-      // next problem, need to validate checkboxes and all
       quizDone.value = true;
-      console.log("SUBMIT QUIZ");
+      // 5 categories, 15 questions, 3 questions per category
+      // results obj used here
+      console.log(personalityAnswers.value);
+      for (const index in categories) {
+        // index is a string (becos categories is an obj)
+        // need to convert to Number to prevent NaN value
+        results[categories[index]] +=
+          personalityAnswers.value[Number(index) + 1];
+      }
+      store.commit("updatePersonalityResults", results);
     };
 
-    return { is_Me, submitQuiz, quizDone };
+    return {
+      quizDone,
+      showQuiz,
+      startQuiz,
+      submitQuiz,
+      slides,
+      personalityAnswers,
+    };
   },
 };
 </script>
@@ -131,4 +172,24 @@ export default {
   width: 12rem;
   height: 4rem;
 }
+.bg-pinkred {
+  background-color: hsl(300, 69%, 70%);
+}
+/* .vueperslides__bullet span {
+  display: block;
+  color: #fff;
+  font-size: 10px;
+  opacity: 0.8;
+}
+.vueperslides__bullet--active .default {
+  background-color: #42b983;
+}
+.vueperslides__bullet .default {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  box-shadow: none;
+  transition: 0.3s;
+  width: 16px;
+  height: 16px;
+} */
 </style>
