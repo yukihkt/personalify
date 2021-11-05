@@ -1,34 +1,21 @@
 <template>
   <!-- need to add the stuff jen has done in the grp repo -->
-  
+  <Sidebar />
 
   <div
     style="margin-left: 18rem; margin-right: 0"
     class="row d-flex justify-content-center"
   >
-  <Sidebar />
     <div class="col">
-      <div class="pt-5 px-3 text-start fs-2">
-        <!-- header section -->
-        Hello, {{ nickname }}
-      </div>
-      <div id="main-content-areas" class="mt-1">
-        <div class="px-3 text-start fs-4">
-          See current quiz report or take a new one...
-        </div>
-        <div class="text-center text-muted">
-          <small>...do whatever you want I guess</small>
-        </div>
-        <div class="d-flex justify-content-evenly mt-5">
-          <!-- switch with router link later -->
-          <button class="btn btn-success rounded-3">Basic Personality</button>
-          <router-link to="/pquiz" class="btn btn-secondary rounded-3">
-            Quiz
-          </router-link>
-          <button class="btn btn-secondary rounded-3">Career</button>
-        </div>
-      </div>
+      <div class="pt-5 px-3 text-start fs-2">Hello, {{ nickname }}</div>
+      <!-- to replace with dynamic component -->
+      <!-- <MainComponent /> -->
+      <!-- <MusicBasic /> -->
+      <component :is="currentComponent" @to-other-component="changeComponent" />
     </div>
+    <!-- could have the quizzes be it's own component in this current -->
+    <!-- page, and that would work well for what is needed and necessary -->
+    <!-- a new view is cool, but the idea of components is also cool -->
   </div>
 </template>
 
@@ -36,24 +23,35 @@
 import { useStore } from "vuex";
 import { checkDomain } from "../components/redirect";
 import Sidebar from "../components/sidebar/Sidebar.vue";
+import MainComponent from "../components/main/MainComponent.vue";
+import MusicBasic from "../components/main/MusicBasic.vue";
+import { ref } from "vue";
 
 export default {
   name: "MainPage",
-  components: { Sidebar },
+  components: { Sidebar, MainComponent, MusicBasic },
   setup() {
     const store = useStore();
     checkDomain();
 
-    const nickname = store.state.nickname;
+    // destructuring store.state
+    const { nickname } = store.state;
 
-    return { nickname };
+    // setting defaults for dynamic components which switch when event emitted from MainComponent or MusicBasic
+    const currentComponent = ref("MainComponent");
+    let hiddenComponent = "MusicBasic";
+
+    const changeComponent = () => {
+      let temp = currentComponent.value;
+      console.log({ temp });
+      currentComponent.value = hiddenComponent;
+      hiddenComponent = temp;
+      console.log({ temp });
+    };
+
+    return { nickname, currentComponent, changeComponent };
   },
 };
 </script>
 
-<style scoped>
-.btn {
-  width: 13rem;
-  height: 13rem;
-}
-</style>
+<style scoped></style>
