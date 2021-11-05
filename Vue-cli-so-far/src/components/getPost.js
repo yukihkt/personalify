@@ -7,7 +7,9 @@ export function newConfig(method, url, params = { auth: null, data: null }) {
     headers: { Accept: "application/json" },
     url: url,
   };
+  // for spotify authentication
   if (params.auth) config.headers["Authorization"] = params.auth;
+  // for firebase putting / posting of data
   if (params.data) config["data"] = params.data;
 
   return config;
