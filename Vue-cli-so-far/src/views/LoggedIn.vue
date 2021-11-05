@@ -39,14 +39,6 @@
         >
           Confirm
         </router-link>
-
-        <!-- <RouterButton
-          to="/character"
-          options="main-btn btn btn-success bgdarkgreen"
-          :clicky="confirmCharacter"
-        >
-          Confirm
-        </RouterButton> -->
       </div>
     </transition>
   </div>
@@ -69,7 +61,6 @@ import {
   rng,
 } from "@/components/redirect.js"; // redirect and relogin
 import ErrorComponent from "@/components/ErrorComponent.vue";
-// import RouterButton from "@/components/RouterButton.vue";
 
 export default {
   name: "LoggedIn",
@@ -126,6 +117,7 @@ export default {
     // obtaining current user's data to store as the primary keys for database
     if (access_token && (state == null || state !== storedState)) {
       auth_error.value = true; // ErrorComponent shows
+      store.commit("updateMyDomain", window.location.origin); // so reauth doesn't return an error
     } else {
       // localStorage.removeItem(stateKey);
       if (access_token) {
@@ -142,7 +134,13 @@ export default {
             // to force a .catch() to break the .then()
             store.commit("updateId", res.data.id); // user id into vuex store
             nickname.value = res.data.display_name; // default nickname based on spotify display_name
-            store.dispatch("retrieveGenres", access_token); // access token to retrieve genres
+            // so that there is a default backup if user puts all spaces in nickname input
+            store.commit("updateNickName", res.data.display_name); // committing the nickname
+
+            // due to the nature of the += mutations, an if statement is needed
+            // in case of a refresh (this is also due to using persisted state)
+            if (store.state.numOfTracks == 0)
+              store.dispatch("retrieveGenres", access_token); // access token to retrieve genres
           })
           .catch((err) => console.log(err));
       }
@@ -157,14 +155,14 @@ export default {
     const showCharacter = ref(false);
     const showCharacterBtn = () => {
       // as long as nickname chosen isn't all spaces
-      if (nickname.value.trim != "") {
+      if (nickname.value.trim() != "") {
         showInput.value = false; // fade out the input area
         setTimeout(() => (showCharacter.value = true), 1100); // delay before fading in character choice
-        store.commit("updateNickName", nickname); // committing the nickname
+        store.commit("updateNickName", nickname.value); // committing the nickname
       } else {
         alert("Please enter a nickname that isn't empty or simply spaces");
-        // nickname.value = ""; // an idea to give the user a random nickname from an arr
-        // of like 30 nicknames, but it might be a bit mean to do so
+        // reseting the default value when needed
+        nickname.value = store.state.nickname;
       }
     };
 
@@ -197,6 +195,11 @@ export default {
     };
 
     const confirmCharacter = () => store.commit("updateCharacter", char_num);
+
+    //====================================================//
+
+    // retrieval of the personality quiz questions from firebase realtime db
+    store.dispatch("retrievePersonalityQuiz");
 
     //====================================================//
 
