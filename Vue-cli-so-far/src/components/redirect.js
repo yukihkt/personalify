@@ -4,6 +4,13 @@
 import router from "../router"; // router imported for router push
 import store from "../store"; // store imported to use here
 
+// just note that these here don't work, not sure reason, but just know it doesn't
+// for js files at least (works with vue files though)
+// import { useRouter } from "vue-router";
+// import { useStore } from "vuex";
+// const router = useRouter();
+// const store = useStore();
+
 // adding the getHashParams() function here to reduce clutter
 // spotify implicit grant flow, retrieves data parameters from URI Component
 export const getHashParams = () => {
@@ -49,9 +56,17 @@ export const redirecting = () => {
   window.location = url; // redirecting user when login btn is pressed
 };
 
+// if empty, returns true
+// no export, since there is currently no need for it, currently only checkdomain uses it
+const isEmpty = (obj = {}) => Object.keys(obj).length === 0;
+
 export const checkDomain = () => {
   // check if vuex store has current domain, otherwise, path send to home
-  if (store.state.myDomain == "" || !store.state.isLoggedIn) {
+  if (
+    store.state.myDomain == "" ||
+    !store.state.isLoggedIn ||
+    isEmpty(store.state)
+  ) {
     router.replace({ path: "/" });
   }
 };
