@@ -4,137 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Homepage</title>
-    <link rel="stylesheet" href="css/homepage.css">
-    <link rel="stylesheet" href="css/base.css">
+    <title>Personalify</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- Bootstrap Icon CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/about.css">
+    
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
-<div id='everything'>
+    <div id="app">
+        
+        {{countQuiz()}}
+       
+        <!-- Side Nav Bar -->
+        <nav-bar :elements="navEl" :user="user"></nav-bar>
+        <!-- to add: jquery to change isActive to relevant boolean -->
 
-    <!-- main content -->
-    <div id='main'>
-        <div id='main-content'>
-            <div id='heading'>
-                <span id='heading1'>Hello</span>
-            </div>
-            <div id='about'>
-                <div id='box'>
-                    <span id='heading4'>About</span>
-                    <div id='info'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit animi, similique aut quod ab, eum rerum perferendis suscipit, non voluptatem labore quasi! Sequi laudantium incidunt asperiores illum eum facere voluptatibus!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- about -->
+        <about></about>
 
-    <!-- top bar -->
-    <div id='top'>
-        <div id='icon'>
-            <img src='images/homepage/icon.svg'>
-            <span id='title'>Personalify</span>
-        </div>
-        <div id='arrows'>
-            <!-- add onclick later-->
-            <button id='arrow1'> < </button>
-            <button id='arrow2'> > </button>
-        </div>
-    </div>
+        <!-- Bottom Progress Bar -->
+        <progress-bar :elements="navEl" :progress="completedQuizzes" :user="user"></progress-bar>
+        <!-- to add: jquery to edit quiz's isCompleted boolean value -->
+        <!-- .wave:before, .wave:after width and height -->
+         <!-- and length of progress bar to change accordingly -->
     
-    <!-- side bar  -->
-    <div id='sidebar'>
-        <!-- homepage -->
-        <div class='pages'>
-            <div>
-                <img src='images/homepage/home_icon.png'>
-            </div>
-            <div class='pagename'>
-                <a class='bold'>Homepage</a><br>
-            </div>
-            
-        </div>
-        <!-- aboutpage -->
-        <div class='pages'>
-            <div>
-                <img src='images/homepage/info_icon.png'>
-            </div>
-            <div class='pagename'>
-                <a  href='about.html'>About</a><br>
-            </div>
-        </div>
-        <!-- reportpage -->
-        <div class='pages'>
-            <div>
-                <img src='images/homepage/report_icon.png'>
-            </div>
-            <div class='pagename'>
-                <a href='report.html' >Report</a><br>
-            </div>
-        </div>
-        <!-- logoutpage -->
-        <div class='pages'>
-            <div>
-                <img src='images/homepage/logout_icon.png'>
-            </div>
-            <div class='pagename'>
-                <a href='logout.html'>Logout</a><br>
-            </div>
-        </div>
     </div>
 
+    <!-- Animate JS CDN -->
+    <!-- <script src="https://koffiisen.github.io/Animate.js/dist/animate.min.js"></script> -->
 
-    <!-- bottom bar -->
-    <div id='bottombar'>
-        <div id='leftbottombar'>
-            <div>
-                <img src='images/homepage/basic_personality.svg'>
-            </div>
-            <div>
-                <span id='personalityanalysis'>Personality Analysis</span>
-                <br>
-                <span id='inprocess'>In process</span>
-            </div>
-        </div>
+    <!-- for cards design -->
+    <script src='GridLayoutMotion-master/js/demo.js'></script>
+    <script src='GridLayoutMotion-master/js/imagesloaded.pkgd.min.js'></script>
+    <script src='GridLayoutMotion-master/js/TweenMax.min.js'></script>
 
-        <div id='middlebottombar'>
-            <div id='icons'>
-                <div>
-                    <ion-icon name="shuffle"></ion-icon>
-                </div>
-                <div>   
-                    <ion-icon name="play-skip-back"></ion-icon>
-                </div>
-                <div>
-                    <ion-icon id='play-circle' name="play-circle"></ion-icon>
-                </div>
-                <div>
-                    <ion-icon name="play-skip-forward"></ion-icon>
-                </div>
-                <div>
-                    <ion-icon name="repeat"></ion-icon>
-                </div>
-            </div>
-            <div id='track-progress'>
-                <div class="current-track-progress">
-                    0%
-                </div>
-                <div id="current-track-progress-bar">
-                    <div id='white-1st'>
-                    </div>
-                    <div id='grey-1st'>
-                    </div>
-                </div>
-                <div class="current-track-progress">
-                    100%
-                </div>
-            </div>
-        </div>
-        <div id='rightbottombar'>
-        </div>
-    </div>
-</div>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Vue Typed.js -->
+    <script src="/node_modules/vue-typed-js/dist/vue-typed-js.browser.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- jQuery JS -->
+    <script src='js/main.js'></script>
+
+    <!-- Homepage Vue -->
+    <script src='js/testhomepage.js'></script>
 </body>
 </html>

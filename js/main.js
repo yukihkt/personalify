@@ -12,7 +12,7 @@ $(document).ready(function(){
 
         $("#basic").animate({
             "margin": '0rem',
-            height: '100vh',
+            height: '70vh',
             width: '30vw',
         })
 
@@ -30,14 +30,12 @@ $(document).ready(function(){
         $(".box__shadow").hide();
         $(".box__title").hide();
         $(".box__text").hide();
-        // $(".box__content").fadeOut();
 
         // Move box
         $(".box__content").animate({
             "font-size": "3vw",
             "margin-top": "0.5vw",
         },1500);
-        // $("#basic .box__content").hide().fadeIn()
 
     });
 });
@@ -56,12 +54,15 @@ $(document).ready(function(){
             height: '0px',
             width: '0px',
             opacity: "0"
-        });
+        },500);
         $("#personality").animate({
-            "margin-left": '20px',
-            height: '1000px',
-            width: '400px'
+            // "margin-left": '20px',
+            height: '70vh',
+            width: '30vw'
         });
+        $("#personality:hover").css({
+            "filter": "none"
+        })
         $(".grid__item").css({
             width:'100vw'
         })
@@ -99,10 +100,13 @@ $(document).ready(function(){
             opacity: "0"
         },500);
         $("#career").animate({
-            "margin-left": '20px',
-            height: '1000px',
-            width: '400px'
+            // "margin-left": '20px',
+            height: '70vh',
+            width: '30vw'
         });
+        $("#career:hover").css({
+            "filter": "none"
+        })
         $(".grid__item").css({
             width:'100vw'
         })

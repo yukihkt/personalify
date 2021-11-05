@@ -24,6 +24,9 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- for chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    
 </head>
 <body>
     <div id="app">
@@ -35,7 +38,6 @@
         <!-- Side Nav Bar -->
         <nav-bar :elements="navEl" :user="user"></nav-bar>
         <!-- to add: jquery to change isActive to relevant boolean -->
-
         
         <!-- Main Content in the middle -->
         <home-content :homelinks="homeEl" :elements="navEl" :user="user"></home-content>
@@ -72,6 +74,9 @@
 
     <!-- Homepage Vue -->
     <script src='js/testhomepage.js'></script>
+
+    <!-- chart.js -->
+    <script src='js/chart.js'></script>
 
 </body>
 </html>

@@ -1,7 +1,8 @@
 /* Homepage CSS */
 body {
-	overflow: scroll;
+	overflow-y: auto;
 	height: 100%;
+	overflow-x: hidden;
 }
 
 #gridCards {
@@ -10,7 +11,8 @@ body {
     z-index: -1;
     height: 100px; 
     display: flex; 
-	height: 50%
+	height: 50%;
+	margin-bottom: 20px;
 }
 
 #welcomeText {
@@ -21,8 +23,41 @@ body {
 #career, #personality, #basic {
 	/* position: absolute; */
 	width: 50vh;
-	height: 60vh;
+	height: 50vh;
+	margin-bottom: 100px;
+
 }
+
+#basic-personality, #personality-quiz, #career-quiz {
+	padding-left: 22vw;
+	width: 300vh;
+	padding-bottom: 70vw;
+	/* display: none; */
+}
+
+
+/* start of radar chart design */
+#info {
+	/* justify-content: space-around; */
+	display:flex;
+	/* overflow: hidden; */
+	color: white;
+}
+
+#chart1 {
+	position: relative; 
+	height:20vh; 
+	width:30vw;
+	padding: 20px;
+}
+
+#chart2 {
+	position: relative; 
+	height:30vh; 
+	width:40vw;
+	padding: 20px;
+}
+/* end of radar chart design */
 
 /* Grid CSS */
 @import url('https://fonts.googleapis.com/css?family=Anton|Buenard:400,700');
@@ -82,8 +117,8 @@ a:hover, a:active, a:focus {
 	/* max-width: 1440px; */
 	width: 100%;
 	max-width: 80%;
-	margin: -1vw 12vw;
-	padding: 1rem 0 10rem 4rem;
+	margin: -1vw 8vw;
+	padding: 1rem 0 0rem 4rem;
 	display: flex;
 	position: sticky;
 	justify-content: flex-start;
@@ -94,7 +129,7 @@ a:hover, a:active, a:focus {
 .grid__item {
 	display: flex;
 	justify-content: center;
-	margin: 0 0 10vw 0;
+	margin: 0 0 0 0;
 	cursor: pointer;
 	padding-top:10%;
 }
@@ -134,7 +169,7 @@ a:hover, a:active, a:focus {
 	position: relative;
 	font-weight: normal;
 	text-transform: uppercase;
-	font-size: 4.15rem;
+	font-size: 3.0rem;
 	letter-spacing: 0.15rem;
 	line-height: 1;
 	font-family: 'Anton', sans-serif;
@@ -318,7 +353,7 @@ a:hover, a:active, a:focus {
 		flex-direction: row;
 	}
 	.overlay__content {
-		font-size: 2.25rem;
+		font-size: 2.5rem;
 		margin-top: 0;
 	}
 	.overlay__item .box__title--bottom {

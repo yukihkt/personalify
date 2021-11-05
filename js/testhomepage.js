@@ -4,24 +4,28 @@ const app = Vue.createApp({
             navEl: {
                 "home": {
                     // Bootstrap Icon
+                    id: "home",
                     iconClass: "bi bi-house-fill",
                     link: "testhomepage.html",
                     title: "Home",
                     isActive: true
                 },
                 "about": {
+                    id: "about",
                     iconClass: "bi bi-info-circle-fill",
                     link: "about.html",
                     title: "About",
                     isActive: false
                 },
                 "report": {
+                    id: "report",
                     iconClass: "bi bi-file-earmark-person",
                     link: "report.html",
                     title: "Report",
                     isActive: false
                 },
                 "logout": {
+                    id: "logout",
                     iconClass: "bi bi-box-arrow-left",
                     link: "connect.html",
                     title: "Logout",
@@ -39,7 +43,8 @@ const app = Vue.createApp({
                     color: "#78E185",
                     id: "basic",
                     isCompleted: true,
-                    imgId: "basicimg"
+                    imgId: "basicimg",
+                    show: false
                 },
                 "personality": {
                     title: "Personality Quiz",
@@ -50,7 +55,8 @@ const app = Vue.createApp({
                     color: "#FF4B40",
                     id: "personality",
                     isCompleted: false,
-                    imgId: "personalityimg"
+                    imgId: "personalityimg",
+                    show: false
                 },
                 "career": {
                     title: "Career Quiz",
@@ -61,7 +67,8 @@ const app = Vue.createApp({
                     color: "#37C1FF",
                     id: "career",
                     isCompleted: false,
-                    imgId: "careerimg"
+                    imgId: "careerimg",
+                    show: false
                 },
             },
 
@@ -86,6 +93,35 @@ const app = Vue.createApp({
             }
             this.completedQuizzes = count
             // console.log(count)
+        },
+        
+        changeActive: function () {
+            console.log("inside changeActive()")
+            // if (obj == "about") {
+            //     this.navEl["homepage"].isActive = false
+            //     this.navEl["about"].isActive = true
+            //     this.navEl["report"].isActive = false
+            //     this.navEl["logout"].isActive = false
+            // }
+            // else if (obj == "homepage") {
+            //     this.navEl["homepage"].isActive = true
+            //     this.navEl["about"].isActive = false
+            //     this.navEl["report"].isActive = false
+            //     this.navEl["logout"].isActive = false
+            // }
+            // else if (obj == "report") {
+            //     this.navEl["homepage"].isActive = false
+            //     this.navEl["about"].isActive = false
+            //     this.navEl["report"].isActive = true
+            //     this.navEl["logout"].isActive = false
+            // }
+            // else if (obj == "logout") {
+            //     this.navEl["homepage"].isActive = false
+            //     this.navEl["about"].isActive = false
+            //     this.navEl["report"].isActive = false
+            //     this.navEl["logout"].isActive = true
+            // }
+            
         }
 
     //     getUser(username, charId, imgSrc) {
@@ -108,7 +144,7 @@ app.component('nav-bar', {
                 </h2>
             </a>
             <div v-for="nav in elements" class="d-flex justify-content-center align-items-center" id="navlinks">
-                <a class="nav-link" :class="nav.isActive ? 'active activeNavLink' : ''" :href="nav.link">
+                <a class="nav-link" :class="nav.isActive ? 'active activeNavLink' : ''" :href='nav.link'>
                     <i :class="nav.iconClass" class="pe-2 ps-0"> </i>
                     {{nav.title}}
                 </a>
@@ -116,6 +152,86 @@ app.component('nav-bar', {
         </nav>
     `
 })
+
+//about
+app.component("about", {
+    template: 
+    `
+    <div  id='about'>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <p class='cover'>
+                        Our Music Analysis
+                    </p>
+                </div>
+                <div class="flip-card-back">
+                    <p>We derive the main characteristics of the music you listen to, namely <ul>
+                        <li>Duration</li>
+                        <li>Acousticness</li>
+                        <li>Danceability</li>
+                        <li>Instrumentalness</li>
+                        <li>Energy</li>
+                        <li>Liveness</li>
+                        <li>Loudness</li>
+                        <li>Speechiness</li>
+                        <li>Valence</li>
+                        <li>Tempo</li>
+                    </ul>
+                    from your main music genre.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <p class='middle cover'>
+                        Our personality analysis
+                    </p>
+                </div>
+                <div class="flip-card-back">
+                    <p>We then sort the main characteristics of the music you listen to into one of the <strong>Big 5 Personality</strong>, which consist of
+                    <ul>
+                    <li>extraversion (outgoing/energetic vs. solitary/reserved)</li>
+                    <li>agreeableness (friendly/compassionate vs. critical/rational)</li>
+                    <li>openness to experience (inventive/curious vs. consistent/cautious)</li>
+                    <li>conscientiousness (efficient/organized vs. extravagant/careless)</li>
+                    <li>neuroticism (sensitive/nervous vs. resilient/confident)</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <p class='cover'>
+                        Our Career analysis
+                    </p>
+                </div>
+                <div class="flip-card-back">
+                    <p>The result of your quizzes will determine your interests, strength, and the preferences of your work environment.We will then categories you into your most suitable career prospect using the results of your quizzes, alongside your Music and Personality analysis. The career prospects we can suggest includes
+                    <ul>
+                        <li>Architecture and engineering</li>
+                        <li>Arts, culture and entertainment</li>
+                        <li>Business management</li>
+                        <li>Law and public policy</li>
+                        <li>Community and social services</li>
+                        <li>Education</li>
+                        <li>Science and technology</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    `
+
+    
+})
+
+
 
 app.component('home-content', {
     props: ['homelinks', 'elements', 'user'],
@@ -128,7 +244,7 @@ app.component('home-content', {
                 <h4 class="ps-3 fst-italic">...do whatever you want I guess</h4>
             </div>
             <div class='grid content'>
-                <div id="gridCards" v-for="el in homelinks">
+                <div v-on:click='el.show = !el.show' v-on:click='el.isCompleted = !el.isCompleted' id="gridCards" v-for="el in homelinks">
                     <a class="grid__item grid__item--noclick" :id="el.id" :class="el.isCompleted ? 'quizActive' : 'quizInActive'">
                         <div class="box p-0">
                             <div class="box__shadow">
@@ -152,9 +268,38 @@ app.component('home-content', {
                     </a>
                 </div>
             </div>
+            <div v-show="homelinks['basic'].show == true" id='basic-personality'>
+                <div id='box'>
+                    <div id='info'>
+                        <div id='chart1'>
+                            <canvas id="musictraitschart"></canvas>
+                        </div>
+                        <div id='chart2'>
+                            <canvas id="personalitytraits"></canvas>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div v-show="homelinks['personality'].show == true" id='personality-quiz'>
+                <div id='box'>
+                    <div id='info'>
+                        ADD QUIZ HERE
+                    </div>
+                </div>
+            </div>
+            <div v-show="homelinks['career'].show == true" id='career-quiz'>
+                <div id='box'>
+                    <div id='info'>
+                        ADD QUIZ HERE
+                    </div>
+                </div>
+            </div>
         </div>
     `
 })
+
+
 
 // Bottom Progress Bar Component
 app.component('progress-bar', {
