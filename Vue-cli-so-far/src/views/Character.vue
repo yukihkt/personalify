@@ -65,13 +65,14 @@
 
 <script>
 import { useStore } from "vuex";
-import { checkDomain } from "@/components/redirect.js";
 import { onMounted, ref } from "vue";
-import router from "../router";
+import { useRouter } from "vue-router";
+import { checkDomain } from "@/components/redirect.js";
 export default {
   name: "Character",
   setup() {
     const store = useStore();
+    const router = useRouter();
 
     // check if vuex store has current domain, otherwise, path send to home
     checkDomain();
