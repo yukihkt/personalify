@@ -1,0 +1,2 @@
+this folder is for the various components which make up the main
+content area of the mainpage view
