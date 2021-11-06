@@ -235,7 +235,7 @@ app.component("about", {
 
 app.component('home-content', {
     props: ['homelinks', 'elements', 'user'],
-    template: `
+    template: /*html*/`
     
         <div>
             <div class="text-white" id="welcomeText">
@@ -249,7 +249,7 @@ app.component('home-content', {
                         <div class="box p-0">
                             <div class="box__shadow">
                             </div>
-                            <img class="box__img" id='el.imgId' :src="el.cardImg">
+                            <img class="box__img" :id='el.imgId' :src="el.cardImg">
                             <h3 class="box__title">
                                 <span class="box__title-inner" data-hover="Level">
                                     Level {{el.level}}
@@ -262,7 +262,7 @@ app.component('home-content', {
                             </h4>
                             <p id='box__content' class="box__content">
                                 <strong>{{el.title}}</strong> 
-                                {{el.dec}}
+                                {{el.desc}}
                             </p>
                         </div>
                     </a>
