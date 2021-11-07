@@ -95,8 +95,12 @@ const app = Vue.createApp({
             // console.log(count)
         },
         
-        changeActive: function () {
-            console.log("inside changeActive()")
+        changeActive(pageEl) {
+            console.log("===changeActive()===")
+            for (el in this.navEl) {
+                this.navEl[el].isActive = false
+            }
+            this.navEl[pageEl].isActive = true
             // if (obj == "about") {
             //     this.navEl["homepage"].isActive = false
             //     this.navEl["about"].isActive = true
@@ -154,7 +158,7 @@ app.component('nav-bar', {
 })
 
 //about
-app.component("about", {
+app.component("about-content", {
     template: 
     `
     <div  id='about'>

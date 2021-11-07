@@ -1,6 +1,10 @@
 /* start of about page design */
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 
+a {
+	text-decoration: none;
+}
+
 .cover {
 	display: block;
 	margin-left:auto;
@@ -23,6 +27,7 @@
 	font-family: 'Reem Kufi', sans-serif;
 	align-items: baseline;
 }
+
 .flip-card {
 	background-color: transparent;
 	width: 20vw;

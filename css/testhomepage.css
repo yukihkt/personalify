@@ -122,7 +122,7 @@ a:hover, a:active, a:focus {
 	display: flex;
 	position: sticky;
 	justify-content: flex-start;
-	left: 5%;
+	left: 12%;
 	/* overflow: hidden; */
 }
 
@@ -270,7 +270,8 @@ a:hover, a:active, a:focus {
 	position: absolute;
 	max-width: 195px;
 	font-size: 0.9rem;
-	text-align: right;
+	text-align: left;
+	padding-top: 1vh;
 	/* display: none; */
 }
 
@@ -410,5 +411,9 @@ a:hover, a:active, a:focus {
 	}
 	.codrops-links {
 		margin: 0;
+	}
+
+	.box__content {
+		padding-top: 15vh;
 	}
 }
