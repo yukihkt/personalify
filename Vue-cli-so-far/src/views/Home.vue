@@ -1,9 +1,10 @@
 <template>
   <div class="row">
     <LoadingTitle />
+    <!-- some scrolling down for the choreographer to work -->
     <div class="login" v-if="showLogin">
-      <h4 class="my-2">Please login with your spotify account</h4>
-      <button class="btn main-btn btn-success" @click="redirecting">
+      <h3>Please login with your spotify account</h3>
+      <button class="btn main-btn btn-success mt-1" @click="redirecting">
         Login
       </button>
     </div>
@@ -12,7 +13,6 @@
 
 <script>
 // choreographer to be implemented here
-// const Choreographer = require("choreographer-js");
 import { redirecting } from "@/components/redirect.js";
 import { ref } from "vue";
 import { useStore } from "vuex";
@@ -28,6 +28,8 @@ export default {
     store.replaceState(defaultState());
     // dynamic domain setting, because so many different localhost port and possible site domain
     store.commit("updateMyDomain", window.location.origin);
+
+    // show login, perhaps can have it as a fade if possible, considering only for now lah
     const showLogin = ref(true);
     return { redirecting, showLogin };
   },
@@ -35,11 +37,12 @@ export default {
 </script>
 
 <style scoped>
-.btn {
-  width: 9.5rem;
-  height: 2.7rem;
+.main-btn {
+  width: 11rem;
+  height: 3.2rem;
 }
 .login {
-  margin-bottom: 30vh;
+  margin-bottom: 40vh;
+  z-index: 1;
 }
 </style>
