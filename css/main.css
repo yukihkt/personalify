@@ -78,7 +78,7 @@ body {
     z-index: 1;
     /* top: 88vh; */
     bottom: 0;
-    height: 8vw;
+    height: 7rem;
     border-top: rgb(46, 46, 46) 0.5px solid;
 }
 
@@ -91,13 +91,14 @@ body {
 #playButtons {
     position: relative;
     display: flex;
-    padding-left: 49vw;
-    margin-top: 0.5vw;
+    margin-top: 0.5%;
+    margin-left: 22vw;
+    left: 45%;
 }
 
 #playButtons i{
     font-size: 250%;
-    padding: 0 1vw;
+    padding: 0 2%;
     color: white;
 }
 
@@ -108,9 +109,9 @@ body {
     background-color: darkgrey;
     border-radius: 2px; 
     position: fixed;
-    width: 70vw;
-    bottom: 2vw;
-    height: 0.5vw;
+    width: 72%;
+    bottom: 3%;
+    height: 1%;
 }
 
 #progressbar:after {
