@@ -37,7 +37,7 @@
         <!-- about -->
         <!-- to change the green box around About instead of Home -->
         {{changeActive('about')}}
-        <about-content></about-content>
+        <about-content :names="names" :covers="homeEl"></about-content>
 
         <!-- Bottom Progress Bar -->
         <progress-bar :elements="navEl" :progress="completedQuizzes" :user="user"></progress-bar>
@@ -66,5 +66,13 @@
 
     <!-- Homepage Vue -->
     <script src='js/testhomepage.js'></script>
+
+    <!-- About Vue -->
+    <script src='js/about.js'></script>
+
+    <script>
+        app.mount('#app')
+    </script>
+
 </body>
 </html>

@@ -37,38 +37,70 @@ const app = Vue.createApp({
                 "basic": {
                     title: "Basic Personality Test",
                     level: 1,
-                    cardImg: "images/homepage/basic_personality.svg",
+                    cardImg: "images/homepage/basic_personality.png",
                     link: "basicpersonalityloading.html",
                     desc: "offers Personality Analysis based on your music taste",
                     color: "#78E185",
                     id: "basic",
                     isCompleted: true,
                     imgId: "basicimg",
-                    show: false
+                    show: false,
+                    full_desc: `We derive the main characteristics of the music you listen to, namely 
+                        <ul>
+                            <li>Duration</li>
+                            <li>Acousticness</li>
+                            <li>Danceability</li>
+                            <li>Instrumentalness</li>
+                            <li>Energy</li>
+                            <li>Liveness</li>
+                            <li>Loudness</li>
+                            <li>Speechiness</li>
+                            <li>Valence</li>
+                            <li>Tempo</li>
+                        </ul>
+                        from your top music genres.`
                 },
                 "personality": {
                     title: "Personality Quiz",
                     level: 2,
-                    cardImg: "images/homepage/personality_quiz_done.svg",
+                    cardImg: "images/homepage/personality_quiz.png",
                     link: "personalityquiz.html",
                     desc: "offers further insights into which of the big 5 personalities you are",
                     color: "#FF4B40",
                     id: "personality",
                     isCompleted: false,
                     imgId: "personalityimg",
-                    show: false
+                    show: false,
+                    full_desc: `We then sort the main characteristics of the music you listen to into one of the <strong>Big 5 Personality</strong>, which consists of
+                        <ul>
+                            <li>extraversion (outgoing/energetic vs. solitary/reserved)</li>
+                            <li>agreeableness (friendly/compassionate vs. critical/rational)</li>
+                            <li>openness to experience (inventive/curious vs. consistent/cautious)</li>
+                            <li>conscientiousness (efficient/organized vs. extravagant/careless)</li>
+                            <li>neuroticism (sensitive/nervous vs. resilient/confident)</li>
+                        </ul>`
                 },
                 "career": {
                     title: "Career Quiz",
                     level: 3,
-                    cardImg: "images/homepage/career_quiz_done.svg",
+                    cardImg: "images/homepage/career_quiz.png",
                     link: "careerquiz.html",
                     desc: "offers guidance on your suitable career prospects",
                     color: "#37C1FF",
                     id: "career",
                     isCompleted: false,
                     imgId: "careerimg",
-                    show: false
+                    show: false,
+                    full_desc: `The result of your quizzes will determine your interests, strength, and the preferences of your work environment.We will then categories you into your most suitable career prospect using the results of your quizzes, alongside your Music and Personality analysis. The career prospects we can suggest includes
+                        <ul>
+                            <li>Architecture and engineering</li>
+                            <li>Arts, culture and entertainment</li>
+                            <li>Business management</li>
+                            <li>Law and public policy</li>
+                            <li>Community and social services</li>
+                            <li>Education</li>
+                            <li>Science and technology</li>
+                        </ul>`
                 },
             },
 
@@ -78,7 +110,25 @@ const app = Vue.createApp({
                 charId: 1
             },
 
-            completedQuizzes: 0
+            completedQuizzes: 0,
+
+            names: {
+                'amanda': {
+                    role: "Front-end developer"
+                }, 
+                'jennifer': {
+                    role: "Front-end developer"
+                }, 
+                'ranon': {
+                    role: "Full stack developer"
+                }, 
+                'shreya': {
+                    role: "Full stack developer"
+                }, 
+                'yuki': {
+                    role: "Full stack developer"
+                }
+            }
         } 
     },
 
@@ -156,86 +206,6 @@ app.component('nav-bar', {
         </nav>
     `
 })
-
-//about
-app.component("about-content", {
-    template: 
-    `
-    <div  id='about'>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class='cover'>
-                        Our Music Analysis
-                    </p>
-                </div>
-                <div class="flip-card-back">
-                    <p>We derive the main characteristics of the music you listen to, namely <ul>
-                        <li>Duration</li>
-                        <li>Acousticness</li>
-                        <li>Danceability</li>
-                        <li>Instrumentalness</li>
-                        <li>Energy</li>
-                        <li>Liveness</li>
-                        <li>Loudness</li>
-                        <li>Speechiness</li>
-                        <li>Valence</li>
-                        <li>Tempo</li>
-                    </ul>
-                    from your main music genre.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class='middle cover'>
-                        Our personality analysis
-                    </p>
-                </div>
-                <div class="flip-card-back">
-                    <p>We then sort the main characteristics of the music you listen to into one of the <strong>Big 5 Personality</strong>, which consist of
-                    <ul>
-                    <li>extraversion (outgoing/energetic vs. solitary/reserved)</li>
-                    <li>agreeableness (friendly/compassionate vs. critical/rational)</li>
-                    <li>openness to experience (inventive/curious vs. consistent/cautious)</li>
-                    <li>conscientiousness (efficient/organized vs. extravagant/careless)</li>
-                    <li>neuroticism (sensitive/nervous vs. resilient/confident)</li>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class='cover'>
-                        Our Career analysis
-                    </p>
-                </div>
-                <div class="flip-card-back">
-                    <p>The result of your quizzes will determine your interests, strength, and the preferences of your work environment.We will then categories you into your most suitable career prospect using the results of your quizzes, alongside your Music and Personality analysis. The career prospects we can suggest includes
-                    <ul>
-                        <li>Architecture and engineering</li>
-                        <li>Arts, culture and entertainment</li>
-                        <li>Business management</li>
-                        <li>Law and public policy</li>
-                        <li>Community and social services</li>
-                        <li>Education</li>
-                        <li>Science and technology</li>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    `
-
-    
-})
-
-
 
 app.component('home-content', {
     props: ['homelinks', 'elements', 'user'],
@@ -327,5 +297,3 @@ app.component('progress-bar', {
         </div>
     `
 })
-
-app.mount('#app')
