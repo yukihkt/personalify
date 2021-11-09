@@ -37,7 +37,7 @@ const app = Vue.createApp({
                 "basic": {
                     title: "Basic Personality Test",
                     level: 1,
-                    cardImg: "images/homepage/basic_personality.png",
+                    cardImg: "images/homepage/basic_personality.svg",
                     link: "basicpersonalityloading.html",
                     desc: "offers Personality Analysis based on your music taste",
                     color: "#78E185",
@@ -63,7 +63,7 @@ const app = Vue.createApp({
                 "personality": {
                     title: "Personality Quiz",
                     level: 2,
-                    cardImg: "images/homepage/personality_quiz.png",
+                    cardImg: "images/homepage/personality_quiz.svg",
                     link: "personalityquiz.html",
                     desc: "offers further insights into which of the big 5 personalities you are",
                     color: "#FF4B40",
@@ -83,7 +83,7 @@ const app = Vue.createApp({
                 "career": {
                     title: "Career Quiz",
                     level: 3,
-                    cardImg: "images/homepage/career_quiz.png",
+                    cardImg: "images/homepage/career_quiz.svg",
                     link: "careerquiz.html",
                     desc: "offers guidance on your suitable career prospects",
                     color: "#37C1FF",

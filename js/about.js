@@ -6,7 +6,7 @@ app.component("about-content", {
         <div class="row justify-content-center" id="team">
             <h3> Meet Our Team </h3>
             <div class="col-lg-2 col-md-6 col-12" v-for="(value,key) in names">
-                <img :src="'images/about/'+key+'.png'">
+                <img :src="'images/about/'+ key +'.svg'">
             </div>
         </div>
 
