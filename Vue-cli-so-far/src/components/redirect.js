@@ -56,16 +56,12 @@ export const redirecting = () => {
   window.location = url; // redirecting user when login btn is pressed
 };
 
-// if empty, returns true
-// no export, since there is currently no need for it, currently only checkdomain uses it
-const isEmpty = (obj = {}) => Object.keys(obj).length === 0;
-
 export const checkDomain = () => {
   // check if vuex store has current domain, otherwise, path send to home
   if (
     store.state.myDomain == "" ||
     !store.state.isLoggedIn ||
-    isEmpty(store.state)
+    Object.keys(store.state).length === 0
   ) {
     router.replace({ path: "/" });
   }
