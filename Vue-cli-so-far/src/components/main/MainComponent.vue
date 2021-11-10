@@ -1,42 +1,54 @@
 <template>
+  <h2 class="pt-5 px-3 text-start">Hello, {{ userNick }}</h2>
   <div id="main-content-areas" class="mt-1">
-    <div class="px-3 text-start fs-4">
+    <h4 class="ps-3 text-start">
       See current quiz report or take a new one...
-    </div>
-    <div class="text-center text-muted">
-      <small>...do whatever you want I guess</small>
-    </div>
+    </h4>
+    <h6 class="ps-4 text-start text-muted fst-italic">
+      ...do whatever you want I guess
+    </h6>
+
+    <!-- the main part of the animate.js and GridLayoutMotion replace -->
     <div class="d-flex justify-content-evenly mt-5">
-      <button @click="toLvl" class="btn btn-success rounded-3" id="1">
+      <button id="0" @click="emitFunc" class="btn btn-success rounded-3">
         Basic Personality
       </button>
-      <button @click="toLvl" class="btn btn-secondary rounded-3" id="2">
+      <button id="1" @click="emitFunc" class="btn btn-secondary rounded-3">
         Quiz
       </button>
-      <button @click="toLvl" class="btn btn-secondary rounded-3" id="3">
+      <button id="2" @click="emitFunc" class="btn btn-secondary rounded-3">
         Career
       </button>
+    </div>
+
+    <!-- starting the the new things here for the better comparisons -->
+    <div class="grid content">
+      <!-- will v-for this with the MainComponentBtn inside -->
+      <div id="gridCards">
+        <!-- <MainComponentBtn /> -->
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { useRouter } from "vue-router";
+import MainComponentBtn from "./MainComponentBtn.vue";
 
 export default {
   name: "MainComponent",
-  emits: ["to-other-component"],
+  // eslint-disable-next-line
+  components: { MainComponentBtn },
+  emits: ["show-component"],
+  props: ["userNick"],
   // eslint-disable-next-line
   setup(props, { emit }) {
-    const router = useRouter();
-
-    const toLvl = (e) => {
-      const lvl = e.currentTarget.id;
-      if (lvl === "1") emit("to-other-component");
-      if (lvl === "2") router.push({ path: "/pquiz" });
-      if (lvl === "3") console.log("career quiz -- TBD");
+    const emitFunc = (e) => {
+      const currTarg = e.currentTarget.id;
+      console.log(currTarg, typeof currTarg);
+      emit("show-component", currTarg);
     };
-    return { toLvl };
+
+    return { emitFunc };
   },
 };
 </script>
@@ -47,3 +59,5 @@ export default {
   height: 13rem;
 }
 </style>
+<!-- <style src="../../assets/GridLayoutMotionCSS/base.css" scoped></style> -->
+<style src="../../assets/homepage/homepage.css" scoped></style>
