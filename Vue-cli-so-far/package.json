@@ -13,6 +13,7 @@
     "@popperjs/core": "^2.10.2",
     "axios": "^0.23.0",
     "bootstrap": "^5.1.3",
+    "chart.js": "^3.6.0",
     "choreographer-js": "^1.1.0",
     "core-js": "^3.6.5",
     "firebase": "^9.1.3",
