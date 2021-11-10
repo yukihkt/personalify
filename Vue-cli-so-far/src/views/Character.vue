@@ -12,21 +12,30 @@
       >
         <div>
           <transition name="fade">
-            <div class="d-flex justify-content-start align-items-start" v-if="enterTop">
+            <div
+              class="d-flex justify-content-start align-items-start"
+              v-if="enterTop"
+            >
               {{ messages[0] }}
             </div>
           </transition>
         </div>
         <div>
           <transition name="fade">
-            <div class="d-flex justify-content-center align-items-center" v-if="enterMid">
+            <div
+              class="d-flex justify-content-center align-items-center"
+              v-if="enterMid"
+            >
               {{ messages[1] }}
             </div>
           </transition>
         </div>
         <div>
           <transition name="fade">
-            <div class="d-flex justify-content-start align-items-end" v-if="enterBottom">
+            <div
+              class="d-flex justify-content-start align-items-end"
+              v-if="enterBottom"
+            >
               {{ messages[2] }}
             </div>
           </transition>
