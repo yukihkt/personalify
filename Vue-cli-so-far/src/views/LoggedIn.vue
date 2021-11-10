@@ -1,7 +1,10 @@
 <template>
   <div id="main" class="container-md pt-5" v-if="!auth_error">
-    <div ref="typedStrings" class="mt-2">
+    <div class="mt-2">
       <span style="font-size: 30px" ref="typed"></span>
+      <transition name="fade">
+        <span v-if="showTyped2" style="font-size: 30px" ref="typed_2"></span>
+      </transition>
     </div>
 
     <!-- delayed fade in of the nickname input area -->
@@ -68,7 +71,7 @@ export default {
   setup() {
     const store = useStore(); // vuex store
 
-    store.commit("updateLoginState", true); // making sure login state is true
+    store.commit("updateLoginState"); // updating login state to true
     checkDomain(); // checking if domain and loginstate are there and true
 
     // default set in auth_checking section
@@ -81,19 +84,28 @@ export default {
      * @delays the fade in of the nickname input and confirmation button
      */
     const showInput = ref(false); // reactive control of when input shows
+    const showTyped2 = ref(true);
     const typed = ref(null); // template ref (since using SFC & virtual DOM)
+    const typed_2 = ref(null); // template ref for typed2
     onMounted(() => {
       // typed.value null if auth_error is true
       // eslint-disable-next-line
-      var typing = new Typed(typed.value, {
-        strings: [
-          /*html*/ `Welcome to <span id='logo'>Personalify</span>^600 <br>How would you like to be addressed?`,
-        ],
+      const typing = new Typed(typed.value, {
+        strings: [/*html*/ `Welcome to <span id='logo'>Personalify</span>`],
         typeSpeed: 15,
-        cursorChar: "|",
+        cursorChar: "_",
         startDelay: 1000,
         loop: false,
-        // onComplete: (self) => self.cursor.remove(), // if we decide it is irritating blinking
+        onComplete: (self) => self.cursor.remove(), // if we decide it is irritating blinking
+      });
+      // eslint-disable-next-line
+      const typing_2 = new Typed(typed_2.value, {
+        strings: [/*html*/ `<br>How would you like to be addressed?`],
+        typeSpeed: 15,
+        cursorChar: "_",
+        startDelay: 2400,
+        loop: false,
+        onComplete: (self) => self.cursor.remove(), // if we decide it is irritating blinking
       });
       setTimeout(() => (showInput.value = true), 4500);
     });
@@ -113,6 +125,7 @@ export default {
     const { access_token, state } = params;
     const stateKey = "spotify_auth_state";
     const storedState = localStorage.getItem(stateKey);
+    let storedNick;
 
     // obtaining current user's data to store as the primary keys for database
     if (access_token && (state == null || state !== storedState)) {
@@ -127,20 +140,16 @@ export default {
         });
         axios(config)
           .then((res) => {
-            // something here before the commit operation
-            // so instead of a commit, will be a dispatch (vuex action)
-            // that checks firebase for the userId, and skips the rest of the things
-            // if the user is returning, and perhaps the easiest way is to perhaps throw an error
-            // to force a .catch() to break the .then()
             store.commit("updateId", res.data.id); // user id into vuex store
-            nickname.value = res.data.display_name; // default nickname based on spotify display_name
-            // so that there is a default backup if user puts all spaces in nickname input
-            store.commit("updateNickName", res.data.display_name); // committing the nickname
-
+            if (store.state.numOfTracks == 0)
+              store.dispatch("retrieveGenres", access_token);
+            // retrieving new music genre and feature data every login
+            // since user may listen to new music every so often
+            store.dispatch("checkDB");
             // due to the nature of the += mutations, an if statement is needed
             // in case of a refresh (this is also due to using persisted state)
-            if (store.state.numOfTracks == 0)
-              store.dispatch("retrieveGenres", access_token); // access token to retrieve genres
+            nickname.value = res.data.display_name; // default nickname based on spotify display_name
+            storedNick = res.data.display_name; // storing a default in case the user attempts to use all spaces
           })
           .catch((err) => console.log(err));
       }
@@ -156,6 +165,7 @@ export default {
     const showCharacterBtn = () => {
       // as long as nickname chosen isn't all spaces
       if (nickname.value.trim() != "") {
+        showTyped2.value = false;
         showInput.value = false; // fade out the input area
         setTimeout(() => (showCharacter.value = true), 1100); // delay before fading in character choice
         store.commit("updateNickName", nickname.value); // committing the nickname
@@ -163,6 +173,7 @@ export default {
         alert("Please enter a nickname that isn't empty or simply spaces");
         // reseting the default value when needed
         nickname.value = store.state.nickname;
+        nickname.value = storedNick;
       }
     };
 
@@ -198,15 +209,12 @@ export default {
 
     //====================================================//
 
-    // retrieval of the personality quiz questions from firebase realtime db
-    store.dispatch("retrievePersonalityQuiz");
-
-    //====================================================//
-
     return {
       nickname, // v-model
       auth_error, // v-if
       typed, // template ref
+      typed_2, // template ref
+      showTyped2, // template ref
       redirecting, // onclick
       character_img, // :src
       prevCharacter, // new character select btn
