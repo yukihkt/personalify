@@ -13,6 +13,8 @@ us to easily use, without clogging up the views and components files
     questions: [], // list of personality test questions retrieved -- arr (that is the data response)
     answers: {}, // user-answers to the personality test questions retrieved -- obj (that is the data request requirement)
     personalityResults: {}, // results object that is returned -- obj (data response from api)
+
+    genres: {}, // genre ids -- obj, cant use keyed collection like set
   [mutations]
     updateToken(state, newToken) { state.auth_token = newToken; },
     updateTracks(state, newTracks) {
@@ -25,6 +27,10 @@ us to easily use, without clogging up the views and components files
     },
     updateQuestions(state, newQuestions) { state.questions = newQuestions; },
     updatePersonalityResults(state, newResults) { state.personalityResults = newResults; },
+
+    updateGenres(state, newGenre) {
+      state.genres[newGenre] = 0; // check for newGenre in state.genres doesn't work, doesn't really check it, and I can't find why
+    },
   [actions]
     async retrieveQuestions({ state, commit }) {
       const config = newConfig("GET", `${state.mbtiDomain}/questions`);
@@ -40,6 +46,19 @@ us to easily use, without clogging up the views and components files
       if (results) commit("updatePersonalityResults", results);
       else console.log("Unable to return results");
     },
+
+    [under "retrieveGenres()", after "tracks.items.forEach()"]
+      userArtists.forEach(async (id) => {
+        const artistConfig = newConfig(
+          "GET",
+          `${state.spotifyDomain}/artists/${id}`,
+          { auth: `Bearer ${auth_token}` }
+        );
+        const artist = await axiosAwait(artistConfig);
+        if (artist)
+          artist.genres.forEach((genre) => commit("updateGenres", genre));
+        else console.log("Unable to retrieve genres");
+      });
 </Vuex-Store>
 
 <LoggedIn>
