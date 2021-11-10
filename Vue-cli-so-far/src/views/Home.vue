@@ -12,7 +12,6 @@
 </template>
 
 <script>
-// choreographer to be implemented here
 import { redirecting } from "@/components/redirect.js";
 import { ref } from "vue";
 import { useStore } from "vuex";

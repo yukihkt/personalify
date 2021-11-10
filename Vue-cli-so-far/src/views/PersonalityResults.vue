@@ -1,4 +1,6 @@
 <template>
+  <!-- currently deprecated, no one wants to use anymore unfortunately -->
+  <!-- so the strat I'm feeling is to rename this file for the career quiz SFC -->
   <Sidebar />
 
   <!-- the main container where the content will go, this will act -->
