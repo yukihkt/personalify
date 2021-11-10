@@ -1,6 +1,4 @@
 <template>
-
-
   <div
     style="margin-left: 18rem; margin-right: 0"
     class="row d-flex justify-content-center px-4 pb-3"
@@ -15,8 +13,20 @@
         </div>
         <hr />
         <div id="main-content-areas">
-          <div class = "container-fluid" :style= "slideOffset">
-            <vueper-slides class = "no-shadow" :class="{ 'offset-slide--first': firstSlide, 'offset-slide--last': lastSlide }" before-slide="beforeSlide" :visible-slides="3" :slide-ratio="1/4" :dragging-distance = "75" :arrows-outside="false" show-multiple-slides>
+          <div class="container-fluid" :style="slideOffset">
+            <vueper-slides
+              class="no-shadow"
+              :class="{
+                'offset-slide--first': firstSlide,
+                'offset-slide--last': lastSlide,
+              }"
+              before-slide="beforeSlide"
+              :visible-slides="3"
+              :slide-ratio="1 / 4"
+              :dragging-distance="75"
+              :arrows-outside="false"
+              show-multiple-slides
+            >
               <!-- v-if="!showQuiz" -- not sure if to have or not -->
               <!-- <vueper-slide>
                 initial slide, welcome type-message 
@@ -38,13 +48,17 @@
               <!-- main question slides -->
               <!-- eslint-disable-next-line vue/no-use-v-if-with-v-for prettier/prettier -->
               <!-- <vueper-slide v-for="slide in slides" :key="slide.id" v-if="showQuiz"> -->
-              <vueper-slide v-for="slide in slides" :key="slide.id" style = "width:100%;">
+              <vueper-slide
+                v-for="slide in slides"
+                :key="slide.id"
+                style="width: 100%"
+              >
                 <template #content>
                   <!-- <div class="vueperslide__content-wrapper"> -->
-                    <div>{{ slide.title }}</div>
-                    <div class="flex-row mt-2">
-                      <span class="m-3">
-                        <button class="btn btn-dark">
+                  <div>{{ slide.title }}</div>
+                  <div class="flex-row mt-2">
+                    <span class="m-3">
+                      <button class="btn btn-dark">
                         <input
                           class="form-check-input mx-1"
                           type="radio"
@@ -53,10 +67,10 @@
                           :value="1"
                           v-model="personalityAnswers[slide.id]"
                         /><label :for="slide.id + 1">That's Me</label>
-                        </button>
-                      </span>
-                      <span class="m-3">
-                        <button class="btn btn-dark">
+                      </button>
+                    </span>
+                    <span class="m-3">
+                      <button class="btn btn-dark">
                         <input
                           class="form-check-input mx-1"
                           type="radio"
@@ -65,9 +79,9 @@
                           :value="0"
                           v-model="personalityAnswers[slide.id]"
                         /><label :for="slide.id">Not Me</label>
-                        </button>
-                      </span>
-                    </div>
+                      </button>
+                    </span>
+                  </div>
                   <!-- </div> -->
                 </template>
               </vueper-slide>
@@ -132,19 +146,19 @@ export default {
       categories.push(category);
     }
 
-    const firstSlide = 0
-    const lastSlide = 15
+    const firstSlide = 0;
+    const lastSlide = 15;
 
-    const beforeSlide = ({nextSlide}) => {
-      this.firstSlide = !nextSlide.index
-      this.lastSlide = nextSlide.index === this.slides.length - 1
-      console.log(lastSlide)
-    }
+    const beforeSlide = ({ nextSlide }) => {
+      this.firstSlide = !nextSlide.index;
+      this.lastSlide = nextSlide.index === this.slides.length - 1;
+      console.log(lastSlide);
+    };
 
     const slideOffset = computed(function () {
       return {
-        '--offset': this.currentSlide
-      }
+        "--offset": this.currentSlide,
+      };
     });
 
     // v-modeled question answers
@@ -155,7 +169,7 @@ export default {
     const quizDone = ref(false);
 
     const results = store.state.personalityResults;
-    
+
     // only shows when all questions are answered
     const submitQuiz = () => {
       quizDone.value = true;
@@ -181,13 +195,13 @@ export default {
       firstSlide,
       lastSlide,
       beforeSlide,
-      slideOffset
+      slideOffset,
     };
   },
 };
 </script>
 
-<style scoped lang = "scss">
+<style scoped lang="scss">
 input {
   width: 0%;
   height: 0%;
@@ -204,22 +218,27 @@ input {
   height: 4rem;
 }
 
-.vueperslides__arrow {color: whitesmoke;}
-.vueperslides__bullet {border-color: #E73C7E;box-shadow: none;}
+.vueperslides__arrow {
+  color: whitesmoke;
+}
+.vueperslides__bullet {
+  border-color: #e73c7e;
+  box-shadow: none;
+}
 
 .vueperslide {
   color: #fff;
   background: red;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   opacity: 0.3;
   /* filter: blur(4px); */
   transform: scale(0.9);
 }
 
 .veuperslide--active {
-    opacity: 1 !important;
-    transform: scale(1);
-    filter: blur(0);
+  opacity: 1 !important;
+  transform: scale(1);
+  filter: blur(0);
 }
 
 .offset-slide--first .vueperslides__track-inner {
