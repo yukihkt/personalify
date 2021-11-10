@@ -1,0 +1,5 @@
+0 -- basic personality SVG
+1 -- personality quiz SVG
+2 -- career quiz SVG
+
+homepage.css is copy pasted code from testhomepage.css
