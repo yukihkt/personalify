@@ -1,21 +1,47 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=454868&assignment_repo_type=GroupAssignmentRepo)
-# :wave: is216-project
+# 👋 is216-project
 
 ## 🤓 IS216 - Group 15 - Personalify
-* Please update the above header. For example, it should look like this: **IS216 - Group 123 - Supreme Children**
-* Who are your group members? List everyone's full name, SMU email address, and other info you wish to put here.
+* Group Members (names based on elearn):
+  * Soh Qi Hui Amanda (amanda.soh.2020)
+  * Kushal Kumar Shreya (shreyakk.2020)
+  * Han Ke Tong Yuki (yuki.han.2020)
+  * Jennifer Wang Xue'Er (xewang.2020)
+  * Ranon Sew YiJie (ranonsew.2020)
 
 
-## 🤓 Project Overview ##
-* Describe your project. What is it called? What does it do? Why did you make this web application? Who will benefit from using your web application? Describe your users - who are they? (anyone? or specific target age group or gender? region? country?)
-* Feel free to use diagrams and images to describe. For example, if you have a system architecture diagram, please place it here and describe it. If you have a business process diagram, you can also place it here and describe it.
+## 🔥 Personalify Overview
+* Our prototype design: [Personalify Prototype]
+> Personalify's aim is to provide a one-stop interactive website for Spotify users, primarily targeting young adults aged 18 to 30. The bulk of Spotify's user base is below the age of 35, and at that age, we tend to go through a lot of self-searching when we transition into different phases in our lives. With Personalify, users will embark on a journey of self-discovery with a more personalized experience by integrating music that they listen to. By use of statistical analysis of their Spotify listening patterns, in addition to curated quizzes made to determine their personality, we will be able to determine they strengths and weaknesses, suitable career paths, team dynamics, and match them with personality types that we believe they will work best with.
+<!-- * Describe your project. What is it called? What does it do? Why did you make this web application? Who will benefit from using your web application? Describe your users - who are they? (anyone? or specific target age group or gender? region? country?)
+* Feel free to use diagrams and images to describe. For example, if you have a system architecture diagram, please place it here and describe it. If you have a business process diagram, you can also place it here and describe it. -->
 
 
-## 🤓 How to Install and Run Our Web Application (for Developers) ##
-* If a new developer were to have access to your IS216 project GitHub repo (and subsequently your source code files) and replicate your development environment on his development laptop computer, what are the steps he should take?
+## ✨ Project Setup: How to Install and Run Our Web Application (for Developers)
+* switch into the vue cli directory (assumption: vue cli is installed)
+```
+cd .\Vue-cli-so-far\
+```
+* install the required dependencies
+```
+npm install
+```
+* Compiles and hot-reloads for development
+```
+npm run serve
+```
+* Compiles and minifies for production
+```
+npm run build
+```
+* Lints and fixes files
+```
+npm run lint
+```
+<!-- * If a new developer were to have access to your IS216 project GitHub repo (and subsequently your source code files) and replicate your development environment on his development laptop computer, what are the steps he should take?
 * What does he needs to install on his development laptop computer? How can he download your project files and run it on his own computer?
 * Provide a step-by-step description of how to get the development environment running. You can choose to do so for at least 1 Operating System (Windows 10 or Mac OS).
-* Feel free to use diagrams and images to describe.
+* Feel free to use diagrams and images to describe. -->
 
 
 ## 🤓 [OPTIONAL] How to Deploy Our Web Application (for Developers) ##
@@ -39,3 +65,6 @@
 * [**GOOD** README Example 2](https://github.com/typeorm/typeorm)
 * [**GOOD** README Example 3](https://github.com/amark/gun)
 * [**GOOD** README Example 4](https://github.com/google/leveldb)
+
+
+[Personalify Prototype]: https://www.figma.com/file/wq8simGjxfhj4cyeCsuT3v/Personalify-Prototype?node-id=77%3A432

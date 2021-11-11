@@ -1,8 +1,7 @@
-# vue-js-3
-test stuff idk lmao
-- testing apis and using vuex store with all the vue js stuff
-- using vuex store as a global store of data (as an alternative to passing around props)
-- using various vue based plugins and packages to introduce more efficiencies
+# vue-cli-so-far
+- vue cli integration of various html, js, and css files. 
+- done in a different directory from the root to prevent potential issues
+- includes some items we thought we would be using but have not worked on them, thus they still exist here (e.g. i18n)
 
 ## Project setup
 ```
