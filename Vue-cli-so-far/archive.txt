@@ -66,3 +66,24 @@ us to easily use, without clogging up the views and components files
     store.commit("updateToken", access_token);
     store.dispatch("retrieveQuestions");
 </LoggedIn>
+
+<MainComponent>
+  [before MainComponentBtn was completed]
+    <div class="d-flex justify-content-evenly mt-5">
+      <button id="0" @click="emitFunc" class="btn btn-success rounded-3">
+        Basic Personality
+      </button>
+      <button id="1" @click="emitFunc" class="btn btn-secondary rounded-3">
+        Quiz
+      </button>
+      <button id="2" @click="emitFunc" class="btn btn-secondary rounded-3">
+        Career
+      </button>
+    </div>
+  [old emit function before MainComponentBtn was completed]
+    const emitFunc = (e) => {
+      const currTarg = e.currentTarget.id;
+      console.log(currTarg, typeof currTarg);
+      emit("show-component", currTarg);
+    };
+</MainComponent>

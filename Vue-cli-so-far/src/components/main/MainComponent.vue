@@ -8,24 +8,16 @@
       ...do whatever you want I guess
     </h6>
 
-    <!-- the main part of the animate.js and GridLayoutMotion replace -->
-    <div class="d-flex justify-content-evenly mt-5">
-      <button id="0" @click="emitFunc" class="btn btn-success rounded-3">
-        Basic Personality
-      </button>
-      <button id="1" @click="emitFunc" class="btn btn-secondary rounded-3">
-        Quiz
-      </button>
-      <button id="2" @click="emitFunc" class="btn btn-secondary rounded-3">
-        Career
-      </button>
-    </div>
-
-    <!-- starting the the new things here for the better comparisons -->
-    <div class="grid content">
-      <!-- will v-for this with the MainComponentBtn inside -->
-      <div id="gridCards">
-        <!-- <MainComponentBtn /> -->
+    <div class="d-flex justify-content-evenly">
+      <div id="gridCards" v-for="(item, index) in mcb_data" :key="index">
+        <MainComponentBtn
+          :lvl="index + 1"
+          :id="item.id"
+          :imgId="item.imgId"
+          :title="item.title"
+          :desc="item.desc"
+          @click="emitClickedOn(index)"
+        />
       </div>
     </div>
   </div>
@@ -33,22 +25,42 @@
 
 <script>
 import MainComponentBtn from "./MainComponentBtn.vue";
+import { ref } from "vue";
 
 export default {
   name: "MainComponent",
-  // eslint-disable-next-line
   components: { MainComponentBtn },
   emits: ["show-component"],
   props: ["userNick"],
   // eslint-disable-next-line
   setup(props, { emit }) {
-    const emitFunc = (e) => {
-      const currTarg = e.currentTarget.id;
-      console.log(currTarg, typeof currTarg);
-      emit("show-component", currTarg);
+    const mcb_data = ref([
+      {
+        id: "basic",
+        imgId: "basicimg",
+        title: "Basic Personality Test",
+        desc: "offers Personality Analysis based on your music taste",
+      },
+      {
+        id: "personality",
+        imgId: "personalityimg",
+        title: "Personality Quiz",
+        desc: "offers further insights into which of the big 5 personalities you are",
+      },
+      {
+        id: "career",
+        imgId: "careerimg",
+        title: "Career Quiz",
+        desc: "offers guidance on your suitable career prospects",
+      },
+    ]);
+
+    const emitClickedOn = (currentLvl) => {
+      console.log(typeof currentLvl);
+      emit("show-component", currentLvl);
     };
 
-    return { emitFunc };
+    return { mcb_data, emitClickedOn };
   },
 };
 </script>
@@ -59,5 +71,3 @@ export default {
   height: 13rem;
 }
 </style>
-<!-- <style src="../../assets/GridLayoutMotionCSS/base.css" scoped></style> -->
-<style src="../../assets/homepage/homepage.css" scoped></style>

@@ -120,6 +120,9 @@ export default {
     const { personalityQuestions, personalityAnswers } = store.state;
     let { personalityResults } = store.state;
 
+    // additional check for if the results are already set, if so, perhaps layout
+    // the data on the bottom by default? Otherwise storing this data is pretty pointless at the moment
+
     // preparing the results obj early, no ref needed
     const categories = [];
     const slides = ref([]); // slides for the questions

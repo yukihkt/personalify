@@ -5,27 +5,9 @@ body {
 	overflow-x: hidden;
 }
 
-#gridCards {
-    padding-left: 1%;
-	padding-right: 1%;
-    z-index: -1;
-    height: 100px; 
-    display: flex; 
-	height: 50%;
-	margin-bottom: 20px;
-}
-
 #welcomeText {
 	padding-left: 22vw;
 	padding-top: 1vw;
-}
-
-#career, #personality, #basic {
-	/* position: absolute; */
-	width: 50vh;
-	height: 50vh;
-	margin-bottom: 100px;
-
 }
 
 #basic-personality, #personality-quiz, #career-quiz {
@@ -114,22 +96,19 @@ a:hover, a:active, a:focus {
 }
 
 .grid {
-	/* max-width: 1440px; */
 	width: 100%;
 	max-width: 80%;
-	margin: -1vw 8vw;
-	padding: 1rem 0 0rem 4rem;
+	/* padding: 1rem 0 0rem 4rem; */
 	display: flex;
 	position: sticky;
 	justify-content: flex-start;
-	left: 5%;
-	/* overflow: hidden; */
+	left: 12%;
 }
 
 .grid__item {
 	display: flex;
 	justify-content: center;
-	margin: 0 0 0 0;
+	/* margin: 0 0 0 0; */
 	cursor: pointer;
 	padding-top:10%;
 }
@@ -270,7 +249,8 @@ a:hover, a:active, a:focus {
 	position: absolute;
 	max-width: 195px;
 	font-size: 0.9rem;
-	text-align: right;
+	text-align: left;
+	padding-top: 1vh;
 	/* display: none; */
 }
 
@@ -410,5 +390,9 @@ a:hover, a:active, a:focus {
 	}
 	.codrops-links {
 		margin: 0;
+	}
+
+	.box__content {
+		padding-top: 15vh;
 	}
 }
