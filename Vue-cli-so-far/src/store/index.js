@@ -53,10 +53,10 @@ export default createStore({
       state.careerQuestions = newCareerQuestions;
     },
     updateCareerAnswers(state, newCareerAnswers) {
-      state.careerQuestions = newCareerAnswers;
+      state.careerAnswers = newCareerAnswers;
     },
     updateCareerResults(state, newCareerResults) {
-      state.careerQuestions = newCareerResults;
+      state.careerResults = newCareerResults;
     },
     // the values for personality would be: totalMusicFeatures / numOfTracks
     updateTotalMusicFeatures(state, newMusicFeatures) {

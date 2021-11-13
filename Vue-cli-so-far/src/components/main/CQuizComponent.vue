@@ -19,7 +19,7 @@
                 <button
                   @click="startQuiz"
                   data-bs-toggle="button"
-                  class="main-quiz-btn btn btn-outline-light mt-3"
+                  class="main-quiz-btn btn btn-outline-dark mt-3"
                 >
                   Start Quiz
                 </button>
@@ -44,7 +44,7 @@
                       v-model="userAnswers[slide.id]"
                       autocomplete="off"
                     />
-                    <label :for="slide.id + '0'" class="btn btn-outline-light">
+                    <label :for="slide.id + '0'" class="btn btn-outline-dark">
                       Not Me
                     </label>
                   </span>
@@ -59,7 +59,7 @@
                       v-model="userAnswers[slide.id]"
                       autocomplete="off"
                     />
-                    <label :for="slide.id + '1'" class="btn btn-outline-light">
+                    <label :for="slide.id + '1'" class="btn btn-outline-dark">
                       That's Me
                     </label>
                   </span>
@@ -72,7 +72,7 @@
             <template #content>
               <div class="vueperslide__content-wrapper">
                 <button
-                  class="main-quiz-btn btn btn-outline-light"
+                  class="main-quiz-btn btn btn-outline-dark"
                   data-bs-toggle="button"
                   @click="submitQuiz"
                 >
@@ -116,6 +116,7 @@ export default {
     const store = useStore();
     const { careerQuestions, careerAnswers } = store.state;
     let { careerResults } = store.state;
+    console.log(store)
 
     // additional check for if the results are already set, if so, perhaps layout
     // the data on the bottom by default? Otherwise storing this data is pretty pointless at the moment
@@ -206,7 +207,8 @@ export default {
   margin: 0 0.5rem 0;
 }
 .bg-pinkred {
-  background-color: hsl(0, 86%, 61%);
+  background-color: hsl(199, 80%, 67%);
+  color:black;
 }
 
 #main-content-areas{
