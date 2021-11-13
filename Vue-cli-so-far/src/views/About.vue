@@ -2,7 +2,7 @@
   <div id="mainBody">
     <Sidebar />
     <BottomBar />
-    
+
     <div
       style="margin-left: 15vw; margin-right: 0"
       class="row d-flex justify-content-center"
@@ -31,13 +31,12 @@
         About <span class="logo"> Our Team </span>
       </div>
       <div class="about mt-1 row d-flex mx-auto">
-        <!-- replacement component -->
+        <!-- replacement component, also using :title for the img now -->
         <TeamFlipCard
           v-for="(flip, title) in names"
           :key="title"
           :title="title"
           :listical="flip.listical"
-          :cardImg="flip.cardImg"
         />
       </div>
     </div>
@@ -60,7 +59,8 @@ export default {
 
     const flippers = {
       Music: {
-        cardImg: "../assets/homepage/new/basicimg.svg",
+        // pushing in the full relative link is bad for the require statements and this way also looks nicer imo :3
+        cardImg: "basicimg",
         desc: "We derive the main features of the music you listen to, namely:",
         desc2: "from your main genre",
         listical: [
@@ -76,7 +76,7 @@ export default {
         ],
       },
       Personality: {
-        cardImg: "../assets/homepage/new/personalityimg.svg",
+        cardImg: "personalityimg",
         desc: "We sort the main characteristics of the music you listen to into The Big 5 Personality traits:",
         desc2: "",
         listical: [
@@ -88,6 +88,7 @@ export default {
         ],
       },
       Career: {
+        cardImg: "careerimg",
         desc: "The result of your quizzes will determine your interests, strength, and preferences for your work environment. We will then categorise you into your most suitable career prospect, including:",
         desc2: "",
         listical: [
@@ -101,48 +102,32 @@ export default {
         ],
       },
     };
-    
 
+    // ended up using :title as for the img name because lazy :3
     const names = {
-        'amanda': {
-            cardImg: "@/assets/about/amanda.svg",
-            listical: [
-              "Creative Intern", 
-              "Front-end Developer",
-            ]
-        }, 
-        'jennifer': {
-            cardImg: "@/assets/about/jennifer.svg",
-            listical: [
-              "Head of Global Sales", 
-              "Front-end Developer",
-              "#1 Sales Lead of 2021",
-            ]
-        }, 
-        'ranon': {
-            cardImg: "@/assets/about/ranon.svg",
-            listical: [
-              "CTO",
-              "Tech Lead",
-              "Full-stack Developer",
-            ]
-        }, 
-        'shreya': {
-            cardImg: "@/assets/about/shreya.svg",
-            listical: [
-              "Co-founder", 
-              "Head of Human Resource", 
-              "Front-end Developer"
-            ]
-        }, 
-        'yuki': {
-            cardImg: "../../assets/about/yuki.svg",
-            listical: [
-              "Co-founder", 
-              "Head of Creative", 
-              "Full-stack Developer"
-            ]
-        }
+      amanda: {
+        listical: ["Creative Intern", "Front-end Developer"],
+      },
+      jennifer: {
+        listical: [
+          "Head of Global Sales",
+          "Front-end Developer",
+          "#1 Sales Lead of 2021",
+        ],
+      },
+      ranon: {
+        listical: ["CTO", "Tech Lead", "Full-stack Developer"],
+      },
+      shreya: {
+        listical: [
+          "Co-founder",
+          "Head of Human Resource",
+          "Front-end Developer",
+        ],
+      },
+      yuki: {
+        listical: ["Co-founder", "Head of Creative", "Full-stack Developer"],
+      },
     };
 
     return { flippers, names };
@@ -151,22 +136,21 @@ export default {
 </script>
 
 <style scoped>
-  #mainBody {
-    overflow-y: scroll;
-    height: 90vh;
-  }
+#mainBody {
+  overflow-y: scroll;
+  height: 90vh;
+}
 
-  .about {
-    /* padding-left: 20vw; */
-    padding-top: 1rem;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
-  }
+.about {
+  /* padding-left: 20vw; */
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
 
-  .logo {
-    font-family: "Reem Kufi", sans-serif;
-    color:#56BD66;
-  }
-
+.logo {
+  font-family: "Reem Kufi", sans-serif;
+  color: #56bd66;
+}
 </style>

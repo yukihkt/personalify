@@ -83,7 +83,7 @@
           </vueper-slide>
         </vueper-slides>
       </div>
-      {{ userAnswers }}
+      <!-- {{ userAnswers }} -->
     </div>
     <br />
     <!-- end of the quiz component -->
@@ -95,7 +95,7 @@
     >
       <!-- no spider web, type out the results or whatever aight -->
       <div
-        v-for="(result, category, index) in $store.state.personalityResults"
+        v-for="(result, category, index) in personalityResults"
         :key="index"
         class="col-12 col-lg-6 col-xl-4 bg-success"
       >
@@ -122,6 +122,25 @@ export default {
 
     // additional check for if the results are already set, if so, perhaps layout
     // the data on the bottom by default? Otherwise storing this data is pretty pointless at the moment
+    const quizDone = ref(false);
+    if (!personalityResults) quizDone.value = true;
+
+    // v-modeled question answers; start from 1, end at 15
+    const userAnswers = ref({});
+    const showQuiz = ref(false);
+    const startQuiz = () => {
+      showQuiz.value = true;
+      quizDone.value = false;
+      if (!personalityResults) {
+        personalityResults = {
+          Agreeableness: [0, ""],
+          Conscientiousness: [0, ""],
+          Extroversion: [0, ""],
+          Neuroticism: [0, ""],
+          Openness: [0, ""],
+        };
+      }
+    };
 
     // preparing the results obj early, no ref needed
     const categories = [];
@@ -135,23 +154,6 @@ export default {
       categories.push(category);
     }
     console.log(categories);
-
-    // v-modeled question answers
-    // start from 1, end at 15
-    const userAnswers = ref({});
-
-    const showQuiz = ref(false);
-    const startQuiz = () => (showQuiz.value = true);
-    const quizDone = ref(false);
-
-    if (personalityResults == "")
-      personalityResults = {
-        Agreeableness: [0, ""],
-        Conscientiousness: [0, ""],
-        Extroversion: [0, ""],
-        Neuroticism: [0, ""],
-        Openness: [0, ""],
-      };
 
     // only shows when all questions are answered
     const submitQuiz = () => {
@@ -169,8 +171,8 @@ export default {
             if (personalityResults[category][0] <= 1 && lvl.includes("low")) {
               personalityResults[category][1] = personalityAnswers[lvl];
               break;
-            }
-            if (personalityResults[category][0] >= 2 && lvl.includes("high")) {
+            } else {
+              // if (personalityResults[category][0] >= 2 && lvl.includes("high"))
               personalityResults[category][1] = personalityAnswers[lvl];
               break;
             }
@@ -194,6 +196,7 @@ export default {
       submitQuiz,
       slides,
       userAnswers,
+      personalityResults,
     };
   },
 };

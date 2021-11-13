@@ -1,20 +1,20 @@
 <template>
   <!-- flip card component for the about page -->
   <div class="col-lg-2 col-md-6 col-12">
-	<div class="card">
-		<div class="content">
-			<div class="front">
-				<img :src="cardImg">
-			</div>
-			<div class="back">
-				<h5>{{ title }}</h5>
-				<ul>
-					<!-- v-for here based on a arr from props -->
-					<li v-for="(item, index) in listical" :key="index">{{ item }}</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+    <div class="card">
+      <div class="content">
+        <div class="front">
+          <img :src="flipImg" />
+        </div>
+        <div class="back">
+          <h5>{{ title }}</h5>
+          <ul>
+            <!-- v-for here based on a arr from props -->
+            <li v-for="(item, index) in listical" :key="index">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,95 +22,98 @@
 export default {
   name: "FlipCard",
   props: ["title", "listical", "cardImg"],
-  setup() {
-    return {};
+  setup(props) {
+    const flipImg = require(`@/assets/about/${props.title}.svg`);
+
+    return { flipImg };
   },
 };
 </script>
 
 <style scoped>
 .card {
-	/* position: absolute; */
-	padding: 1rem;
-	/* width: 15rem; */
-	/* height: 15rem; */
-	/* margin: -150px; */
-	float: left;
-	perspective: 500px;
-	background-color: rgba(36, 36, 36, 0.808);
-	margin-bottom: 5vh; 
-	justify-items: center;
-	align-items: center;
+  /* position: absolute; */
+  padding: 1rem;
+  /* width: 15rem; */
+  /* height: 15rem; */
+  /* margin: -150px; */
+  float: left;
+  perspective: 500px;
+  background-color: rgba(36, 36, 36, 0.808);
+  margin-bottom: 5vh;
+  justify-items: center;
+  align-items: center;
 }
 
 .content {
   /* position: absolute; */
-	width: 100%;
-	height: 100%;
-	box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 
-	transition: transform 1s;
-	transform-style: preserve-3d;
+  transition: transform 1s;
+  transform-style: preserve-3d;
 }
 
 .card:hover .content {
-	transform: rotateY( 180deg ) ;
-	transition: transform 0.5s;
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
 }
 
 .card:hover .front {
-	display: none;
+  display: none;
 }
 
-.front img, .back img {
-	width: 100%;
-	height: 100%;
+.front img,
+.back img {
+  width: 100%;
+  height: 100%;
 }
 
 .front,
 .back {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	/* min-height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* min-height: 100%;
 	min-width: 100%;
 	max-height: fit-content;
 	max-width: fit-content; */
-	/* background: white; */
-	color: #03446A;
-	text-align: center;
-	font-size: 1rem;
-	border: transparent 1px solid;
-	border-radius: 8%;
-	backface-visibility: hidden;
-	padding: 0;
-	margin: 0;
+  /* background: white; */
+  color: #03446a;
+  text-align: center;
+  font-size: 1rem;
+  border: transparent 1px solid;
+  border-radius: 8%;
+  backface-visibility: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 .back {
-	background: white;
-	color: black;
-	transform: rotateY( 180deg );
+  background: white;
+  color: black;
+  transform: rotateY(180deg);
   font-size: 80%;
 }
 
-.card, .content {
-	position: relative;
-	width: 12rem;
-	height: 12rem;
+.card,
+.content {
+  position: relative;
+  width: 12rem;
+  height: 12rem;
 }
-
 
 h5 {
   margin: 20px;
   text-transform: uppercase;
 }
 
-ul, li {
+ul,
+li {
   /* text-align: left; */
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
 </style>
