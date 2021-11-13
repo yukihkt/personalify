@@ -3,7 +3,7 @@
     <!-- start of the quiz component -->
     <div class="pt-4 px-3 text-start fs-2">
       <!-- header section -->
-      Career Quiz
+      <span class="logo">Career Quiz</span>
     </div>
     <br />
     <div id="main-content-areas" class="my-1 rounded-3 bg-pinkred px-3">
@@ -90,16 +90,24 @@
     <div v-if="quizDone">
       <div id="quiz-question-results" class="row row-cols-auto text-center justify-content-center py-4 px-3 rounded-3 bg-pinkred">
       <!-- no spider web, type out the results or whatever aight -->
-      <div
-        v-for="(result, category, index) in $store.state.careerResults"
-        :key="index"
-        class="col-12 col-lg-6 col-xl-4 border border-light px-2"
-      >
-        <div>{{ category }}: {{ result[0] }}</div>
-        <div>{{ result[1] }}</div>
+        <div class = "col-12">
+        <h6 class = "left-text">RESULTS</h6>
+        <h2 class = "left-text">Career Quiz</h2>
+        <br><br><br>
+        </div>
+        <div
+          v-for="(result, category, index) in $store.state.careerResults"
+          :key="index"
+          class="col-12 col-lg-6 col-xl-4 rounded-3 px-2 py-2 shadow-sm"
+        >
+          <br>
+          <h4><strong>{{ category }}</strong></h4>
+          <div>Your score: {{ result[0] }}</div>
+          <div class = "px-4">{{ result[1] }}</div>
+          <br>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -181,7 +189,7 @@ export default {
       // unsure if this is necessary, unless we are showing some other things
       console.log(careerResults);
       // updating the vuex store (for consistency and future checking)
-      store.commit("updatecareerResults", careerResults);
+      store.commit("updateCareerResults", careerResults);
       // update the firebase next
       store.dispatch("updateInformation", {
         careerResults: careerResults,
@@ -219,5 +227,14 @@ export default {
 .left-text{
   text-align: left;
   font-weight: bolder;
+}
+
+.font {
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.logo {
+  font-family: "Reem Kufi", sans-serif;
+  color: #56bd66;
 }
 </style>
