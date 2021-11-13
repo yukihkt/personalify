@@ -58,6 +58,5 @@ export default {
     max-width: 100%;
     justify-content: center;
   }
-
 }
 </style>

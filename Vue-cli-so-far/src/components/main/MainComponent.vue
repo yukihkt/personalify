@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="pt-5 px-2 text-start">Hello, {{ userNick }}</h2>
+    <h2 class="pt-4 px-2 text-start">Hello, {{ userNick }}</h2>
     <div id="main-content-areas" class="mt-1">
       <h4 class="ps-2 text-start">
         See current quiz report or take a new one...
@@ -9,8 +9,13 @@
         ...do whatever you want I guess
       </h6>
 
-      <div class="row d-flex justify-content-evenly me-5 ms-0 py-3">
-        <div id="gridCards" v-for="(item, index) in mcb_data" :key="index" class="col-lg-4 col-sm-12">
+      <div class="row d-flex justify-content-evenly me-5 ms-0">
+        <div
+          id="gridCards"
+          v-for="(item, index) in mcb_data"
+          :key="index"
+          class="col-lg-4 col-sm-12"
+        >
           <MainComponentBtn
             :lvl="index + 1"
             :id="item.id"
