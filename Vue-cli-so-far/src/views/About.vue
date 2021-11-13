@@ -1,6 +1,6 @@
 <template>
   <Sidebar />
-
+  
   <div
     style="margin-left: 18rem; margin-right: 0"
     class="row d-flex justify-content-center"
