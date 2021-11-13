@@ -233,6 +233,7 @@ input {
   opacity: 0.3;
   /* filter: blur(4px); */
   transform: scale(0.9);
+  margin-bottom: 10%;
 }
 
 .veuperslide--active {

@@ -14,7 +14,7 @@
           class="btn btn-outline-light mt-4"
           v-if="showBackBtn"
         >
-          Hide Component
+          Hide
         </button>
         <!-- caching recent progress, so if user wants to switch off for a bit -->
         <!-- they don't lose their progress -->

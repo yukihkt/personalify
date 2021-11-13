@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mx-5">
     <!-- start of the quiz component -->
     <div class="pt-4 px-3 text-start fs-2">
       <!-- header section -->
@@ -13,9 +13,9 @@
           <vueper-slide>
             <!-- initial slide, welcome type-message -->
             <template #content>
-              <div class="vueperslide__content-wrapper">
-                <h4>Personality Quiz</h4>
-                <h3>(15 True/False questions)</h3>
+              <div class="vueperslide__content-wrapper" style="z-index=-1;">
+                <h4 class='words'>Personality Quiz</h4>
+                <h3 class='words'>(15 True/False questions)</h3>
                 <button
                   @click="startQuiz"
                   data-bs-toggle="button"
@@ -91,16 +91,17 @@
     <div
       class="row row-cols-auto text-center"
       id="quiz-question-results"
-      v-if="quizDone"
+      v-if="submitQuiz"
     >
       <!-- no spider web, type out the results or whatever aight -->
       <div
         v-for="(result, category, index) in $store.state.personalityResults"
         :key="index"
-        class="col-12 col-lg-6 col-xl-4 bg-success"
+        class="col-12 col-lg-6 bg-success py-4 px-3"
       >
-        <div>{{ category }}: {{ result[0] }}</div>
-        <div>{{ result[1] }}</div>
+        <h4><strong>{{ category }}</strong></h4>
+        <div>Your score: {{ result[0] }}</div>
+        <div><br>{{ result[1] }}</div>
       </div>
     </div>
   </div>
@@ -206,6 +207,10 @@ export default {
   margin: 0 0.5rem 0;
 }
 .bg-pinkred {
-  background-color: hsl(300, 69%, 70%);
+  background-color: hsl(0, 86%, 61%);
+}
+
+.words{
+  z-index: -1;
 }
 </style>
