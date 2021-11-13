@@ -31,12 +31,7 @@ const routes = [
     name: "MainPage",
     component: () => import("../views/MainPage.vue"),
   },
-  // planning to use this current file path and file for the career quiz, just need some renaming
-  // {
-  //   path: "/report",
-  //   name: "PersonalityQuiz",
-  //   component: () => import("../views/PersonalityQuiz.vue"),
-  // },
+  
 ];
 
 const router = createRouter({

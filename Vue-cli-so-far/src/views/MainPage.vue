@@ -40,11 +40,12 @@ import Sidebar from "../components/sidebar/Sidebar.vue";
 import MainComponent from "../components/main/MainComponent.vue";
 import MusicBasic from "../components/main/MusicBasic.vue";
 import PQuizComponent from "../components/main/PQuizComponent.vue";
+import CQuizComponent from "../components/main/CQuizComponent.vue";
 import BottomBar from "../components/bottombar/BottomBar.vue";
 
 export default {
   name: "MainPage",
-  components: { Sidebar, MainComponent, MusicBasic, PQuizComponent, BottomBar },
+  components: { Sidebar, MainComponent, MusicBasic, PQuizComponent, CQuizComponent, BottomBar },
   setup() {
     const store = useStore();
     checkDomain();
@@ -68,13 +69,15 @@ export default {
 
     // retrieval of the personality quiz questions from firebase realtime db
     store.dispatch("retrievePersonalityQuiz");
+    // retrieval of the career quiz questions from firebase realtime db
+    store.dispatch("retrieveCareerQuiz");
 
     // destructuring store.state
     const { nickname } = store.state;
 
     // setting defaults for dynamic components which switch when event emitted from MainComponent or MusicBasic
     const currentComponent = ref("");
-    const components = ["MusicBasic", "PQuizComponent"];
+    const components = ["MusicBasic", "PQuizComponent", "CQuizComponent"];
     const showBackBtn = ref(false);
 
     const changeComponent = (e) => {
