@@ -14,8 +14,8 @@
             <!-- initial slide, welcome type-message -->
             <template #content>
               <div class="vueperslide__content-wrapper">
-                <h4>Career Quiz</h4>
-                <h3>(15 True/False questions)</h3>
+                <h4 class="font">Career Quiz</h4>
+                <h5 class="font">15 simple questions to discover your future careers here.</h5>
                 <button
                   @click="startQuiz"
                   data-bs-toggle="button"
