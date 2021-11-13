@@ -167,15 +167,10 @@ export default createStore({
         // route user to /main
         router.replace({ path: "/main" });
       }
-      // else console.log("Not Found");
     },
 
     // function to put PUT user into the firebase realtime database
-    // specifically, this is to PUT the just registered user's initial data
-    // just taking into account what we have coined as our "Level 1" data
-    // so using the default null type values for
     async putNewUser({ state }) {
-      console.log("adding data for a new user");
       const config = newConfig(
         "PUT",
         `${state.myDatabase}/users/${state.userId}.json`,
@@ -197,13 +192,12 @@ export default createStore({
         }
       );
       const registrationPUT = await axiosAwait(config);
-      if (registrationPUT) console.log("Successful Registration");
-      else console.log("Unsuccessful Registration");
+      if (!registrationPUT) console.log("Unsuccessful Registration");
     },
 
     // newData = { newKey: newValue }
     async updateInformation({ state }, newData) {
-      console.log("updating info for existing user");
+      // console.log("updating info for existing user");
       // action to update general information into the firebase db, without needing mutliple actions to do so
       const config = newConfig(
         "PATCH",
@@ -213,10 +207,7 @@ export default createStore({
         }
       );
       const updatedData = await axiosAwait(config);
-      if (updatedData) {
-        console.log("Data PATCH-ed Successfully!");
-        console.log({ updatedData });
-      } else console.log("Unable to PATCH data...");
+      if (!updatedData) console.log("Unable to PATCH data...");
     },
   },
 });

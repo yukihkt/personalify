@@ -50,13 +50,7 @@ export default {
     const store = useStore();
     checkDomain();
 
-    // if the user is new, then PUT in all the data from the vuex store
-    // now that the user has landed on /main (all through vuex store)
-    // and if the user is existing (i.e. they registered and landed before)
-    // only new info that was collected when they logged in (level 1 stuff)
-    // will need to be updated via PATCH
-    // wait 3 seconds before sending the data, might have longer delay
-    // but need more tests first (delay is so that the vuex can update)
+    // time delay for all the results to compile into the vuex store properly (since it is an async function)
     setTimeout(async () => {
       if (store.state.isExisting) {
         await store.dispatch("updateInformation", {

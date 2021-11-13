@@ -2,10 +2,6 @@
   <router-view />
 </template>
 
-<script setup>
-console.log("app created");
-</script>
-
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&family=Roboto&display=swap");
 

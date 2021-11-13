@@ -62,10 +62,7 @@ export default {
       },
     ]);
 
-    const emitClickedOn = (currentLvl) => {
-      console.log(typeof currentLvl);
-      emit("show-component", currentLvl);
-    };
+    const emitClickedOn = (currentLvl) => emit("show-component", currentLvl);
 
     return { mcb_data, emitClickedOn };
   },

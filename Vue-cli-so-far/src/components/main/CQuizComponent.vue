@@ -124,7 +124,6 @@ export default {
     const store = useStore();
     const { careerQuestions, careerAnswers } = store.state;
     let { careerResults } = store.state;
-    console.log(store)
 
     // additional check for if the results are already set, if so, perhaps layout
     // the data on the bottom by default? Otherwise storing this data is pretty pointless at the moment
@@ -157,7 +156,7 @@ export default {
       });
       categories.push(category);
     }
-    console.log(categories);
+    // console.log(categories);
 
     // only shows when all questions are answered
     const submitQuiz = () => {

@@ -156,7 +156,7 @@ export default {
       });
       categories.push(category);
     }
-    console.log(categories);
+    // console.log(categories);
 
     // only shows when all questions are answered
     const submitQuiz = () => {
