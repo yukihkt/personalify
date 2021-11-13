@@ -1,6 +1,6 @@
 /* Homepage CSS */
 body {
-	overflow-y: auto;
+	overflow-y: scroll;
 	height: 100%;
 	overflow-x: hidden;
 }
@@ -102,7 +102,6 @@ a:hover, a:active, a:focus {
 	display: flex;
 	position: sticky;
 	justify-content: flex-start;
-	left: 12%;
 }
 
 .grid__item {
@@ -110,7 +109,7 @@ a:hover, a:active, a:focus {
 	justify-content: center;
 	/* margin: 0 0 0 0; */
 	cursor: pointer;
-	padding-top:10%;
+	padding-top: 1rem;
 }
 
 .quizInActive {
@@ -142,6 +141,7 @@ a:hover, a:active, a:focus {
 	padding-top: 30px;
 	width: 110%;
 }
+
 
 .box__title-inner {
 	display: block;
@@ -180,7 +180,7 @@ a:hover, a:active, a:focus {
 
 .grid__item:hover .box__title-inner::before {
 	height: 100%;
-	width: 100%;
+	width: 110%;
 }
 
 .box__text {
@@ -339,6 +339,13 @@ a:hover, a:active, a:focus {
 	.overlay__item .box__title--bottom {
 		bottom: 0;
 	}
+	.box__title-inner::before {
+		top: -1.25rem;
+		left: -0.3rem;
+	}
+	#basic .box__title-inner::before {
+		top: -1rem;
+	}
 }
 
 @media screen and (min-width: 80em) {
@@ -354,9 +361,6 @@ a:hover, a:active, a:focus {
 	}
 	.box {
 		margin: 6rem 4.5rem;
-	}
-	.box__content {
-		display: block;
 	}
 }
 
@@ -393,6 +397,7 @@ a:hover, a:active, a:focus {
 	}
 
 	.box__content {
-		padding-top: 15vh;
+		display: none;
+		/* padding-top: 9rem; */
 	}
 }
