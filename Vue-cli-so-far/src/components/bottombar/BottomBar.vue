@@ -1,8 +1,8 @@
 <template>
     <div class="container-fluid bg-dark" id="footer">
         <div class="col-4">
-                <div class="ocean" :style="{backgroundImage: 'url(../../assets/character/upper_body/${charId}.png)'}">
-                    <div class="wave"></div>
+                <div class="ocean" :style="{'backgroundImage': character_img}">
+                    <div class="wave" :style="{'backgroundImage': character_img}"></div>
                 </div> 
         </div>
         <div class="col-8">
@@ -20,12 +20,12 @@
             </span>
             <div id="progressbar"></div>
         </div>
-
     </div>
     
 </template>
 
 <script>
+import { useStore } from "vuex";
 
 export default {
     name: "BottomBar",
@@ -44,6 +44,13 @@ export default {
             default: "user"
         },
     },
+    setup() {
+        const store = useStore();
+        const character = store.state.character; // character number chosen
+        const character_img = require(`@/assets/character/upper_body/${character}.png`);
+
+        return { character_img }
+    }
     // data() {
     //     return {
     //         flip: true,
@@ -59,17 +66,6 @@ export default {
     //             "from": this.flip ? this.pause : this.play,
     //             "to": this.flip ? this.play : this.pause
     //         }).get(0).beginElement();
-    //     }
-    // }
-    // data() {
-    //     return {
-    //         user: {
-    //             // supposed to retrieve from firebase...
-    //             username: "user",
-    //             charId: 1
-    //         },
-
-    //         completedQuizzes: 0
     //     }
     // }
 }
