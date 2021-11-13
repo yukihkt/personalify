@@ -2,6 +2,8 @@
   <!-- need to add the stuff jen has done in the grp repo -->
   <div>
     <Sidebar />
+    <BottomBar />
+
     <div>
       <div
         style="margin-left: 17vw; margin-right: 0;"
@@ -35,10 +37,11 @@ import Sidebar from "../components/sidebar/Sidebar.vue";
 import MainComponent from "../components/main/MainComponent.vue";
 import MusicBasic from "../components/main/MusicBasic.vue";
 import PQuizComponent from "../components/main/PQuizComponent.vue";
+import BottomBar from "../components/bottombar/BottomBar.vue";
 
 export default {
   name: "MainPage",
-  components: { Sidebar, MainComponent, MusicBasic, PQuizComponent },
+  components: { Sidebar, MainComponent, MusicBasic, PQuizComponent, BottomBar },
   setup() {
     const store = useStore();
     checkDomain();

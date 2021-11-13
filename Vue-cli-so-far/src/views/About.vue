@@ -1,6 +1,8 @@
 <template>
   <div>
     <Sidebar />
+    <BottomBar />
+    
     <div
       style="margin-left: 15vw; margin-right: 0"
       class="row d-flex justify-content-center"
@@ -47,11 +49,12 @@ import { checkDomain } from "../components/redirect";
 import Sidebar from "../components/sidebar/Sidebar.vue";
 import FlipCard from "../components/FlipCard.vue";
 import TeamFlipCard from "../components/TeamFlipCard.vue";
+import BottomBar from "../components/bottombar/BottomBar.vue";
 
 export default {
   name: "About",
   // eslint-disable-next-line
-  components: { Sidebar, FlipCard, TeamFlipCard },
+  components: { Sidebar, FlipCard, TeamFlipCard, BottomBar },
   setup() {
     checkDomain();
 
