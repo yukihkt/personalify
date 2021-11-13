@@ -27,7 +27,7 @@
         <img :src="character_img" id="displayed-character" />
         <br />
         <button class="sub-btn btn btn-light" @click="prevCharacter">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-skip-start-fill" viewBox="0 0 16 16">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-skip-start-fill" viewBox="0 0 16 16">
             <path d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.54-.313 1.232.066 1.232.696v7.384c0 .63-.692 1.01-1.232.697L5 8.753V12a.5.5 0 0 1-1 0V4z"/>
           </svg>
         </button>
@@ -38,7 +38,7 @@
           </svg>
         </button>
         <button class="sub-btn btn btn-light" @click="nextCharacter">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-skip-end-fill" viewBox="0 0 16 16">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-skip-end-fill" viewBox="0 0 16 16">
             <path d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0V4z"/>
           </svg>
         </button>
@@ -278,9 +278,10 @@ img#displayed-character {
 }
 
 .btn {
-  margin-top: 15px;
+  margin: 15px;
   background-color: #56BD66;
-  color: black
+  color: black;
+  border: 1px solid #56BD66;
 }
 
 .btn:hover {
@@ -290,9 +291,11 @@ img#displayed-character {
 .sub-btn {
   width: 3rem;
   height: 3rem;
-  margin: 12px 0.5rem 0;
+  margin: 5px 0.5rem 0;
+  border: 1px solid #218C31;
   border-radius: 50%;
   background-color: transparent;
+  text-align: center;
 }
 
 svg {
@@ -304,6 +307,12 @@ svg {
   background-color: #218C31;
   width: 4rem;
   height: 4rem;
-  border: 1px solid transparent;
+  border: 2px solid #218C31;
+}
+
+
+.sub-btn:hover, #randBtn:hover {
+  box-shadow: 0 0 30px 10px lightgreen; /* outer cyan */
+  transition: 0.3s ease-in-out;
 }
 </style>
