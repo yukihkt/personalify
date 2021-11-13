@@ -9,8 +9,8 @@
         ...do whatever you want I guess
       </h6>
 
-      <div class="d-flex justify-content-evenly me-5 ms-0 pe-5 py-3">
-        <div id="gridCards" v-for="(item, index) in mcb_data" :key="index">
+      <div class="row d-flex justify-content-evenly me-5 ms-0 py-3">
+        <div id="gridCards" v-for="(item, index) in mcb_data" :key="index" class="col-lg-4 col-sm-12">
           <MainComponentBtn
             :lvl="index + 1"
             :id="item.id"
@@ -71,5 +71,10 @@ export default {
 .btn {
   width: 13rem;
   height: 13rem;
+}
+
+#gridCards {
+  display: inline-flex;
+  padding: 0;
 }
 </style>

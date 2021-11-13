@@ -400,4 +400,17 @@ a:hover, a:active, a:focus {
 		display: none;
 		/* padding-top: 9rem; */
 	}
+
+	.box {
+		margin-top: 3rem;
+		margin-bottom: 7rem;
+	}
+
+	.box__title-inner::before {
+		left: -1.92rem;
+	}
+	
+	#basic .box__title-inner::before {
+		left: -1.62rem;
+	}
 }

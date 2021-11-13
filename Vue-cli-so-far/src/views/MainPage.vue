@@ -38,7 +38,7 @@ import BottomBar from "../components/bottombar/BottomBar.vue";
 
 export default {
   name: "MainPage",
-  components: { Sidebar, MainComponent, MusicBasic, PQuizComponent, BottomBar},
+  components: { Sidebar, MainComponent, MusicBasic, PQuizComponent, BottomBar },
   setup() {
     const store = useStore();
     checkDomain();
