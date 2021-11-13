@@ -1,8 +1,8 @@
 <template>
   <div class="container-fluid bg-dark" id="footer">
     <div class="col-4">
-      <div class="ocean" :style="{ backgroundImage: character_img }">
-        <div class="wave" :style="{ backgroundImage: character_img }"></div>
+      <div class="ocean" :style="{ backgroundImage: `url(${character_img})` }">
+        <div class="wave" :style="{ backgroundImage: `url(${character_img})` }"></div>
       </div>
     </div>
     <div class="col-8">
