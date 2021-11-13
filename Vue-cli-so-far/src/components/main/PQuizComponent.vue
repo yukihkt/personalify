@@ -3,7 +3,7 @@
     <!-- start of the quiz component -->
     <div class="pt-4 px-3 text-start fs-2">
       <!-- header section -->
-      Personality Quiz
+      <span class="logo">Personality Quiz</span>
     </div>
     <br />
     <div id="main-content-areas" class="my-1 rounded-3 bg-pinkred px-3">
@@ -14,8 +14,8 @@
             <!-- initial slide, welcome type-message -->
             <template #content>
               <div class="vueperslide__content-wrapper">
-                <h4>Personality Quiz</h4>
-                <h3>(15 True/False questions)</h3>
+                <h4 class="font">Personality Quiz</h4>
+                <h5 class="font">15 customised questions, just for you.</h5>
                 <button
                   @click="startQuiz"
                   data-bs-toggle="button"
@@ -91,7 +91,6 @@
       <div id="quiz-question-results" class="row row-cols-auto text-center justify-content-center py-4 px-3 rounded-3 bg-pinkred">
       <!-- no spider web, type out the results or whatever aight -->
         <div class = "col-12">
-        <img :src = "personalityImg">
         <h6 class = "left-text">RESULTS</h6>
         <h2 class = "left-text">Personality Quiz</h2>
         <br><br><br>
@@ -226,5 +225,14 @@ export default {
 .left-text{
   text-align: left;
   font-weight: bolder;
+}
+
+.font {
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.logo {
+  font-family: "Reem Kufi", sans-serif;
+  color: #56bd66;
 }
 </style>
