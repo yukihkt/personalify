@@ -1,29 +1,27 @@
 <template>
   <!-- flip card component for the about page -->
-  <div class="col-lg-3 col-md-6 col-12">
-    <div id="covers" >
-        <div class="card">
-            <div class="content">
-                <div class="front">
-                    <img :src="cardImg">
-                </div>
-                <div class="back">
-                    <p>{{ desc }}</p>
-                    <ul>
-                      <!-- v-for here based on a arr from props -->
-                      <li v-for="(item, index) in listical" :key="index">{{ item }}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="col-lg-2 col-md-6 col-12">
+	<div class="card">
+		<div class="content">
+			<div class="front">
+				<img :src="cardImg">
+			</div>
+			<div class="back">
+				<h5>{{ title }}</h5>
+				<ul>
+					<!-- v-for here based on a arr from props -->
+					<li v-for="(item, index) in listical" :key="index">{{ item }}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
   </div>
 </template>
 
 <script>
 export default {
   name: "FlipCard",
-  props: ["title", "desc", "desc2", "listical", "cardImg"],
+  props: ["title", "listical", "cardImg"],
   setup() {
     return {};
   },
@@ -41,6 +39,8 @@ export default {
 	perspective: 500px;
 	background-color: rgba(36, 36, 36, 0.808);
 	margin-bottom: 5vh; 
+	justify-items: center;
+	align-items: center;
 }
 
 .content {
@@ -94,24 +94,23 @@ export default {
   font-size: 80%;
 }
 
-#covers .card, #covers .content {
+.card, .content {
 	position: relative;
-	width: 18rem;
-	height: 18rem;
+	width: 12rem;
+	height: 12rem;
 }
 
-#covers .card {
-	justify-items: center;
-	align-items: center;
-}
 
-p {
-  margin: 8px;
+h5 {
+  margin: 20px;
+  text-transform: uppercase;
 }
 
 ul, li {
   /* text-align: left; */
   margin: 0;
   padding: 0;
+  list-style: none;
 }
+
 </style>
