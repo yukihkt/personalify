@@ -11,6 +11,9 @@ export const defaultState = () => {
     // personality quiz
     personalityQuestions: [], // questions object, key: trait, value: qn arr
     personalityAnswers: {}, // answers retrieved from db
+    // careerQuiz
+    careerQuestions: [],
+    careerAnswers: {},
 
     // user-to-store-data (ordered here in terms of ideal levelling)
     // level 0
