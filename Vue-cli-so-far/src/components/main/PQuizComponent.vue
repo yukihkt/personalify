@@ -6,16 +6,16 @@
       Personality Quiz
     </div>
     <br />
-    <div id="main-content-areas" class="mt-1 rounded-3 bg-pinkred">
+    <div id="main-content-areas" class="my-1 rounded-3 bg-pinkred px-3">
       <div>
         <vueper-slides :dragging-distance="70" prevent-y-scroll>
           <!-- v-if="!showQuiz" -- not sure if to have or not -->
           <vueper-slide>
             <!-- initial slide, welcome type-message -->
             <template #content>
-              <div class="vueperslide__content-wrapper" style="z-index=-1;">
-                <h4 class='words'>Personality Quiz</h4>
-                <h3 class='words'>(15 True/False questions)</h3>
+              <div class="vueperslide__content-wrapper">
+                <h4>Personality Quiz</h4>
+                <h3>(15 True/False questions)</h3>
                 <button
                   @click="startQuiz"
                   data-bs-toggle="button"
@@ -83,25 +83,30 @@
           </vueper-slide>
         </vueper-slides>
       </div>
-      {{ userAnswers }}
+      <!-- {{ userAnswers }} -->
     </div>
     <br />
     <!-- end of the quiz component -->
     <!-- changes also made here -->
-    <div
-      class="row row-cols-auto text-center"
-      id="quiz-question-results"
-      v-if="submitQuiz"
-    >
+    <div v-if="quizDone">
+      <div id="quiz-question-results" class="row row-cols-auto text-center justify-content-center py-4 px-3 rounded-3 bg-pinkred">
       <!-- no spider web, type out the results or whatever aight -->
-      <div
-        v-for="(result, category, index) in $store.state.personalityResults"
-        :key="index"
-        class="col-12 col-lg-6 bg-success py-4 px-3"
-      >
-        <h4><strong>{{ category }}</strong></h4>
-        <div>Your score: {{ result[0] }}</div>
-        <div><br>{{ result[1] }}</div>
+      <div class = "col-12">
+        <img :src = "personalityImg">
+        <h6 class = "left-text">RESULTS</h6>
+        <h2 class = "left-text">Personality Quiz</h2>
+        <br><br><br>
+      </div>
+        <div
+          v-for="(result, category, index) in $store.state.personalityResults"
+          :key="index"
+          class="col-12 col-lg-8 col-xl-5 mx-2 px-2"
+        >
+          <h4><strong>{{ category }}</strong></h4>
+          <div>Your score: {{ result[0] }}</div>
+          <div class = "px-4"><br>{{ result[1] }}</div>
+          <br><br>
+        </div>
       </div>
     </div>
   </div>
@@ -157,6 +162,7 @@ export default {
     // only shows when all questions are answered
     const submitQuiz = () => {
       quizDone.value = true;
+      showQuiz.value = false;
       // console.log(userAnswers.value);
       for (const index in categories) {
         // index is a string, convert to Number to prevent NaN value
@@ -210,7 +216,13 @@ export default {
   background-color: hsl(0, 86%, 61%);
 }
 
-.words{
-  z-index: -1;
+#main-content-areas{
+  position: sticky;
+  z-index:0;
+}
+
+.left-text{
+  text-align: left;
+  font-weight: bolder;
 }
 </style>
