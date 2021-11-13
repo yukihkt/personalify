@@ -47,17 +47,4 @@ export default {
   width: 25px;
   margin-right: 10px;
 }
-
-@media (max-width: 768px) {
-  .icon {
-    font-size: 3rem;
-    margin-left: 0.5rem;
-  }
-
-  .link {
-    max-width: 100%;
-    justify-content: center;
-  }
-
-}
 </style>

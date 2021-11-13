@@ -1,25 +1,23 @@
 <template>
-  <div>
-    <h2 class="pt-5 px-2 text-start">Hello, {{ userNick }}</h2>
-    <div id="main-content-areas" class="mt-1">
-      <h4 class="ps-2 text-start">
-        See current quiz report or take a new one...
-      </h4>
-      <h6 class="ps-3 text-start text-muted fst-italic">
-        ...do whatever you want I guess
-      </h6>
+  <h2 class="pt-5 px-3 text-start">Hello, {{ userNick }}</h2>
+  <div id="main-content-areas" class="mt-1">
+    <h4 class="ps-3 text-start">
+      See current quiz report or take a new one...
+    </h4>
+    <h6 class="ps-4 text-start text-muted fst-italic">
+      ...do whatever you want I guess
+    </h6>
 
-      <div class="d-flex justify-content-evenly me-5 ms-0 pe-5 py-3">
-        <div id="gridCards" v-for="(item, index) in mcb_data" :key="index">
-          <MainComponentBtn
-            :lvl="index + 1"
-            :id="item.id"
-            :imgId="item.imgId"
-            :title="item.title"
-            :desc="item.desc"
-            @click="emitClickedOn(index)"
-          />
-        </div>
+    <div class="d-flex justify-content-evenly">
+      <div id="gridCards" v-for="(item, index) in mcb_data" :key="index">
+        <MainComponentBtn
+          :lvl="index + 1"
+          :id="item.id"
+          :imgId="item.imgId"
+          :title="item.title"
+          :desc="item.desc"
+          @click="emitClickedOn(index)"
+        />
       </div>
     </div>
   </div>
