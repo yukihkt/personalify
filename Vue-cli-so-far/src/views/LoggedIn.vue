@@ -27,11 +27,20 @@
         <img :src="character_img" id="displayed-character" />
         <br />
         <button class="sub-btn btn btn-light" @click="prevCharacter">
-          Prev
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-skip-start-fill" viewBox="0 0 16 16">
+            <path d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.54-.313 1.232.066 1.232.696v7.384c0 .63-.692 1.01-1.232.697L5 8.753V12a.5.5 0 0 1-1 0V4z"/>
+          </svg>
         </button>
-        <button class="btn btn-light" @click="randCharacter">Random</button>
+        <button class="btn btn-light" @click="randCharacter" id="randBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-shuffle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"/>
+            <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"/>
+          </svg>
+        </button>
         <button class="sub-btn btn btn-light" @click="nextCharacter">
-          Next
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-skip-end-fill" viewBox="0 0 16 16">
+            <path d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0V4z"/>
+          </svg>
         </button>
         <br />
 
@@ -269,10 +278,32 @@ img#displayed-character {
 }
 
 .btn {
-  margin-top: 12px;
+  margin-top: 15px;
+  background-color: #56BD66;
+  color: black
 }
+
+.btn:hover {
+  background-color: #218C31;
+}
+
 .sub-btn {
-  width: 4.8rem;
+  width: 3rem;
+  height: 3rem;
   margin: 12px 0.5rem 0;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+svg {
+  color: white;
+}
+
+#randBtn {
+  border-radius: 50%;
+  background-color: #218C31;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid transparent;
 }
 </style>

@@ -3,7 +3,7 @@
     <LoadingTitle />
     <!-- some scrolling down for the choreographer to work -->
     <div class="login" v-if="showLogin">
-      <h3>Please login with your spotify account</h3>
+      <h3>Please login with your Spotify account</h3>
       <button class="btn main-btn btn-success mt-1" @click="redirecting">
         Login
       </button>
