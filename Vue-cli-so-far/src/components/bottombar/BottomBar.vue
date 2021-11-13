@@ -129,12 +129,12 @@ img {
   width: 100px;
 }
 #footer {
-  position: fixed;
-  z-index: 1;
-  /* top: 88vh; */
-  bottom: 0;
-  height: 5.5rem;
-  border-top: rgb(46, 46, 46) 0.5px solid;
+    position: fixed;
+    z-index: 100;
+    /* top: 88vh; */
+    bottom: 0;
+    height: 5.5rem;
+    border-top: rgb(46, 46, 46) 0.5px solid;
 }
 
 /* #upperBody {
