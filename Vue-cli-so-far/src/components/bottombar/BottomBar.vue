@@ -7,9 +7,20 @@
         </div>
         <div class="col-8">
             <span id="playButtons">
-                <i class="bi bi-skip-start-fill"> </i>
-                <i class="bi bi-play-circle-fill"> </i>
-                <i class="bi bi-skip-end-fill"> </i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-skip-start-fill" viewBox="0 0 16 16">
+                    <path d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.54-.313 1.232.066 1.232.696v7.384c0 .63-.692 1.01-1.232.697L5 8.753V12a.5.5 0 0 1-1 0V4z"/>
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 36 36" version="1.1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <path id="ytp-12" d="M 11 10 L 17 10 L 17 26 L 11 26 M 20 10 L 26 10 L 26 26 L 20 26">
+                        </path>
+                    </defs>
+                    <use xlink:href="#ytp-12" class="ytp-svg-shadow"></use>
+                    <use xlink:href="#ytp-12" class="ytp-svg-fill"></use>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-skip-end-fill" viewBox="0 0 16 16">
+                    <path d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0V4z"/>
+                </svg>
             </span>
             <div id="progressbar"></div>
         </div>
@@ -61,7 +72,7 @@ img {
     z-index: 1;
     /* top: 88vh; */
     bottom: 0;
-    height: 7rem;
+    height: 6rem;
     border-top: rgb(46, 46, 46) 0.5px solid;
 }
 
@@ -74,11 +85,10 @@ img {
 #playButtons {
     position: relative;
     display: flex;
-    margin-top: 0.5%;
+    margin-top: 1%;
     margin-left: 22vw;
     left: 45%;
 }
-
 #playButtons i{
     font-size: 250%;
     padding: 0 2%;
