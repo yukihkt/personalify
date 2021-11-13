@@ -90,16 +90,25 @@
     <div v-if="quizDone">
       <div id="quiz-question-results" class="row row-cols-auto text-center justify-content-center py-4 px-3 rounded-3 bg-pinkred">
       <!-- no spider web, type out the results or whatever aight -->
-      <div
-        v-for="(result, category, index) in $store.state.personalityResults"
-        :key="index"
-        class="col-12 col-lg-6 col-xl-4 border border-light px-2"
-      >
-        <div>{{ category }}: {{ result[0] }}</div>
-        <div>{{ result[1] }}</div>
+        <div class = "col-12">
+        <img :src = "personalityImg">
+        <h6 class = "left-text">RESULTS</h6>
+        <h2 class = "left-text">Personality Quiz</h2>
+        <br><br><br>
+        </div>
+        <div
+          v-for="(result, category, index) in $store.state.personalityResults"
+          :key="index"
+          class="col-12 col-lg-6 col-xl-4 rounded-3 px-2 py-2 shadow-sm"
+        >
+          <br>
+          <h4><strong>{{ category }}</strong></h4>
+          <div>Your score: {{ result[0] }}</div>
+          <div class = "px-4">{{ result[1] }}</div>
+          <br>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
