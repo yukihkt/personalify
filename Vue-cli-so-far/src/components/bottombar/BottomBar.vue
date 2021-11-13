@@ -116,7 +116,7 @@ img {
 }
 #footer {
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     /* top: 88vh; */
     bottom: 0;
     height: 5.5rem;
