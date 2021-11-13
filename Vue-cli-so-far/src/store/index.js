@@ -49,6 +49,15 @@ export default createStore({
     updatePersonalityResults(state, newPersonalityResults) {
       state.personalityResults = newPersonalityResults;
     },
+    updateCareerQuestions(state, newCareerQuestions) {
+      state.careerQuestions = newCareerQuestions;
+    },
+    updateCareerAnswers(state, newCareerAnswers) {
+      state.careerQuestions = newCareerAnswers;
+    },
+    updateCareerResults(state, newCareerResults) {
+      state.careerQuestions = newCareerResults;
+    },
     // the values for personality would be: totalMusicFeatures / numOfTracks
     updateTotalMusicFeatures(state, newMusicFeatures) {
       for (let smf in state.totalMusicFeatures) {
@@ -126,6 +135,18 @@ export default createStore({
       } else console.log("Unable to retrieve personality questions");
     },
 
+    async retrieveCareerQuiz({ state, commit }) {
+      const config = newConfig(
+        "GET",
+        `${state.myDatabase}/quizzes/careerQuiz.json`
+      );
+      const cr_quiz = await axiosAwait(config);
+      if (cr_quiz) {
+        commit("updateCareerQuestions", cr_quiz.questions);
+        commit("updateCareerAnswers", cr_quiz.answers);
+      } else console.log("Unable to retrieve career questions");
+    },
+
     async checkDB({ state, commit }) {
       // checking firebase db for the userId
       const config = newConfig(
@@ -142,7 +163,7 @@ export default createStore({
         commit("updateCharacter", userExists.character);
         commit("updatePersonalityType", userExists.personalityType);
         commit("updatePersonalityResults", userExists.personalityResults);
-
+        commit("updateCareerResults", userExists.careerResults);
         // route user to /main
         router.replace({ path: "/main" });
       }
