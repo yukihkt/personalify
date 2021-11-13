@@ -83,7 +83,6 @@
           </vueper-slide>
         </vueper-slides>
       </div>
-      <!-- {{ userAnswers }} -->
     </div>
     <br />
     <!-- end of the quiz component -->
@@ -92,9 +91,9 @@
       <div id="quiz-question-results" class="row row-cols-auto text-center justify-content-center py-4 px-3 rounded-3 bg-pinkred">
       <!-- no spider web, type out the results or whatever aight -->
       <div
-        v-for="(result, category, index) in personalityResults"
+        v-for="(result, category, index) in $store.state.personalityResults"
         :key="index"
-        class="col-12 col-lg-6 col-xl-4 bg-success"
+        class="col-12 col-lg-6 col-xl-4 border border-light px-2"
       >
         <div>{{ category }}: {{ result[0] }}</div>
         <div>{{ result[1] }}</div>
@@ -121,7 +120,7 @@ export default {
     // additional check for if the results are already set, if so, perhaps layout
     // the data on the bottom by default? Otherwise storing this data is pretty pointless at the moment
     const quizDone = ref(false);
-    if (!personalityResults) quizDone.value = true;
+    if (personalityResults) quizDone.value = true;
 
     // v-modeled question answers; start from 1, end at 15
     const userAnswers = ref({});
@@ -129,15 +128,13 @@ export default {
     const startQuiz = () => {
       showQuiz.value = true;
       quizDone.value = false;
-      if (!personalityResults) {
-        personalityResults = {
-          Agreeableness: [0, ""],
-          Conscientiousness: [0, ""],
-          Extroversion: [0, ""],
-          Neuroticism: [0, ""],
-          Openness: [0, ""],
-        };
-      }
+      personalityResults = {
+        Agreeableness: [0, ""],
+        Conscientiousness: [0, ""],
+        Extroversion: [0, ""],
+        Neuroticism: [0, ""],
+        Openness: [0, ""],
+      };
     };
 
     // preparing the results obj early, no ref needed
@@ -155,6 +152,8 @@ export default {
 
     // only shows when all questions are answered
     const submitQuiz = () => {
+      console.log(personalityResults);
+      console.log(userAnswers.value);
       quizDone.value = true;
       showQuiz.value = false;
       // console.log(userAnswers.value);
@@ -195,7 +194,6 @@ export default {
       submitQuiz,
       slides,
       userAnswers,
-      personalityResults,
     };
   },
 };
