@@ -19,15 +19,15 @@ app.component("about-content", {
             </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" >
             <h2> About <span class="lightgreen"> Personalify </span> </h2>
             <div id="covers" class="col-lg-3 col-md-6 col-12" v-for="cover in covers">
-                <div class="card">
+                <div class="card" >
                     <div class="content">
                         <div class="front">
                             <img :src="cover.cardImg">
                         </div>
-                        <div class="back">
+                        <div class="back" v-html='cover.full_desc'>
                             {{cover.full_desc}}
                         </div>
                     </div>

@@ -37,8 +37,9 @@
         <!-- about -->
         <!-- to change the green box around About instead of Home -->
         {{changeActive('about')}}
+        
         <about-content :names="names" :covers="homeEl"></about-content>
-
+        
         <!-- Bottom Progress Bar -->
         <progress-bar :elements="navEl" :progress="completedQuizzes" :user="user"></progress-bar>
         <!-- to add: jquery to edit quiz's isCompleted boolean value -->
