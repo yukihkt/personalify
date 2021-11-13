@@ -2,26 +2,25 @@
   <!-- need to add the stuff jen has done in the grp repo -->
   <div>
     <Sidebar />
-    <div>
-      <div
-        style="margin-left: 17vw; margin-right: 0;"
-        class="row d-flex justify-content-center"
-      >
-        <div class="col">
-          <MainComponent :userNick="nickname" @show-component="changeComponent" />
-          <button
-            @click="hideComponent"
-            class="btn btn-outline-light mt-4"
-            v-if="showBackBtn"
-          >
-            See Less
-          </button>
-          <!-- caching recent progress, so if user wants to switch off for a bit -->
-          <!-- they don't lose their progress -->
-          <keep-alive>
-            <component :is="currentComponent" class="mb-5" />
-          </keep-alive>
-        </div>
+    <BottomBar />
+    <div
+      style="margin-left: 18rem; margin-right: 0"
+      class="row d-flex justify-content-center"
+    >
+      <div class="col">
+        <MainComponent :userNick="nickname" @show-component="changeComponent" />
+        <button
+          @click="hideComponent"
+          class="btn btn-outline-light mt-4"
+          v-if="showBackBtn"
+        >
+          Hide Component
+        </button>
+        <!-- caching recent progress, so if user wants to switch off for a bit -->
+        <!-- they don't lose their progress -->
+        <keep-alive>
+          <component :is="currentComponent" class="mb-5" />
+        </keep-alive>
       </div>
     </div>
   </div>
@@ -35,10 +34,11 @@ import Sidebar from "../components/sidebar/Sidebar.vue";
 import MainComponent from "../components/main/MainComponent.vue";
 import MusicBasic from "../components/main/MusicBasic.vue";
 import PQuizComponent from "../components/main/PQuizComponent.vue";
+import BottomBar from "../components/bottombar/BottomBar.vue";
 
 export default {
   name: "MainPage",
-  components: { Sidebar, MainComponent, MusicBasic, PQuizComponent },
+  components: { Sidebar, MainComponent, MusicBasic, PQuizComponent, BottomBar},
   setup() {
     const store = useStore();
     checkDomain();
