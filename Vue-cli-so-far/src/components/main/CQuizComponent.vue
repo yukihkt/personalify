@@ -101,7 +101,7 @@
           class="col-12 col-lg-6 col-xl-4 rounded-3 px-2 py-2 shadow-sm"
         >
           <br>
-          <h4><strong>{{ category }}</strong></h4>
+          <h4 class="font"><strong>{{ category }}</strong></h4>
           <div>Your score: {{ result[0] }}</div>
           <div class = "px-4">{{ result[1] }}</div>
           <br>
