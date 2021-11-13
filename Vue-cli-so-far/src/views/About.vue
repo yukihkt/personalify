@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="mainBody">
     <Sidebar />
     <BottomBar />
     
@@ -27,7 +27,7 @@
       style="margin-left: 15vw; margin-right: 0"
       class="row d-flex justify-content-center"
     >
-      <div class="pt-4 px-5 text-start fs-2">
+      <div class="pt-2 px-5 text-start fs-2">
         About <span class="logo"> Our Team </span>
       </div>
       <div class="about mt-1 row d-flex mx-auto">
@@ -105,14 +105,14 @@ export default {
 
     const names = {
         'amanda': {
-            cardImg: "../assets/about/amanda.svg",
+            cardImg: "@/assets/about/amanda.svg",
             listical: [
               "Creative Intern", 
               "Front-end Developer",
             ]
         }, 
         'jennifer': {
-            cardImg: "../assets/about/jennifer.svg",
+            cardImg: "@/assets/about/jennifer.svg",
             listical: [
               "Head of Global Sales", 
               "Front-end Developer",
@@ -120,7 +120,7 @@ export default {
             ]
         }, 
         'ranon': {
-            cardImg: "../assets/about/ranon.svg",
+            cardImg: "@/assets/about/ranon.svg",
             listical: [
               "CTO",
               "Tech Lead",
@@ -128,7 +128,7 @@ export default {
             ]
         }, 
         'shreya': {
-            cardImg: "../assets/about/shreya.svg",
+            cardImg: "@/assets/about/shreya.svg",
             listical: [
               "Co-founder", 
               "Head of Human Resource", 
@@ -136,7 +136,7 @@ export default {
             ]
         }, 
         'yuki': {
-            cardImg: "../assets/about/yuki.svg",
+            cardImg: "../../assets/about/yuki.svg",
             listical: [
               "Co-founder", 
               "Head of Creative", 
@@ -151,6 +151,11 @@ export default {
 </script>
 
 <style scoped>
+  #mainBody {
+    overflow-y: scroll;
+    height: 90vh;
+  }
+
   .about {
     /* padding-left: 20vw; */
     padding-top: 1rem;
@@ -163,4 +168,5 @@ export default {
     font-family: "Reem Kufi", sans-serif;
     color:#56BD66;
   }
+
 </style>
