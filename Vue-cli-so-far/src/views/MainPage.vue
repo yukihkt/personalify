@@ -6,11 +6,14 @@
 
     <div>
       <div
-        style="margin-left: 17vw; margin-right: 0;"
+        style="margin-left: 17vw; margin-right: 0"
         class="row d-flex justify-content-center"
       >
         <div class="col">
-          <MainComponent :userNick="nickname" @show-component="changeComponent" />
+          <MainComponent
+            :userNick="nickname"
+            @show-component="changeComponent"
+          />
           <button
             @click="hideComponent"
             class="btn btn-outline-light mt-4"
@@ -21,7 +24,7 @@
           <!-- caching recent progress, so if user wants to switch off for a bit -->
           <!-- they don't lose their progress -->
           <keep-alive>
-            <component :is="currentComponent" class="mb-5" />
+            <component :is="currentComponent" style="margin-bottom: 8rem" />
           </keep-alive>
         </div>
       </div>
