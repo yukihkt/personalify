@@ -134,7 +134,8 @@ export default {
   position: relative;
   display: flex;
   margin-top: 0.9rem;
-  left: 80%;
+  margin-left: 22vw;
+  left: 45%;
 }
 
 svg {
@@ -330,6 +331,18 @@ img {
   border-radius: 40%;
   background: rgba(0, 0, 0, 0.5);
   animation: animate 10s linear infinite;
+}
+
+@media (max-width: 576px) {
+  #playButtons {
+    left: 34%;
+  }
+}
+
+@media (max-width: 768px) {
+  #playButtons {
+    left: 40%;
+  }
 }
 
 </style>
