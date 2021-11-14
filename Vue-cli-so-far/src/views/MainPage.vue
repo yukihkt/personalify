@@ -10,10 +10,11 @@
         class="row d-flex justify-content-center"
       >
         <div class="col">
-          <MainComponent
-            :userNick="nickname"
-            @show-component="changeComponent"
-          />
+            <MainComponent
+              :userNick="nickname"
+              @show-component="changeComponent"
+              @click="shiftView"
+            />
           <button
             @click="hideComponent"
             class="btn btn-outline-light mt-4"
@@ -83,15 +84,28 @@ export default {
       currentComponent.value = "";
     };
 
+    const shiftView = () => {
+      // scroll
+      let intViewportWidth = window.innerWidth;
+      if (intViewportWidth <= 414) {
+        window.scrollTo(0,1000)
+      }
+      else {
+        window.scrollTo(0,1500)
+      }
+    };
+
     return {
       nickname,
       currentComponent,
       changeComponent,
       hideComponent,
       showBackBtn,
+      shiftView,
     };
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
