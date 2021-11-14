@@ -2,8 +2,8 @@
   <!-- need to add the stuff jen has done in the grp repo -->
   <div>
     <Sidebar />
-    <BottomBar />
-
+    <BottomBar :completedQuizzes="completedQuizzes"/>
+    
     <div>
       <div
         style="margin-left: 17vw; margin-right: 0"
@@ -20,12 +20,12 @@
             class="btn btn-outline-light mt-4"
             v-if="showBackBtn"
           >
-            See Less
+            See Less 
           </button>
           <!-- caching recent progress, so if user wants to switch off for a bit -->
           <!-- they don't lose their progress -->
           <keep-alive>
-            <component :is="currentComponent" style="margin-bottom: 8rem" />
+            <component @changePQuiz='updateCompletedQuizzes' @changeCQuiz='updateCompletedQuizzes' :is="currentComponent" style="margin-bottom: 8rem" />
           </keep-alive>
         </div>
       </div>
@@ -47,6 +47,17 @@ import BottomBar from "../components/bottombar/BottomBar.vue";
 export default {
   name: "MainPage",
   components: { Sidebar, MainComponent, MusicBasic, PQuizComponent, CQuizComponent, BottomBar },
+  data() {
+    return{
+      completedQuizzes: 1
+    }
+  },
+  methods: {
+    updateCompletedQuizzes() {
+      console.log("inside updateCompletedQuizzes")
+      this.completedQuizzes += 1
+    }
+  },
   setup() {
     const store = useStore();
     checkDomain();
