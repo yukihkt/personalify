@@ -1,45 +1,51 @@
 <template>
-  <div>
+<div class='container'>
+  <div class='row'>
     <!-- some space for the music basic area, this is a component -->
-    <div id="chart1" class="mt-3 container bglightgreen rounded-3">
-      <canvas ref="featureChart"></canvas>
-    </div>
-    <div
-      class="
-        mt-2
-        rounded-3
-        bg-success
-        row row-cols-auto
-        d-flex
-        justify-content-center
-      "
-      style="width: 80vw"
-    >
+    <div class='col-sm col-lg-6'>
+      <div id="chart1" class="mt-3 container bglightgreen rounded-3">
+        <canvas ref="featureChart"></canvas>
+      </div>
       <div
-        class="col-12 col-lg-6 col-xl-4 py-2"
-        v-for="(value, feature) in nonChart"
-        :key="feature"
+        class="
+          mt-2
+          rounded-3
+          bg-success
+          row row-cols-auto
+          d-flex
+          justify-content-center
+        "
+        style="width: 80vw"
       >
-        {{ feature }}: {{ value }}
+        <div
+          class="col-12 col-lg-6 col-xl-4 py-2"
+          v-for="(value, feature) in nonChart"
+          :key="feature"
+        >
+          {{ feature }}: {{ value }}
+        </div>
       </div>
     </div>
     <!-- second chart for Big 5 personality -->
-    <div id="chart2" class="mt-3 container bglightgreen rounded-3">
-      <canvas ref="personalityTraits"></canvas>
-    </div>
-    <div
-      class="
-        mt-2
-        rounded-3
-        bg-success
-        row row-cols-auto
-        d-flex
-        justify-content-center
-      "
-      style="width: 80vw"
-    >
+    <div class='col-sm col-lg-6'>
+      <div id="chart2" class="mt-3 container bglightgreen rounded-3">
+        <canvas ref="personalityTraits"></canvas>
+      </div>
+      <div
+        class="
+          mt-2
+          rounded-3
+          bg-success
+          row row-cols-auto
+          d-flex
+          justify-content-center
+        "
+        style="width: 80vw"
+      >
+      </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -146,11 +152,13 @@ export default {
   height: 3rem;
 }
 #chart1 {
-  width: 96%;
+  width: 100%;
+  padding: 1%;
 }
 
 #chart2 {
-  width: 96%;
+  width: 100%;
+  padding: 1%;
 }
 
 </style>
