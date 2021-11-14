@@ -313,8 +313,8 @@ img {
   position: absolute;
   /* adjust below width and height for wave's height */
   /* half of icon will be width: 200% and height: 200% */
-  width: 100%;
-  height: 100%;
+  width: 0%;
+  height: 0%;
   top: 0;
   left: 50%;
   transform: translate(-50%, -75%);
