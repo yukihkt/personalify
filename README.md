@@ -2,10 +2,11 @@
 # 👋 is216-project
 
 ## Table of Contents
-[Group Members](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-is216---group-15---personalify)
-[Personalify](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-personalify-overview)
-[Project Setup](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-project-setup-how-to-install-and-run-our-web-application-for-developers)
-[User Guide](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-how-to-use-our-web-application-for-visitors-to-our-website)
+* [Group Members](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-is216---group-15---personalify)
+* [About Personalify](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-personalify-overview)
+  * [Personalify Prototype](https://www.figma.com/file/wq8simGjxfhj4cyeCsuT3v/Personalify-Prototype?node-id=77%3A432)
+* [Project Setup](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-project-setup-how-to-install-and-run-our-web-application-for-developers)
+* [User Guide](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-how-to-use-our-web-application-for-visitors-to-our-website)
 
 ## 🤓 IS216 - Group 15 - Personalify
 * Group Members (names based on elearn):
@@ -64,6 +65,7 @@ npm run lint
 ```
 ```
 2. Login using your spotify account
+
 ```
 ```
 3. Enter your preferred name to be addressed by the website
