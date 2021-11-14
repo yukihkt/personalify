@@ -1,5 +1,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=454868&assignment_repo_type=GroupAssignmentRepo)
 # 👋 is216-project
+>![image](https://user-images.githubusercontent.com/89073166/141683543-1f203a44-2340-4d3d-aa29-ba2dbc8b8787.png)
+
 
 ## Table of Contents
 * [Group Members](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-is216---group-15---personalify)
@@ -11,7 +13,6 @@
   * [Architecture Diagram](https://user-images.githubusercontent.com/89073166/141679482-fa0941a5-5076-4237-bbc8-e0f8f0c26f36.png)
 
 ## 🤓 IS216 - Group 15 - Personalify
->![image](https://user-images.githubusercontent.com/89073166/141683477-d702ea15-b1f7-4019-a2b4-ea6fc0aa84d2.png)
 * Group Members (names based on elearn):
   * Soh Qi Hui Amanda (amanda.soh.2020@scis.smu.edu.sg)
   * Kushal Kumar Shreya (shreyakk.2020@scis.smu.edu.sg)
