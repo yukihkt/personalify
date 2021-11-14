@@ -2,10 +2,10 @@
   <div class="container-fluid bg-dark" id="footer">
     <div class="col-4">
       <div class="ocean" :style="{ backgroundImage: `url(${character_img})` }">
-        <div class="wave" :style="{ backgroundImage: `url(${character_img})` }"></div>
+        <div id="wave" :style="{ backgroundImage: `url(${character_img})` }"></div>
       </div>
     </div>
-    <div class="col-8">
+    <div class="col-8"> {{updateProgressBar}}
       <div id="playButtons">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,9 @@
           />
         </svg>
       </div>
+      <div id='bar'></div>
       <div id="progressbar"></div>
+      
     </div>
   </div>
 </template>
@@ -54,7 +56,7 @@ export default {
     },
     completedQuizzes: {
       type: Number,
-      default: 0,
+      default: 1,
     },
     username: {
       type: String,
@@ -68,6 +70,23 @@ export default {
 
     return { character_img };
   },
+  computed: {
+    updateProgressBar() {
+      let quiznum = this.completedQuizzes
+      console.log(quiznum)
+      console.log("inside computed")
+      if (quiznum == 2) {
+        document.getElementById("progressbar").id = "progressbar2"
+        document.getElementById("wave").id = "wave2"
+      }
+      if (quiznum == 3) {
+        document.getElementById("progressbar2").id = "progressbar3"
+        document.getElementById("wave2").id = "wave3"
+      }
+      return ""
+    }
+
+  }
   // data() {
   //     return {
   //         flip: true,
@@ -143,6 +162,17 @@ img {
     position: absolute;
 } */
 
+#bar {
+  margin-left: 22vw;
+  overflow: visible;
+  z-index: 2;
+  background-color: rgb(66, 66, 66);
+  border-radius: 4px;
+  position: fixed;
+  width: 70%;
+  bottom: 3%;
+  height: 1%;
+}
 #progressbar {
   margin-left: 22vw;
   overflow: visible;
@@ -150,23 +180,39 @@ img {
   background-color: darkgrey;
   border-radius: 4px;
   position: fixed;
-  width: 72%;
+  width: 23%;
   bottom: 3%;
   height: 1%;
 }
 
-#progressbar:after {
-  content: "";
-  display: block;
-  background-color: white;
-  width: 33%; /* to change this width accordingly using jquery*/
-  height: 100%;
-  border-radius: 2px;
+#progressbar2 {
+  margin-left: 22vw;
+  overflow: visible;
+  z-index: 2;
+  background-color: darkgrey;
+  border-radius: 4px;
+  position: fixed;
+  width: 46%;
+  bottom: 3%;
+  height: 1%;
 }
+
+#progressbar3 {
+  margin-left: 22vw;
+  overflow: visible;
+  z-index: 2;
+  background-color: darkgrey;
+  border-radius: 4px;
+  position: fixed;
+  width: 70%;
+  bottom: 3%;
+  height: 1%;
+}
+
 
 /* Wave Animation for Progress Bar */
 .ocean,
-.wave {
+#wave {
   background-size: 70%;
   background-repeat: no-repeat;
 }
@@ -184,8 +230,8 @@ img {
   overflow: hidden;
   background-position: 50%;
 }
-
-.wave {
+/* 1/3 filled */
+#wave {
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -197,8 +243,8 @@ img {
   background-position: 50%;
 }
 
-.wave:before,
-.wave:after {
+#wave:before,
+#wave:after {
   content: "";
   position: absolute;
   /* adjust below width and height for wave's height */
@@ -211,13 +257,13 @@ img {
   /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
-.wave:before {
+#wave:before {
   border-radius: 45%;
   background: rgba (0, 0, 0, 0.1);
   animation: animate 5s linear infinite;
 }
 
-.wave:after {
+#wave:after {
   border-radius: 40%;
   background: rgba(0, 0, 0, 0.5);
   animation: animate 10s linear infinite;
@@ -231,4 +277,59 @@ img {
     transform: translate(-50%, -75%) rotate(360deg);
   }
 }
+
+/* 2/3 filled */
+#wave2:before,
+#wave2:after {
+  content: "";
+  position: absolute;
+  /* adjust below width and height for wave's height */
+  /* half of icon will be width: 200% and height: 200% */
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+#wave2:before {
+  border-radius: 45%;
+  background: rgba (0, 0, 0, 0.1);
+  animation: animate 5s linear infinite;
+}
+
+#wave2:after {
+  border-radius: 40%;
+  background: rgba(0, 0, 0, 0.5);
+  animation: animate 10s linear infinite;
+}
+
+/* fully filled */
+#wave3:before,
+#wave3:after {
+  content: "";
+  position: absolute;
+  /* adjust below width and height for wave's height */
+  /* half of icon will be width: 200% and height: 200% */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+#wave3:before {
+  border-radius: 45%;
+  background: rgba (0, 0, 0, 0.1);
+  animation: animate 5s linear infinite;
+}
+
+#wave3:after {
+  border-radius: 40%;
+  background: rgba(0, 0, 0, 0.5);
+  animation: animate 10s linear infinite;
+}
+
 </style>
