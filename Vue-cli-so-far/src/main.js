@@ -6,5 +6,6 @@ import store from "./store";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import "@fortawesome/fontawesome-free/js/all";
+import 'animate.css';
 
 createApp(App).use(store).use(router).mount("#app");
