@@ -24,7 +24,7 @@ cd .\Vue-cli-so-far\
 ```
 * install the required dependencies
 ```
-npm install
+npm install animate.css --save
 ```
 * Compiles and hot-reloads for development
 ```
@@ -53,6 +53,24 @@ npm run lint
 > To fully utilize our website, please contact [personName] and provide your spotify email address to be explicitly added into the system, as spotify currently only allows up to 25 explicitly added users into the system. If demand is high enough, we should be able to request for a quota extension to allow all users to access our web application with ease!
 <!-- * Yay! Your website is READY for visitors!
 * Provide a step-by-step description of what the user/visitor can/should do upon visiting your website for the first time.
+```
+1. Scroll all the way down till the "Login" button is visible
+```
+2. Login using your spotify account
+```
+3. Enter your preferred name to be addressed by the website
+```
+4. Choose your preferred avatar
+```
+5. Choose your personality type: Ambivert/Extrovert/Introvert
+```
+6. On the homepage, there are 3 levels:
+- Level 1: Basic Personality - This page will consist of the characteristics of your music which is gathered from your spotify data. The page also consists of your personality traits derived from your music taste.
+- Level 2: Personality Quiz - This page consist of a quiz of 15 questions. After you have answered all the questions, you will be directed to your Personality Quiz result page, where your personality analysis will be displayed.
+- Level 3: Career Quiz - This page consist of a quiz of 15 questions. After you have answered all the questions, you will be directed to your Career Quiz result page, where your career analysis will be displayed.
+```
+7. After you have completed all 3 levels, we will find you your most suitable career path based on your spotify data and the answers to your quizzes.
+```
 * It would be wonderful if you could include **screenshot images** of web pages to demonsrate what the user/visitor can/should do. -->
 
 
