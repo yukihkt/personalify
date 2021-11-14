@@ -17,13 +17,13 @@
         "
         style="width: 80vw"
       >
-        <div
+        <!-- <div
           class="col-12 col-lg-6 col-xl-4 py-2"
           v-for="(value, feature) in nonChart"
           :key="feature"
         >
           {{ feature }}: {{ value }}
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- second chart for Big 5 personality -->
@@ -75,7 +75,29 @@ export default {
     const featureChart = ref(null);
     const personalityTraits = ref(null);
 
-    const pTraits = {agreeableness:0, conscientiousness: 0, neuroticism: 0, openness_to_experience: 0, extraversion: 0};
+    const pTraits = {agreeableness:0, conscientiousness: 0, neuroticism: 0, openness: 0, extraversion: 0};
+    // START of calculate personality trait chart based on music characteristics
+    let acousticness = chartFeatures['acousticness']
+    let danceability = chartFeatures['danceability']
+    let energy = chartFeatures['energy']
+    let instrumentalness = chartFeatures['instrumentalness']
+    // let liveness = chartFeatures['liveness']
+    let speechiness = chartFeatures['speechiness']
+    let valence = chartFeatures['valence']
+
+    //extraversion: [danceability, valance, speechiness]
+    pTraits['extraversion'] = danceability * 0.5 + valence *0.35 + speechiness *0.15
+    // openness: [acousticness, instrumentalness, speechiness]
+    pTraits['openness'] = acousticness * 0.5 + instrumentalness *0.35 + speechiness *0.15
+    // agreeableness: [acousticness, valence, danceability]
+    pTraits['agreeableness'] = acousticness * 0.5 + valence *0.35 + danceability *0.15
+    // conscientiousness: [acousticness, loudness, tempo]
+    pTraits['conscientiousness'] = acousticness * 0.5 + danceability *0.35 + energy *0.15
+    // neuroticism: [tempo, loudness, speechiness]
+    pTraits['neuroticism'] = acousticness * 0.5 + energy *0.35 + speechiness *0.15
+    
+    console.log(pTraits)
+    // END of calculate personality trait chart based on music characteristics
 
     onMounted(() => {
       // eslint-disable-next-line
@@ -112,7 +134,7 @@ export default {
       const myChart2 = new Chart(personalityTraits.value, {
         type: "radar",
         data: {
-          labels: ["Openness to experience", "Agreeableness", "Extraversion", "Neuroticism", "Conscientiousness"], // array of personality traits
+          labels: Object.keys(pTraits), // array of personality traits
           datasets: [
             {
               label: "Your Personality Traits",
