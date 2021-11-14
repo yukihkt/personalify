@@ -23,6 +23,22 @@
         {{ feature }}: {{ value }}
       </div>
     </div>
+    <!-- second chart for Big 5 personality -->
+    <div id="chart2" class="mt-3 container bglightgreen rounded-3">
+      <canvas ref="personalityTraits"></canvas>
+    </div>
+    <div
+      class="
+        mt-2
+        rounded-3
+        bg-success
+        row row-cols-auto
+        d-flex
+        justify-content-center
+      "
+      style="width: 80vw"
+    >
+    </div>
   </div>
 </template>
 
@@ -51,6 +67,10 @@ export default {
     }
 
     const featureChart = ref(null);
+    const personalityTraits = ref(null);
+
+    const pTraits = {agreeableness:0, conscientiousness: 0, neuroticism: 0, openness_to_experience: 0, extraversion: 0};
+
     onMounted(() => {
       // eslint-disable-next-line
       const myChart1 = new Chart(featureChart.value, {
@@ -80,10 +100,42 @@ export default {
         },
       });
     });
+  /* eslint-disable no-unused-vars */
+    onMounted(() => {
+      // second chart
+      const myChart2 = new Chart(personalityTraits.value, {
+        type: "radar",
+        data: {
+          labels: ["Openness to experience", "Agreeableness", "Extraversion", "Neuroticism", "Conscientiousness"], // array of personality traits
+          datasets: [
+            {
+              label: "Your Personality Traits",
+              data: Object.values(pTraits),
+              fill: true,
+              backgroundColor: "rgba(33, 140, 49, 0.3)",
+              borderColor: "rgb(33, 140, 49)", // .bgdarkgreen color scheme
+              pointBackgroundColor: "rgb(33, 140, 49)",
+              pointBorderColor: "#fff",
+              pointHoverBackgroundColor: "#fff",
+              pointHoverBorderColor: "rgb(33, 140, 49)",
+            },
+          ],
+        },
+        options: {
+          elements: {
+            line: {
+              borderWidth: 2,
+            },
+          },
+        },
+      });
+    });
+
+    /* eslint-enable no-unused-vars */
 
     const returnToMain = () => emit("to-other-component");
 
-    return { returnToMain, featureChart, nonChart };
+    return { returnToMain, featureChart, nonChart, personalityTraits, pTraits };
   },
 };
 </script>
@@ -96,4 +148,9 @@ export default {
 #chart1 {
   width: 96%;
 }
+
+#chart2 {
+  width: 96%;
+}
+
 </style>
