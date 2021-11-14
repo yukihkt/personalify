@@ -25,7 +25,12 @@
           <!-- caching recent progress, so if user wants to switch off for a bit -->
           <!-- they don't lose their progress -->
           <keep-alive>
+            <transition
+            mode='out-in'
+            enter-active-class="animate__animated animate__fadeIn"
+            leave-active-class="animate__animated animate__fadeOut">
             <component @changePQuiz='updateCompletedQuizzes' @changeCQuiz='updateCompletedQuizzes' :is="currentComponent" style="margin-bottom: 8rem" />
+            </transition>
           </keep-alive>
         </div>
       </div>
