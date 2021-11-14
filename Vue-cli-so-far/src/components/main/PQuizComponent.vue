@@ -74,7 +74,7 @@
                 <button
                   class="main-quiz-btn btn btn-outline-light"
                   data-bs-toggle="button"
-                  @click="submitQuiz; $emit('changePQuiz',quizDone)"
+                  @click="submitQuiz(); $emit('changePQuiz',quizDone)"
                 >
                   Submit Quiz
                 </button>

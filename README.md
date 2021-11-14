@@ -1,5 +1,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=454868&assignment_repo_type=GroupAssignmentRepo)
 # 👋 is216-project
+>![image](https://user-images.githubusercontent.com/89073166/141683543-1f203a44-2340-4d3d-aa29-ba2dbc8b8787.png)
+
 
 ## Table of Contents
 * [Group Members](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-is216---group-15---personalify)
@@ -90,6 +92,12 @@ This page consist of a quiz of 15 questions. After you have answered all the que
 Level 3: Career Quiz 🔍
 This page consist of a quiz of 15 questions. After you have answered all the questions, you will be directed to your Career Quiz result page, where your career analysis will be displayed.
 ```
+![image](https://user-images.githubusercontent.com/89073166/141683985-eb123fb0-c15b-4005-b338-35c5299e48a0.png)![image](https://user-images.githubusercontent.com/89073166/141684002-510ceb4a-7817-4aea-8f78-ea53095ea60a.png)
+
+
+
+
+
 ```
 7. After you have completed all 3 levels, we will find you your most suitable career path based on your spotify data and the answers to your quizzes.
 ```
