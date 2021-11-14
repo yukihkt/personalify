@@ -52,15 +52,19 @@ export default {
     checkDomain();
 
     // time delay for all the results to compile into the vuex store properly (since it is an async function)
-    setTimeout(async () => {
-      if (store.state.isExisting) {
-        await store.dispatch("updateInformation", {
-          numOfTracks: store.state.numOfTracks,
-          totalMusicFeatures: store.state.totalMusicFeatures,
-          currentDate: store.state.currentDate,
-        });
-      } else await store.dispatch("putNewUser");
-    }, 3000);
+    if (store.state.userId) {
+      setTimeout(async () => {
+        if (store.state.isExisting) {
+          await store.dispatch("updateInformation", {
+            numOfTracks: store.state.numOfTracks,
+            totalMusicFeatures: store.state.totalMusicFeatures,
+            currentDate: store.state.currentDate,
+          });
+        } else await store.dispatch("putNewUser");
+      }, 3000);
+    } else {
+      console.log("sorry, the current beta only allows for explicitly added users to access the application, please email OWNER to gain access.");
+    }
 
     // retrieval of the personality quiz questions from firebase realtime db
     store.dispatch("retrievePersonalityQuiz");
