@@ -84,6 +84,7 @@ npm run lint
 ```
 ```
 Level 1: Basic Personality 🎵
+>![image](https://user-images.githubusercontent.com/89073166/141683703-69de0eac-917d-4a22-a565-67cb34ea1033.png)
 This page will consist of the characteristics of your music which is gathered from your spotify data. The page also consists of your personality traits derived from your music taste.
 
 Level 2: Personality Quiz 👤
