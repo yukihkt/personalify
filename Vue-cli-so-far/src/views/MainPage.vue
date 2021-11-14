@@ -87,11 +87,11 @@ export default {
     const shiftView = () => {
       // scroll
       let intViewportWidth = window.innerWidth;
-      if (intViewportWidth <= 414) {
-        window.scrollTo(0,1000)
+      if (intViewportWidth <= 500) {
+        window.scrollTo(0,1200)
       }
-      else {
-        window.scrollTo(0,1500)
+      else if (intViewportWidth > 500) {
+        window.scrollTo(0,500)
       }
     };
 
