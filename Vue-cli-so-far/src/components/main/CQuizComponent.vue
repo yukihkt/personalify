@@ -33,7 +33,7 @@
               <div class="vueperslide__content-wrapper">
                 <h3>{{ slide.title }}</h3>
                 <div class="flex-row mt-2">
-                  <span class="mx-3 radioBtnProg">
+                  <span class="mx-3">
                     <input
                       class="btn-check me-1"
                       type="radio"
@@ -48,7 +48,7 @@
                       Not Me
                     </label>
                   </span>
-                  <span class="mx-3 radioBtnProg">
+                  <span class="mx-3">
                     <input
                       class="btn-check me-1"
                       type="radio"
@@ -235,30 +235,5 @@ export default {
 .logo {
   font-family: "Reem Kufi", sans-serif;
   color: #56bd66;
-}
-
-@media (max-width: 768px) {
-
-  .vueperslide__content-wrapper h3,
-  .vueperslide__content-wrapper h4 {
-    font-size: 1rem;
-  }
-  .vueperslide__content-wrapper h5 {
-    font-size: 1rem;
-  }
-  
-  .main-quiz-btn {
-    margin-bottom: 1vw;
-  }
-
-  .radioBtnProg input[type=radio] {
-    width: 0.5rem;
-    height: 0.5rem;
-  }
-
-  .vueperslide__content-wrapper input {
-    width: 3vw;
-  }
-
 }
 </style>
