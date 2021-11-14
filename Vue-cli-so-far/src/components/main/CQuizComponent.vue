@@ -44,7 +44,7 @@
                       v-model="userAnswers[slide.id]"
                       autocomplete="off"
                     />
-                    <label :for="slide.id + '0'" class="btn btn-outline-dark">
+                    <label :for="slide.id + '0'" class="btn btn-dark">
                       Not Me
                     </label>
                   </span>
@@ -59,7 +59,7 @@
                       v-model="userAnswers[slide.id]"
                       autocomplete="off"
                     />
-                    <label :for="slide.id + '1'" class="btn btn-outline-dark">
+                    <label :for="slide.id + '1'" class="btn btn-success">
                       That's Me
                     </label>
                   </span>
