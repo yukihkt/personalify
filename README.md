@@ -7,6 +7,7 @@
   * [Personalify Prototype](https://www.figma.com/file/wq8simGjxfhj4cyeCsuT3v/Personalify-Prototype?node-id=77%3A432)
 * [Project Setup](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-project-setup-how-to-install-and-run-our-web-application-for-developers)
 * [User Guide](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-how-to-use-our-web-application-for-visitors-to-our-website)
+* [Other Things](https://github.com/is216-supreme/is216-project-group15#-other-things)
 
 ## 🤓 IS216 - Group 15 - Personalify
 * Group Members (names based on elearn):
@@ -79,13 +80,13 @@ npm run lint
 6. On the homepage, there are 3 levels:
 ```
 ```
-**Level 1: Basic Personality** 🎵
+Level 1: Basic Personality 🎵
 This page will consist of the characteristics of your music which is gathered from your spotify data. The page also consists of your personality traits derived from your music taste.
 
-**Level 2: Personality Quiz** 👤
+Level 2: Personality Quiz 👤
 This page consist of a quiz of 15 questions. After you have answered all the questions, you will be directed to your Personality Quiz result page, where your personality analysis will be displayed.
 
-**Level 3: Career Quiz** 🔍
+Level 3: Career Quiz 🔍
 This page consist of a quiz of 15 questions. After you have answered all the questions, you will be directed to your Career Quiz result page, where your career analysis will be displayed.
 ```
 ```
