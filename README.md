@@ -8,6 +8,7 @@
 * [Project Setup](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-project-setup-how-to-install-and-run-our-web-application-for-developers)
 * [User Guide](https://github.com/is216-supreme/is216-project-group15/blob/main/README.md#-how-to-use-our-web-application-for-visitors-to-our-website)
 * [Other Things](https://github.com/is216-supreme/is216-project-group15#-other-things)
+  * [Architecture Diagram](https://user-images.githubusercontent.com/89073166/141677851-14760a02-8a53-439e-8d11-dcfc4a820eb0.png)
 
 ## 🤓 IS216 - Group 15 - Personalify
 * Group Members (names based on elearn):
