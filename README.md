@@ -92,7 +92,7 @@ This page consist of a quiz of 15 questions. After you have answered all the que
 Level 3: Career Quiz 🔍
 This page consist of a quiz of 15 questions. After you have answered all the questions, you will be directed to your Career Quiz result page, where your career analysis will be displayed.
 ```
-![image](https://user-images.githubusercontent.com/89073166/141684182-1985a927-dfaa-4135-bc36-9e2a052f6007.png)
+>![image](https://user-images.githubusercontent.com/89073166/141684182-1985a927-dfaa-4135-bc36-9e2a052f6007.png)
 
 ```
 7. After you have completed all 3 levels, we will find you your most suitable career path based on your spotify data and the answers to your quizzes.
