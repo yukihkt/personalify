@@ -65,7 +65,6 @@ npm run lint
 ```
 ```
 2. Login using your spotify account
-
 ```
 ```
 3. Enter your preferred name to be addressed by the website
@@ -78,9 +77,16 @@ npm run lint
 ```
 ```
 6. On the homepage, there are 3 levels:
-- Level 1: Basic Personality - This page will consist of the characteristics of your music which is gathered from your spotify data. The page also consists of your personality traits derived from your music taste.
-- Level 2: Personality Quiz - This page consist of a quiz of 15 questions. After you have answered all the questions, you will be directed to your Personality Quiz result page, where your personality analysis will be displayed.
-- Level 3: Career Quiz - This page consist of a quiz of 15 questions. After you have answered all the questions, you will be directed to your Career Quiz result page, where your career analysis will be displayed.
+```
+```
+**Level 1: Basic Personality** 🎵
+This page will consist of the characteristics of your music which is gathered from your spotify data. The page also consists of your personality traits derived from your music taste.
+
+**Level 2: Personality Quiz** 👤
+This page consist of a quiz of 15 questions. After you have answered all the questions, you will be directed to your Personality Quiz result page, where your personality analysis will be displayed.
+
+**Level 3: Career Quiz** 🔍
+This page consist of a quiz of 15 questions. After you have answered all the questions, you will be directed to your Career Quiz result page, where your career analysis will be displayed.
 ```
 ```
 7. After you have completed all 3 levels, we will find you your most suitable career path based on your spotify data and the answers to your quizzes.
@@ -89,12 +95,3 @@ npm run lint
 
 
 ## 🤓 Other Things ##
-* FEEL FREE to **add more things** into this **README**
-
-
-## 🤓 Useful Resources ##
-* [**Markdown** Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
-* [**GOOD** README Example 1](https://github.com/testing-library/cypress-testing-library)
-* [**GOOD** README Example 2](https://github.com/typeorm/typeorm)
-* [**GOOD** README Example 3](https://github.com/amark/gun)
-* [**GOOD** README Example 4](https://github.com/google/leveldb)
