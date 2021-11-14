@@ -92,7 +92,9 @@ This page consist of a quiz of 15 questions. After you have answered all the que
 Level 3: Career Quiz 🔍
 This page consist of a quiz of 15 questions. After you have answered all the questions, you will be directed to your Career Quiz result page, where your career analysis will be displayed.
 ```
-![image](https://user-images.githubusercontent.com/89073166/141683848-945260e9-2e41-403c-8355-7088b3149c1c.png) ![image](https://user-images.githubusercontent.com/89073166/141683873-5f681992-75eb-4de8-a500-e9356670bcad.png)
+![image](https://user-images.githubusercontent.com/89073166/141683985-eb123fb0-c15b-4005-b338-35c5299e48a0.png)![image](https://user-images.githubusercontent.com/89073166/141684002-510ceb4a-7817-4aea-8f78-ea53095ea60a.png)
+
+
 
 
 
