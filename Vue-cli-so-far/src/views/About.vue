@@ -69,10 +69,7 @@ export default {
           "Speechiness",
           "Acousticness",
           "Instrumentalness",
-          "Liveness",
-          "Valence",
-          "Loudness",
-          "Tempo",
+          "Valence"
         ],
       },
       Personality: {
