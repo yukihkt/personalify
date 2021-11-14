@@ -52,7 +52,7 @@ npm run lint
 ## 🤓 How to Use Our Web Application (for Visitors to our Website) ##
 > To fully utilize our website, please contact [personName] and provide your spotify email address to be explicitly added into the system, as spotify currently only allows up to 25 explicitly added users into the system. If demand is high enough, we should be able to request for a quota extension to allow all users to access our web application with ease!
 <!-- * Yay! Your website is READY for visitors!
-* Provide a step-by-step description of what the user/visitor can/should do upon visiting your website for the first time.
+* Provide a step-by-step description of what the user/visitor can/should do upon visiting your website for the first time. -->
 ```
 1. Scroll all the way down till the "Login" button is visible
 ```
@@ -71,7 +71,7 @@ npm run lint
 ```
 7. After you have completed all 3 levels, we will find you your most suitable career path based on your spotify data and the answers to your quizzes.
 ```
-* It would be wonderful if you could include **screenshot images** of web pages to demonsrate what the user/visitor can/should do. -->
+<!--* It would be wonderful if you could include **screenshot images** of web pages to demonsrate what the user/visitor can/should do. -->
 
 
 ## 🤓 Other Things ##
