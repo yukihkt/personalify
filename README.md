@@ -98,7 +98,8 @@ This page consist of a quiz of 15 questions. After you have answered all the que
 
 ## 🤓 Other Things ##
 * Our Architecture Diagram: 
-> ![image](https://user-images.githubusercontent.com/89073166/141679387-1ceeb402-c970-455d-9383-57bddcdede21.png)
+> ![image](https://user-images.githubusercontent.com/89073166/141679482-fa0941a5-5076-4237-bbc8-e0f8f0c26f36.png)
+
 
 
 
