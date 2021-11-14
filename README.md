@@ -11,6 +11,7 @@
   * [Architecture Diagram](https://user-images.githubusercontent.com/89073166/141679482-fa0941a5-5076-4237-bbc8-e0f8f0c26f36.png)
 
 ## 🤓 IS216 - Group 15 - Personalify
+>![image](https://user-images.githubusercontent.com/89073166/141683477-d702ea15-b1f7-4019-a2b4-ea6fc0aa84d2.png)
 * Group Members (names based on elearn):
   * Soh Qi Hui Amanda (amanda.soh.2020@scis.smu.edu.sg)
   * Kushal Kumar Shreya (shreyakk.2020@scis.smu.edu.sg)
