@@ -1,12 +1,12 @@
 <template>
-  <div class="mx-5">
+  <div class="mx-2">
     <!-- start of the quiz component -->
-    <div class="pt-4 px-3 text-start fs-2">
+    <div class="pt-4 px-1 text-start fs-2">
       <!-- header section -->
       <span class="logo">Personality Quiz</span>
     </div>
     <br />
-    <div id="main-content-areas" class="my-1 rounded-3 bg-pinkred px-3">
+    <div id="main-content-areas" class="my-1 rounded-3 bg-pinkred px-3 ">
       <div>
         <vueper-slides :dragging-distance="70" prevent-y-scroll>
           <!-- v-if="!showQuiz" -- not sure if to have or not -->
@@ -33,7 +33,7 @@
               <div class="vueperslide__content-wrapper">
                 <h3>{{ slide.title }}</h3>
                 <div class="flex-row mt-2">
-                  <span class="mx-3">
+                  <span class="mx-3 radioBtnProg">
                     <input
                       class="btn-check me-1"
                       type="radio"
@@ -48,7 +48,7 @@
                       Not Me
                     </label>
                   </span>
-                  <span class="mx-3">
+                  <span class="mx-3 radioBtnProg">
                     <input
                       class="btn-check me-1"
                       type="radio"
@@ -234,5 +234,30 @@ export default {
 .logo {
   font-family: "Reem Kufi", sans-serif;
   color: #56bd66;
+}
+
+@media (max-width: 768px) {
+
+  .vueperslide__content-wrapper h3,
+  .vueperslide__content-wrapper h4 {
+    font-size: 1rem;
+  }
+  .vueperslide__content-wrapper h5 {
+    font-size: 1rem;
+  }
+  
+  .main-quiz-btn {
+    margin-bottom: 1vw;
+  }
+
+  .radioBtnProg input[type=radio] {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  .vueperslide__content-wrapper input {
+    width: 3vw;
+  }
+
 }
 </style>
