@@ -1,4 +1,3 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=454868&assignment_repo_type=GroupAssignmentRepo)
 # 👋 is216-project
 >![image](https://user-images.githubusercontent.com/89073166/141683543-1f203a44-2340-4d3d-aa29-ba2dbc8b8787.png)
 
@@ -23,6 +22,7 @@
 
 ## 🔥 Personalify Overview
 * Our prototype design: [Personalify Prototype](https://www.figma.com/file/wq8simGjxfhj4cyeCsuT3v/Personalify-Prototype?node-id=77%3A432)
+* Our summary video: [Personalify Summary](https://www.youtube.com/watch?v=0nhvMPws2oc&ab_channel=%EC%9D%91%EC%9D%91%EC%9C%A0%ED%82%A4)
 > Personalify's aim is to provide a one-stop interactive website for Spotify users, primarily targeting young adults aged 18 to 30. The bulk of Spotify's user base is below the age of 35, and at that age, we tend to go through a lot of self-searching when we transition into different phases in our lives. With Personalify, users will embark on a journey of self-discovery with a more personalized experience by integrating music that they listen to. By use of statistical analysis of their Spotify listening patterns, in addition to curated quizzes made to determine their personality, we will be able to determine they strengths and weaknesses, suitable career paths, team dynamics, and match them with personality types that we believe they will work best with.
 <!-- * Describe your project. What is it called? What does it do? Why did you make this web application? Who will benefit from using your web application? Describe your users - who are they? (anyone? or specific target age group or gender? region? country?)
 * Feel free to use diagrams and images to describe. For example, if you have a system architecture diagram, please place it here and describe it. If you have a business process diagram, you can also place it here and describe it. -->
